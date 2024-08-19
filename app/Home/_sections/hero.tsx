@@ -39,14 +39,25 @@ export const Hero = () => {
       className="relative mb-[8rem] h-screen py-16 text-white before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100px)_var(--y,_100px),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-60"
     >
       <motion.div
-        style={{ position, scale, x: "-50%" }}
-        className="fixed left-1/2 z-10 flex flex-col items-center"
+        style={{ position, scale, x: "30%", y: "20%" }}
+        className="fixed z-10 flex flex-col"
       >
-        <div className="">
-          <h1 className="mb-12 text-black font-heading text-[54px] font-semibold leading-[1]">
+        <div className="min-w-[510px] md:max-md :flex border text-black">
+          <h1 className="mb-9 text-black text-left font-heading text-[54px] font-semibold leading-[1]">
             Grow Skills Together
           </h1>
+          <p className="text-[40pt] max-w-[510px]">Boost skills <br/> with Teamwork and shared Learning</p>
         </div>
+        <video width="320" height="240" controls preload="none">
+      <source src="C:\Users\Dinith\Desktop\6781547-uhd_3840_2160_30fps.mp4" type="video/mp4" />
+      <track
+        src="/path/to/captions.vtt"
+        kind="subtitles"
+        srcLang="en"
+        label="English"
+      />
+      Your browser does not support the video tag.
+    </video>
       </motion.div>
     </motion.section>
   );
