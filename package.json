@@ -28,6 +28,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18",
     "@uploadthing/react": "^6.7.2",
+    "aatjs": "^0.0.4",
     "ai": "^3.3.7",
     "axios": "^1.7.4",
     "class-variance-authority": "^0.7.0",
