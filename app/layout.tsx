@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Cousine, Poppins, Nunito } from "next/font/google";
+import { Inter, Cousine, Poppins, Nunito, Anek_Devanagari, PT_Sans } from 'next/font/google';
 
 import "./styles/globals.css";
 
@@ -14,6 +14,19 @@ const nunito = Nunito({
   display: "swap",
 });
 
+const AnekDevanagari = Anek_Devanagari({
+  subsets: ["latin"],
+  variable: "--font-anek-devanagari",
+  display: "swap",
+});
+
+const ptSans = PT_Sans({
+  subsets: ["latin"],
+  variable: "--font-pt-sans",
+  display: "swap",
+  weight: "400",
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -21,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">          
-      <body className={`bg-[#fbf6f2] ${nunito.variable}`}>{children}</body>
+      <body className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable}`}>{children}</body>
     </html>
   );
 }

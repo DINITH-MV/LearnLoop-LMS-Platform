@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --color-primary: #dcff50;
+    --color-primary: #276a22;
     --color-secondary: #dccd6b;
     --color-heading: #f5f5f7;
     --color-text: rgba(0, 0, 0, 0.6);
@@ -37,3 +37,11 @@
 .nunito{
   font-family: var(--font-nunito);
 } 
+
+.AnekDevanagari {
+  font-family: var(--font-anek-devanagari);
+}
+
+.ptSans {
+  font-family: var(--font-pt-sans);
+}

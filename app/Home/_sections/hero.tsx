@@ -39,23 +39,24 @@ export const Hero = () => {
       className="relative mb-[8rem] h-screen py-16 text-white before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100px)_var(--y,_100px),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-60"
     >
       <motion.div
-        style={{ position, scale, x: "26%", y: "20%" }}
+        style={{ scale, position, x: 140, y: 100}}
         className="fixed z-10 flex flex-col"
       >
         <div className="flex">
-          <div className="min-w-[510px] md:max-md :flex border text-black">
-            <h1 className="mb-9 nunito text-black text-left text-[54px] font-bold leading-[1]">
+          <div className="min-w-[570px] md:max-md border text-black">
+            <h1 className="ptSans mt-4 mb-9  nunito text-black text-left text-[54px] font-bold leading-[1]">
               Grow Skills Together
             </h1>
-            <p className="nunito text-[35pt] max-w-[510px]">
-              Boost skills <br /> with Teamwork and shared Learning
+            <p className="AnekDevanagari text-[32pt] max-w-[510px]">
+            Boost Your Skills Through Collaborative Teamwork and Shared Learning Together
             </p>
-            <button></button>
+           
+          <button className="mt-[40px] mr-[20px] text-[18px] font-semibold bg-[#94e689] py-[10px] px-[20px] rounded-[11px]">Check it out</button>
+          <button className="mt-[40px] text-[18px] font-semibold border-black border-[2px] py-[9px] px-[18px] rounded-[11px]">Start Free Trial</button>
           </div>
 
-          <div className="mask1 h-[400px]">
+          <div className="mask1 h-[600px] w-[770px]">
             <img
-              className="pr-[100px]"
               src="https://pouch.jumpshare.com/preview/eEbzD91fD9yFozlVwKCexT4YvnrDF0H9Me8dQUZPAEZz1LlaJkqspdMCdDugG01M-qbSmMrQhzyNUyGA34wJRMzbZtu5uEJQbdXw7qoGlww"
             />
           </div>
