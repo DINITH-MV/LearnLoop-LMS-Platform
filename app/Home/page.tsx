@@ -13,7 +13,7 @@ export default function Page() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main>
+      <main>       
         <Hero />
         <div className="relative z-10 w-full overflow-x-clip">
           <Features />

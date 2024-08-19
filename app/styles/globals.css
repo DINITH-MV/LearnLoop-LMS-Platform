@@ -34,7 +34,6 @@
   mask-repeat: no-repeat;    
 }
 
-code {
-  font-family: "Protest Revolution",BadScript, Sacramento, Satisfy, "Fira Sans",Barlow, Cairo, Abel, "Cantora One", "Kay Pho Du", Coda, Spirax,
-    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
+.nunito{
+  font-family: var(--font-nunito);
+} 
