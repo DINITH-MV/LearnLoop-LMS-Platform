@@ -26,3 +26,8 @@
     @apply translate-x-[calc(-50%_+_var(--x))];
   }
 }
+
+.mask1 {
+  -webkit-mask-image: url(w3logo.png);
+  mask-image: url(w3logo.png);
+}
