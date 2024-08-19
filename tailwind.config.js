@@ -10,6 +10,24 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing: {
+        100: "100px",
+      },
+      fontFamily: {
+        Spirax: ['Spirax', "system-ui"],
+      Coda: ['Coda', "system-ui"],
+      Natural: ['Kay Pho Du', "serif"],
+      CantoraOne: ['Cantora One', "sans-serif"],
+      Abel: ['Abel', "sans-serif"],
+      Cairo: ['Cairo', "sans-serif"],
+      Barlow: ['Barlow', "sans-serif"],
+      FiraSans: ['Fira Sans', "sans-serif"],
+      Satisfy: ['Satisfy', "cursive"],
+      Sacramento: ['Sacramento', "cursive"],
+      BadScript: ['Bad Script', "cursive"],
+      Protest: ['Protest Revolution', "sans-serif"]
+
+      },
       colors: {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",

@@ -28,6 +28,13 @@
 }
 
 .mask1 {
-  -webkit-mask-image: url(../../public/mask.png);
-  mask-image: url(../../public/mask.png);
+  -webkit-mask-image: url(../../public/mask8.png);
+  mask-image: url(../../public/mask8.png);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;    
+}
+
+code {
+  font-family: "Protest Revolution",BadScript, Sacramento, Satisfy, "Fira Sans",Barlow, Cairo, Abel, "Cantora One", "Kay Pho Du", Coda, Spirax,
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

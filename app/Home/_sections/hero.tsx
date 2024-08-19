@@ -44,17 +44,18 @@ export const Hero = () => {
       >
         <div className="flex">
           <div className="min-w-[510px] md:max-md :flex border text-black">
-            <h1 className="mb-9 text-black text-left font-heading text-[54px] font-semibold leading-[1]">
+            <h1 className="mb-9 font-spirax text-black text-left font-heading text-[54px] font-semibold leading-[1]">
               Grow Skills Together
             </h1>
             <p className="text-[35pt] max-w-[510px]">
               Boost skills <br /> with Teamwork and shared Learning
             </p>
+            <button></button>
           </div>
           <div className="mask1">
             <img
-              width={500}
-              src="https://s4.ezgif.com/tmp/ezgif-4-79a785ec28.gif"
+            className="pr-[100px]"
+              src="https://pouch.jumpshare.com/preview/eEbzD91fD9yFozlVwKCexT4YvnrDF0H9Me8dQUZPAEZz1LlaJkqspdMCdDugG01M-qbSmMrQhzyNUyGA34wJRMzbZtu5uEJQbdXw7qoGlww"
             />
           </div>
         </div>
