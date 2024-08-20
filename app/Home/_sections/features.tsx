@@ -77,7 +77,7 @@ export const Features = () => {
           style={stylesWithCssVar({
             "--y": text0Y,
             color: "black",
-            marginLeft: "80px",
+            marginLeft: "70px",
             width: "700px",
             textAlign: "center",
           })}
