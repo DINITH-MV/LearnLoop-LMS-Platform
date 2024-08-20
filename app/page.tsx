@@ -1,6 +1,6 @@
-import { Features } from "./_sections/features";
+import { Features } from "./Home/_sections/features";
 import Head from "next/head";
-import { Hero } from "./_sections/hero";
+import { Hero } from "./Home/_sections/hero";
 
 export default function Page() {
   return (
