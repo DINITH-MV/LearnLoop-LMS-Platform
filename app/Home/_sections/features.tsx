@@ -11,12 +11,17 @@ export const Features = () => {
     offset: ["start end", "end end"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1, 1], [0.8, 0.8, 0]); 
-  const x = useTransform(scrollYProgress, [0.9, 1], ["23%", "84%"]);
+  const scale = useTransform(scrollYProgress, [0.8, 0.2], [0.8, 0.8]); 
+  const x = useTransform(scrollYProgress, [0.9, 1], ["23%", "10%"]);
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.9, 0, 0, 0.9],
-    [1, 1, 1, 1, 0]
+    [0, 0.9],
+    [0.9, 1]
+  );
+  const opacity1 = useTransform(
+    scrollYProgress,
+    [0,  0.9],
+    [0.9,  1]
   );
 
   const text0Y = useTransform(
@@ -27,13 +32,13 @@ export const Features = () => {
 
   const text1Opacity = useTransform(
     scrollYProgress,
-    [0.2, 0.4, 0.5], // when the text will be visible
-    [0, 2, 0] // how long the text will be visible
+    [0.1, 0.2, 0.5], // when the text will be visible
+    [0, 1, 0] // how long the text will be visible
   );
   const text1Y = useTransform(
     scrollYProgress,
     [0.2, 0.4, 0.5],
-    ["100px", "65px", "100px"]
+    ["65px", "65px", "100px"]
   );
 
   const text2Opacity = useTransform(
@@ -63,48 +68,54 @@ export const Features = () => {
       ref={targetRef}
       className="flex h-[500vh] flex-col items-center justify-start"
     >
-      <div className="sticky top-[16.7vh] h-[66.8vh] px-16 text-2xl leading-[1] text-white [&_p]:w-[45rem] [&_p]:max-w-[90%]">
-        <motion.div style={{ x, scale }} className="relative h-full">
+      <div className="sticky top-[24vh] h-[66.8vh] px-16 text-2xl leading-[1] text-white [&_p]:w-[45rem] [&_p]:max-w-[90%]">
+        <motion.div style={{ x, scale, opacity:opacity1}} className="relative h-full">
           <motion.figure className="h-full">
             <img
-              src="https://pouch.jumpshare.com/preview/UBIxa5GMOkYn5Fvn55lA2ngbLLPZaXjee44u2FIbdYGrZeHmiAE5IY1DZP22aMMaJtRKZkNnv8bFOsYdQVm8qniHEc-h9Y276s_Zw4v1iDE"
-              className="rounded-[60pt] mt-[70px] h-full w-auto"
+              src="https://pouch.jumpshare.com/preview/FeD4eNVR379qAw1-4kK-IVfTHTI9nHxxfw33ARvA2koacPNnFsagf9PngOczRn7i6eKJSRr6dk7EvclSRz2flhlKznmhAVqU1IfycROm1dQ"
+              className="rounded-l-[150px] ml-[100px] mt-[40px] h-[400px]"
             />
+            
           </motion.figure>
         </motion.div>
        
-        <motion.p
+        <motion.div
           style={stylesWithCssVar({
             opacity: opacity,
             "--y": text0Y,
-            color: "black",
-            marginLeft: "70px",
-            width: "700px",
+            marginTop: "-60px",
+            marginLeft: "80px",
+            width: "480px",
             textAlign: "center",
+            borderRadius: "30px",
           })}
           className="translate-x-[100px] translate-y-[-350px] absolute top-1/2 left-0"
         >
-          <span className="text-[#474747] ptSans font-semibold leading-[1.4]">
-            Building a Learning Culture with AI to Enhance Essential Skills
-          </span>
-        </motion.p>
+          <div className="bg-[linear-gradient(140deg,#ff8f93,#ffbe77)] ... rounded-r-[80px] py-[28pt] p-[20px]">
+          <p className="text-[#725123d8] ml-[20px] text-justify ptSans font-semibold leading-[1.4]">
+            BUILDING LEARNING <br/> CULTURE WITH AI
+          </p>
+          </div>
+        </motion.div>
 
         <motion.div
           style={stylesWithCssVar({
             opacity: text1Opacity,
             "--y": text1Y,
             color: "black",
-            width: "360px",
+            width: "350px",
             size: "24pt",
+            marginLeft: "60px",
+            marginTop: "-40px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
-          <div className="border  py-[30px] bg-[#ddceb4] pl-[10px] rounded-[40px]">
-            <p className="ptSans text-[#b48c4d] text-right text-[28pt] font-bold leading-[1.2]">
+          <div className="border  py-[30px] bg-[#f3e3c8] pl-[10px] rounded-[40px]">
+            <p className="ptSans text-[#9c7840] text-right text-[28pt] font-bold leading-[1.2]">
             AI-Powered <br />Learning for everyone
             </p>
 
-            <p className="AnekDevanagari mt-[30px] pb-[60px] text-[20pt] leading-[1.2] text-right">
+            <p className="AnekDevanagari mt-[30px] pb-[60px] text-[16pt] leading-[1.2] text-right">
             Our LMS now uses AI to suggest content and track progress, making learning easier and personalized.
             </p>
             <button className="mt-[-40px] mr-[38px] text-[18px] float-right font-semibold bg-[#f4f7e5] py-[10px] px-[10px] rounded-[11px]">
@@ -119,15 +130,17 @@ export const Features = () => {
             "--y": text2Y,            
             width: "360px",
             color: "black",
+            marginLeft: "50px",
+            marginTop: "-70px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
           <div className="border pl-[30px] py-[30px] bg-[#ceddb4] rounded-[40px]">
-            <p className="ptSans text-[#80ad46] text-right text-[28pt] font-bold leading-[1.2]">
+            <p className="ptSans text-[#4c7c29] text-right text-[28pt] font-bold leading-[1.2]">
             Smart Learning <br /> Made Simple
             </p>
 
-            <p className="AnekDevanagari mt-[30px] pb-[60px] text-[20pt] leading-[1.2] text-right">
+            <p className="AnekDevanagari mt-[30px] pb-[60px] text-[16pt] leading-[1.2] text-right">
             With AI, our LMS adapts lessons and monitors progress, creating a smoother and more focused learning path.
             </p>
             <button className="mt-[-40px] mr-[40px] text-[18px] float-right font-semibold bg-[#f0f7e5] py-[10px] px-[10px] rounded-[11px]">
@@ -140,20 +153,22 @@ export const Features = () => {
           style={stylesWithCssVar({
             opacity: text3Opacity,
             "--y": text3Y,
-            width: "370px",
+            width: "340px",
             color: "black",
+            marginLeft: "80px",
+            marginTop: "-40px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-70px]"
           >
-            <div className="border pl-[30px] py-[30px] bg-[#e7cef5] rounded-[40px]">
-              <p className="ptSans text-[#a62e96] text-right text-[28pt] font-bold leading-[1.2]">
+            <div className="border pl-[30px] py-[30px] bg-[#f2e1ce] rounded-[40px]">
+              <p className="ptSans text-[#b4634d] text-right text-[28pt] font-bold leading-[1.2]">
               AI for Personalized Learning Paths
               </p>
   
-              <p className="AnekDevanagari mt-[30px] pb-[60px] text-[20pt] leading-[1.2] text-right">
+              <p className="AnekDevanagari mt-[30px] pb-[60px] text-[16pt] leading-[1.2] text-right">
               Our LMS tailors lessons using AI, offering students the right content at the right time to boost their learning journey.
               </p>
-              <button className="mt-[-35px] mr-[38px] text-[18px] float-right font-semibold bg-[#fef5fd] py-[10px] px-[10px] rounded-[11px]">
+              <button className="mt-[-35px] mr-[33px] text-[18px] float-right font-semibold bg-[#fef5fd] py-[10px] px-[10px] rounded-[11px]">
                 Learn more
               </button>
             </div>

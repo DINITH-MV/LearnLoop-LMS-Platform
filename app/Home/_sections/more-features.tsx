@@ -1,3 +1,5 @@
+"use client";
+
 import { Flow } from "../icons/flow";
 import { Intellisense } from "../icons/intellisense";
 import { Keyboard } from "../icons/keyboard";
@@ -48,23 +50,37 @@ export const MoreFeatures = () => {
   });
 
   const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
-  const y = useTransform(scrollYProgress, [0.8, 1], ["0vh", "50vh"]);
+  const x = useTransform(scrollYProgress, [0.8, 1], ["0vw", "50vw"]); // Horizontal movement
 
   return (
     <motion.section
+      style={{ opacity }}
       ref={targetRef}
-      style={{ opacity, y }}
-      className="mx-auto grid w-full max-w-[120rem] grid-cols-3 gap-40 py-96"
+      className="mt-[-140px] relative mb-[15rem] h-screen py-16 text-white "
     >
-      {content.map(({ icon: Icon, title, text }) => (
-        <div key={title}>
-          <span className="padding-8 mb-4 flex h-32 w-32 items-center justify-center rounded-[1.8rem] bg-[#151515]">
-            <Icon className="h-12 w-12" />
-          </span>
-          <h3 className="mb-2 text-xl text-white">{title}</h3>
-          <p className="text-md">{text}</p>
+      <motion.section
+        ref={targetRef}
+        style={{ opacity, x }} // Apply x transform instead of y
+        className="flex flex-col items-center justify-star "
+      >
+        <div className="w-[540px] text-center py-[28px] bg-[linear-gradient(135deg,#fba946,#ffba7f)] rounded-r-[70px] p-[20px] ml-[0px]">
+          <p className="text-[32pt] text-left ml-[20px] text-[#80643ae5] ptSans font-semibold leading-[1.4]">
+            DISCOVER OUR LATEST<br/> AI FEATURES
+          </p>
         </div>
-      ))}
+
+        <div className="mt-[50px] rounded-tl-[50px] rounded-br-[50px] grid w-[1100px] bg-gradient-to-r from-black via-gray-800 to-gray-900 ... border-black border px-[10px] max-w-[120rem] grid-cols-3 gap-[5px] py-[10px]">
+          {content.map(({ icon: Icon, title, text }) => (
+            <div key={title} className="bg-[#fff] rounded-tl-[40px] rounded-br-[50px] h-[260px] w-[340px] p-[10px] m-[10px]">
+              <span className="mb-4 flex h-32 w-32 items-center justify-center rounded-tl-[30px] bg-gradient-to-r from-black via-gray-800 to-gray-900 ...">
+                <Icon className="h-12 w-12" />
+              </span>
+              <h3 className="mb-2 text-xl text-black">{title}</h3>
+              <p className="text-md text-black">{text}</p>
+            </div>
+          ))}
+        </div>
+      </motion.section>
     </motion.section>
   );
 };

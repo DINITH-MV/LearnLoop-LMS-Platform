@@ -1,6 +1,7 @@
 import { Features } from "./Home/_sections/features";
 import Head from "next/head";
 import { Hero } from "./Home/_sections/hero";
+import { MoreFeatures } from './Home/_sections/more-features';
 
 export default function Page() {
   return (
@@ -13,12 +14,14 @@ export default function Page() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main>       
+      <main className="h-[6000px]">
         <Hero />
-        <div className="relative z-10 w-full overflow-x-clip">
-          <Features />
+        <div>
+          <div className="relative z-10 w-full overflow-x-clip">
+            <Features />
+            <MoreFeatures />
+          </div>
         </div>
-        
       </main>
     </div>
   );
