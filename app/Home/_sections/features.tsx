@@ -11,12 +11,12 @@ export const Features = () => {
     offset: ["start end", "end end"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 0.9, 1], [0.8, 0.8, 1]); 
-  const x = useTransform(scrollYProgress, [0.9, 1], ["25%", "0%"]);
+  const scale = useTransform(scrollYProgress, [0, 1, 1], [0.8, 0.8, 0]); 
+  const x = useTransform(scrollYProgress, [0.9, 1], ["23%", "84%"]);
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.5, 0.6, 0.85, 0.9],
-    [1, 1, 0.4, 0.4, 1]
+    [0, 0.9, 0, 0, 0.9],
+    [1, 1, 1, 1, 0]
   );
 
   const text0Y = useTransform(
@@ -33,29 +33,29 @@ export const Features = () => {
   const text1Y = useTransform(
     scrollYProgress,
     [0.2, 0.4, 0.5],
-    ["100px", "70px", "100px"]
+    ["100px", "65px", "100px"]
   );
 
   const text2Opacity = useTransform(
     scrollYProgress,
     [0.5, 0.6, 0.7],
-    [0, 1, 0]
+    [0, 2, 0]
   );
   const text2Y = useTransform(
     scrollYProgress,
     [0.5, 0.6, 0.7],
-    ["100px", "70px", "100px"]
+    ["100px", "65px", "100px"]
   );
 
   const text3Opacity = useTransform(
     scrollYProgress,
     [0.7, 0.8, 0.9],
-    [0, 1, 0]
+    [0, 2, 0]
   );
   const text3Y = useTransform(
     scrollYProgress,
     [0.7, 0.8, 0.9],
-    ["30px", "0px", "-30px"]
+    ["100px", "60px", "100px"]
   );
 
   return (
@@ -67,14 +67,15 @@ export const Features = () => {
         <motion.div style={{ x, scale }} className="relative h-full">
           <motion.figure className="h-full">
             <img
-              src="https://pouch.jumpshare.com/preview/UBIxa5GMOkYn5Fvn55lA2ngbLLPZaXjee44u2FIbdYGrZeHmiAE5IY1DZP22aMMaujdhxQ5GODuM6rq-fjw3Y4DAihLeUFHFQ9pXQm5Je6k"
+              src="https://pouch.jumpshare.com/preview/UBIxa5GMOkYn5Fvn55lA2ngbLLPZaXjee44u2FIbdYGrZeHmiAE5IY1DZP22aMMaJtRKZkNnv8bFOsYdQVm8qniHEc-h9Y276s_Zw4v1iDE"
               className="rounded-[60pt] mt-[70px] h-full w-auto"
             />
           </motion.figure>
         </motion.div>
-
+       
         <motion.p
           style={stylesWithCssVar({
+            opacity: opacity,
             "--y": text0Y,
             color: "black",
             marginLeft: "70px",
@@ -93,20 +94,20 @@ export const Features = () => {
             opacity: text1Opacity,
             "--y": text1Y,
             color: "black",
-            width: "380px",
+            width: "360px",
             size: "24pt",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
-          <div className="border pl-[30px] py-[30px] bg-[#ddceb4] rounded-[40px]">
-            <p className="ptSans text-[#b48c4d] text-right text-[28pt] font-bold leading-[1.1]">
-              Guided Learning <br /> At Home
+          <div className="border  py-[30px] bg-[#ddceb4] pl-[10px] rounded-[40px]">
+            <p className="ptSans text-[#b48c4d] text-right text-[28pt] font-bold leading-[1.2]">
+            AI-Powered <br />Learning for everyone
             </p>
 
             <p className="AnekDevanagari mt-[30px] pb-[60px] text-[20pt] leading-[1.2] text-right">
-            Empowering and inspiring young minds with AI-driven insights, personalized guidance, and unwavering support for their growth and success.
+            Our LMS now uses AI to suggest content and track progress, making learning easier and personalized.
             </p>
-            <button className="mt-[-40px] mr-[40px] text-[18px] float-right font-semibold bg-[#f0f7e5] py-[10px] px-[10px] rounded-[11px]">
+            <button className="mt-[-40px] mr-[38px] text-[18px] float-right font-semibold bg-[#f4f7e5] py-[10px] px-[10px] rounded-[11px]">
               Learn more
             </button>
           </div>
@@ -116,18 +117,18 @@ export const Features = () => {
           style={stylesWithCssVar({
             opacity: text2Opacity,
             "--y": text2Y,            
-            width: "380px",
+            width: "360px",
             color: "black",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
           <div className="border pl-[30px] py-[30px] bg-[#ceddb4] rounded-[40px]">
             <p className="ptSans text-[#80ad46] text-right text-[28pt] font-bold leading-[1.2]">
-            Learning Together, <br /> Growing Stronger
+            Smart Learning <br /> Made Simple
             </p>
 
             <p className="AnekDevanagari mt-[30px] pb-[60px] text-[20pt] leading-[1.2] text-right">
-            Inspiring young minds with AI-enhanced learning, personalized guidance, and unwavering support for their growth and success.
+            With AI, our LMS adapts lessons and monitors progress, creating a smoother and more focused learning path.
             </p>
             <button className="mt-[-40px] mr-[40px] text-[18px] float-right font-semibold bg-[#f0f7e5] py-[10px] px-[10px] rounded-[11px]">
               Learn more
@@ -135,19 +136,28 @@ export const Features = () => {
           </div>
         </motion.div>
 
-        <motion.p
+        <motion.div
           style={stylesWithCssVar({
             opacity: text3Opacity,
             "--y": text3Y,
+            width: "370px",
             color: "black",
           })}
-          className="translate-y-centered-offset absolute top-1/2 left-[-20px]"
-        >
-          <span className="text-primary">Devtools</span>
-          <br />
-          We've bundled useful tools to help you get your work done faster and
-          more efficiently.
-        </motion.p>
+          className="translate-y-centered-offset absolute top-1/2 left-[-70px]"
+          >
+            <div className="border pl-[30px] py-[30px] bg-[#e7cef5] rounded-[40px]">
+              <p className="ptSans text-[#a62e96] text-right text-[28pt] font-bold leading-[1.2]">
+              AI for Personalized Learning Paths
+              </p>
+  
+              <p className="AnekDevanagari mt-[30px] pb-[60px] text-[20pt] leading-[1.2] text-right">
+              Our LMS tailors lessons using AI, offering students the right content at the right time to boost their learning journey.
+              </p>
+              <button className="mt-[-35px] mr-[38px] text-[18px] float-right font-semibold bg-[#fef5fd] py-[10px] px-[10px] rounded-[11px]">
+                Learn more
+              </button>
+            </div>
+        </motion.div>
       </div>
     </section>
   );

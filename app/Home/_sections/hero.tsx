@@ -57,7 +57,7 @@ export const Hero = () => {
 
           <div className="mask1 h-[600px] w-[770px]">
             <img
-              src="https://pouch.jumpshare.com/preview/eEbzD91fD9yFozlVwKCexT4YvnrDF0H9Me8dQUZPAEZz1LlaJkqspdMCdDugG01MyqaW58wnNu97xBNHqQV2AFhikDi3u2xEs2dJBcasJ0U"
+              src="https://pouch.jumpshare.com/preview/eEbzD91fD9yFozlVwKCexT4YvnrDF0H9Me8dQUZPAEZz1LlaJkqspdMCdDugG01MJtRKZkNnv8bFOsYdQVm8qvSfYcOURtFykdkD-ksKrzA"
             />
           </div>
         </div>
