@@ -68,7 +68,7 @@ export const Features = () => {
       ref={targetRef}
       className="flex h-[500vh] flex-col items-center justify-start"
     >
-      <div className="sticky top-[24vh] h-[66.8vh] px-16 text-2xl leading-[1] text-white [&_p]:w-[45rem] [&_p]:max-w-[90%]">
+      <div className="sticky top-[28vh] h-[66.8vh] px-16 text-2xl leading-[1] text-white [&_p]:w-[45rem] [&_p]:max-w-[90%]">
         <motion.div style={{ x, scale, opacity:opacity1}} className="relative h-full">
           <motion.figure className="h-full">
             <img
