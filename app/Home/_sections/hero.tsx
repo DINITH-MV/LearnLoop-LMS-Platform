@@ -2,6 +2,7 @@
 
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import "../styles/index.css"
 
 export const Hero = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -36,7 +37,7 @@ export const Hero = () => {
     <motion.section
       style={{ opacity }}
       ref={targetRef}
-      className="relative mb-[15rem] h-screen py-16 text-white before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100px)_var(--y,_100px),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-60"
+      className="relative mb-[300px] h-screen py-16 text-white before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100px)_var(--y,_100px),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-60"
     >
       <motion.div
         style={{ scale, position, x: 140, y: 100}}
@@ -57,7 +58,7 @@ export const Hero = () => {
 
           <div className="mask1 h-[600px] w-[770px]">
             <img
-              src="https://pouch.jumpshare.com/preview/eEbzD91fD9yFozlVwKCexT4YvnrDF0H9Me8dQUZPAEZz1LlaJkqspdMCdDugG01MJtRKZkNnv8bFOsYdQVm8qvSfYcOURtFykdkD-ksKrzA"
+              src="https://pouch.jumpshare.com/preview/eEbzD91fD9yFozlVwKCexT4YvnrDF0H9Me8dQUZPAEZz1LlaJkqspdMCdDugG01MiQC70HQGutKHoWt5NJK5IxL11zVD6ySp8UhCmn5VTG0"
             />
           </div>
         </div>

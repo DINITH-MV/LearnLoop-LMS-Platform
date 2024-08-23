@@ -72,8 +72,8 @@ export const Features = () => {
         <motion.div style={{ x, scale, opacity:opacity1}} className="relative h-full">
           <motion.figure className="h-full">
             <img
-              src="https://pouch.jumpshare.com/preview/FeD4eNVR379qAw1-4kK-IVfTHTI9nHxxfw33ARvA2koacPNnFsagf9PngOczRn7i6eKJSRr6dk7EvclSRz2flhlKznmhAVqU1IfycROm1dQ"
-              className="rounded-l-[150px] ml-[100px] mt-[40px] h-[400px]"
+              src="https://pouch.jumpshare.com/preview/FeD4eNVR379qAw1-4kK-IVfTHTI9nHxxfw33ARvA2koacPNnFsagf9PngOczRn7iL20qD2zNBMcXxsIsaoERX3oQ1hk0ZPt_03V6Q0YH9DA"
+              className="rounded-l-[150px] ml-[100px] mt-[54px] h-[400px]"
             />
             
           </motion.figure>
@@ -83,7 +83,7 @@ export const Features = () => {
           style={stylesWithCssVar({
             opacity: opacity,
             "--y": text0Y,
-            marginTop: "-60px",
+            marginTop: "-100px",
             marginLeft: "80px",
             width: "480px",
             textAlign: "center",
@@ -106,7 +106,7 @@ export const Features = () => {
             width: "350px",
             size: "24pt",
             marginLeft: "60px",
-            marginTop: "-40px",
+            marginTop: "-30px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
@@ -131,7 +131,7 @@ export const Features = () => {
             width: "360px",
             color: "black",
             marginLeft: "50px",
-            marginTop: "-70px",
+            marginTop: "-50px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
@@ -156,7 +156,7 @@ export const Features = () => {
             width: "340px",
             color: "black",
             marginLeft: "80px",
-            marginTop: "-40px",
+            marginTop: "-20px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-70px]"
           >

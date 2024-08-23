@@ -69,7 +69,7 @@ export const MoreFeatures = () => {
           </p>
         </div>
 
-        <div className="mt-[50px] rounded-tl-[50px] rounded-br-[50px] grid w-[1100px] bg-gradient-to-r from-black via-gray-800 to-gray-900 ... border-black border px-[10px] max-w-[120rem] grid-cols-3 gap-[5px] py-[10px]">
+        <div className="mt-[30px] rounded-tl-[50px] rounded-br-[50px] grid w-[1100px] bg-gradient-to-r from-black via-gray-800 to-gray-900 ... border-black border px-[10px] max-w-[120rem] grid-cols-3 gap-[5px] py-[10px]">
           {content.map(({ icon: Icon, title, text }) => (
             <div key={title} className="bg-[#fff] rounded-tl-[40px] rounded-br-[40px] h-[260px] w-[340px] p-[10px] m-[10px]">
               <span className="mb-4 flex h-32 w-32 items-center justify-center rounded-tl-[30px] bg-gradient-to-r from-black via-gray-800 to-gray-900 ...">

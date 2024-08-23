@@ -27,13 +27,6 @@
   }
 }
 
-.mask1 {
-  -webkit-mask-image: url(../../public/mask8.png);
-  mask-image: url(../../public/mask8.png);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;    
-}
-
 .nunito{
   font-family: var(--font-nunito);
 } 
