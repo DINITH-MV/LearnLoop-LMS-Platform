@@ -73,7 +73,7 @@ export const Features = () => {
           <motion.figure className="h-full">
             <img
               src="https://pouch.jumpshare.com/preview/FeD4eNVR379qAw1-4kK-IVfTHTI9nHxxfw33ARvA2koacPNnFsagf9PngOczRn7iL20qD2zNBMcXxsIsaoERX3oQ1hk0ZPt_03V6Q0YH9DA"
-              className="rounded-l-[150px] ml-[100px] mt-[54px] h-[400px]"
+              className="rounded-l-[150px] ml-[100px] mt-[40px] h-[400px]"
             />
             
           </motion.figure>
@@ -83,9 +83,9 @@ export const Features = () => {
           style={stylesWithCssVar({
             opacity: opacity,
             "--y": text0Y,
-            marginTop: "-100px",
+            marginTop: "-60px",
             marginLeft: "80px",
-            width: "480px",
+            width: "500px",
             textAlign: "center",
             borderRadius: "30px",
           })}
@@ -106,7 +106,7 @@ export const Features = () => {
             width: "350px",
             size: "24pt",
             marginLeft: "60px",
-            marginTop: "-30px",
+            marginTop: "-40px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
@@ -131,7 +131,7 @@ export const Features = () => {
             width: "360px",
             color: "black",
             marginLeft: "50px",
-            marginTop: "-50px",
+            marginTop: "-70px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
@@ -156,7 +156,7 @@ export const Features = () => {
             width: "340px",
             color: "black",
             marginLeft: "80px",
-            marginTop: "-20px",
+            marginTop: "-40px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-70px]"
           >
