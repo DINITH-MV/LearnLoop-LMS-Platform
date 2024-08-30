@@ -66,15 +66,18 @@ export default function CodeGenerator() {
   }
 
   return (
-    <div className="px-4 lg:px-8 py-4">
+    <div className="h-[1100px] lg:px-8 py-4">
       <div className="flex justify-end mb-4">
+      </div>
+      <div className="text-center font-bold text-[30pt]">
+        CODE GENERATOR
+      </div>
         <Button>
           <Link href="/Features/code-generator/code-history" className="flex items-center gap-x-1">
             <History className="w-5 h-5"/>
             History
           </Link>
         </Button>
-      </div>
       <Card>
         <CardContent className="space-y-8">
           <Form {...form}>
@@ -82,24 +85,27 @@ export default function CodeGenerator() {
               onSubmit={form.handleSubmit(onSubmit)}
               className="mt-2 space-y-4"
             >
+              <div className="bg-[#fff] p-[30px] rounded-[7px]">
               <FormField
                 control={form.control}
                 name="prompt"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Prompt</FormLabel>
+                    <FormLabel className="text-[18pt] font-normal">INPUT YOUR PROMPT HERE</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="e.g: Generate a python code to verify email address"
+                        placeholder="E.g: Generate a python code to verify email address"
                         {...field}
-                        className="border "
+                        className="border text-[14pt]"
                       />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
+                  
                 )}
-              />
-              <Button type="submit">Submit</Button>
+                />
+                </div>
+              <Button type="submit" className="w-[740px] h-[50px] bg-[#beb228] rounded-[8px] text-[20px] text-[#fff]">Submit</Button>
             </form>
           </Form>
           <div>
@@ -108,11 +114,12 @@ export default function CodeGenerator() {
                 <pre>{generatedCode}</pre>
               </div>
             )}
+            <div className="text-[18pt] mb-[10px]">YOUR CODE WILL DISPLAY HERE</div>
             {!generatedCode &&
               (loading ? (
-                <div className="p-5 overflow-auto border border-dashed border-black rounded-md">
+                <div className="bg-[#fff] p-5 overflow-auto h-[400px] border border-dashed border-black rounded-md">
                   <pre>Code Line Here</pre>
-                  <div className="space-y-2 mt-2">
+                  <div className="bg-[#fff] space-y-2 mt-2">
                     <Skeleton className="h-4 w-[550px] bg-slate-400" />
                     <Skeleton className="h-4 w-[500px] bg-slate-400" />
                     <Skeleton className="h-4 w-[525px] bg-slate-400" />
@@ -123,7 +130,7 @@ export default function CodeGenerator() {
                   </div>
                 </div>
               ) : (
-                <div className="p-5 border border-dashed border-black rounded-md">
+                <div className="text-[14pt] p-5 h-[400px] border-[2pt] border-dashed border-black rounded-md">
                   <pre>Code Line Here</pre>
                 </div>
               ))}

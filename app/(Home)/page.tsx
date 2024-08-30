@@ -5,6 +5,7 @@ import Head from "next/head";
 import { Hero } from "./_sections/hero";
 import { MoreFeatures } from "./_sections/more-features";
 import { useState, useEffect } from 'react'
+import Header from "./_components/Header";
 
 export default function Page() {
 
@@ -24,7 +25,8 @@ export default function Page() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="h-[5120px]">
+      <main className="h-[5160px]">
+        <Header/>
         <Hero />
           <div className="relative z-10 w-full overflow-x-clip">
             <Features />

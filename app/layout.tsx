@@ -7,7 +7,6 @@ import {
   Anek_Devanagari,
   PT_Sans,
 } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 import "./styles/globals.css";
 
 export const metadata: Metadata = {
@@ -40,7 +39,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
      
       <html lang="en">
         <body
@@ -49,6 +47,5 @@ export default function RootLayout({
           {children}
         </body>
       </html>
-    </ClerkProvider>
   );
 }

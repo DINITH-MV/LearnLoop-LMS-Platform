@@ -117,10 +117,9 @@ export const MoreFeatures = () => {
           })}
           className="translate-x-[100px] translate-y-[-350px] absolute top-1/2 left-0"
         >
-          <div className="mt-[5px] w-[500px] text-center py-[40px] bg-[linear-gradient(287deg,#ea92ff,#5ad2f3)] rounded-r-[70px] p-[20px] ml-[0px]">
-            <p className="text-[32pt] text-left ml-[20px] text-[#fdfff9] ptSans font-semibold leading-[1.4]">
-              DISCOVER OUR <br />LATEST
-               AI FEATURES
+          <div className="mt-[5px] w-[520px] text-center py-[40px] bg-[linear-gradient(87deg,#ffe292,#FF7755)] rounded-r-[70px] p-[20px] ml-[0px]">
+            <p className="text-[32pt] text-left ml-[20px] text-[#fffce8]  ptSans font-semibold leading-[1.4]">
+              INTRODUCING OUR <br />LATEST AI FEATURES
             </p>
           </div>
         </motion.div>
@@ -143,13 +142,13 @@ export const MoreFeatures = () => {
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
-         <div className="mt-[400px] rounded-tl-[50px] rounded-br-[50px] grid w-[1100px] bg-gradient-to-r from-[#5ad2f3] to-[#24528d] ... border px-[10px] max-w-[120rem] grid-cols-3 gap-[5px] py-[10px]">
+         <div className="mt-[440px] rounded-tl-[50px] rounded-br-[50px] grid rounded-bl-[8px] rounded-tr-[8px]  w-[1100px] bg-gradient-to-r from-[#cb6866] to-[#ffe292] ... border px-[10px] max-w-[120rem] grid-cols-3 gap-[5px] py-[10px]">
             {content.map(({ icon: Icon, title, text, link }) => (
               <div
                 key={title}
-                className="bg-[#fff] rounded-tl-[40px] rounded-br-[40px] h-[220px] w-[340px] p-[10px] m-[10px]"
+                className="bg-[#fff] rounded-tl-[40px] rounded-br- [40px]  rounded-bl-[8px] rounded-tr-[8px] rounded-br-[40px] h-[220px] w-[340px] p-[10px] m-[10px]"
               >
-                <span className="mb-4 flex h-32 w-32 items-center justify-center rounded-tl-[30px] bg-gradient-to-r from-black via-gray-800 to-gray-900 ...">
+                <span className="mb-4 flex h-32 w-32 items-center justify-center rounded-tl-[30px] rounded-tr-[4px] rounded-bl-[4px] rounded-br-[4px] bg-gradient-to-r from-[#ba654f] to-[#cb6866] ...">
                   <Icon className="h-12 w-12" />
                 </span>
                 <a href={link} className="text-[#000]">

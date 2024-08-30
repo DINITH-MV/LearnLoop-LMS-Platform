@@ -1,7 +1,13 @@
+
 export default function Header() {
-    return (
-        <div>
-            <nav className="header"><a className="active a"><span>ART</span></a><a className="a"><span>ABOUT</span></a><a className="a"><span>VISIT</span></a><a className="a"><span>SHOP</span></a><a className="a"><span>SEARCH</span></a><div className="cursor"></div></nav>
-        </div>
-    );
+  return (
+    <div className="w-full pt-[30px] z-199">
+      <div className="text-center text-[16pt] m-auto w-[600px] flex justify-around">
+        <span>HOME</span>
+        <span>FEATURES</span>
+        <span>COURSES</span>
+        <span>ABOUT US</span>
+      </div>
+    </div>
+  );
 }
