@@ -14,6 +14,7 @@ const content = [
     icon: Prebuilds,
     title: "Prebuilds",
     text: "CodeSandbox continuously prebuilds your branches. This means no more waiting for dependencies to be downloaded and builds to finish.",
+    
   },
   {
     icon: Intellisense,

@@ -16,11 +16,9 @@ export default function Page() {
       </Head>
       <main className="h-[6000px]">
         <Hero />
-        <div>
           <div className="relative z-10 w-full overflow-x-clip">
             <Features />
             <MoreFeatures />
-          </div>
         </div>
       </main>
     </div>

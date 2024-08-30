@@ -58,7 +58,7 @@ export const Hero = () => {
 
           <div className="mask1 h-[600px] w-[770px]">
             <img
-              src="https://pouch.jumpshare.com/preview/eEbzD91fD9yFozlVwKCexT4YvnrDF0H9Me8dQUZPAEZz1LlaJkqspdMCdDugG01MiQC70HQGutKHoWt5NJK5IxL11zVD6ySp8UhCmn5VTG0"
+              src="https://s11.gifyu.com/images/SoVll.gif"
             />
           </div>
         </div>

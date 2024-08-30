@@ -72,7 +72,7 @@ export const Features = () => {
         <motion.div style={{ x, scale, opacity:opacity1}} className="relative h-full">
           <motion.figure className="h-full">
             <img
-              src="https://pouch.jumpshare.com/preview/FeD4eNVR379qAw1-4kK-IVfTHTI9nHxxfw33ARvA2koacPNnFsagf9PngOczRn7iL20qD2zNBMcXxsIsaoERX3oQ1hk0ZPt_03V6Q0YH9DA"
+              src="https://s11.gifyu.com/images/SoVd7.gif"
               className="rounded-l-[150px] ml-[100px] mt-[40px] h-[400px]"
             />
             
