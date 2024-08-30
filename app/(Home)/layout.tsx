@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import Header from "./_components/Header";
 import { motion } from 'framer-motion';
+import { ToastProvider } from "@/components/providers/toaster-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,7 +55,7 @@ export default function HomeLayout(
   };
 
   return (
-    <html suppressHydrationWarning>
+    <html lang="en">
       <body className={inter.variable}>
         
         <motion.div
@@ -72,8 +73,8 @@ export default function HomeLayout(
             backgroundColor: "#00000060",
             pointerEvents: "none",
           }}
-        />
-        {/* Render the children */}
+        />        
+        <ToastProvider />
         {children}
       </body>
     </html>

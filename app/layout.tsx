@@ -7,7 +7,7 @@ import {
   Anek_Devanagari,
   PT_Sans,
 } from "next/font/google";
-import { ToastProvider } from "@/components/providers/toaster-provider";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./styles/globals.css";
 
 export const metadata: Metadata = {
@@ -40,14 +40,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    <ClerkProvider>
      
-      <html suppressHydrationWarning >
+      <html lang="en">
         <body
           className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable}`}
         > 
-        <ToastProvider />
           {children}
         </body>
       </html>
+    </ClerkProvider>
   );
 }

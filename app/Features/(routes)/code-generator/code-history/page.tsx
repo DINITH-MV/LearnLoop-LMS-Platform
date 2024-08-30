@@ -19,7 +19,7 @@ const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
   });
 
   return (
-    <div suppressHydrationWarning className="px-4 lg:px-8 py-4">
+    <div  suppressHydrationWarning className="px-4 lg:px-8 py-4">
       <div>
         <Button>
           <Link href="/Features/code-generator" className="flex items-center gap-x-1">
