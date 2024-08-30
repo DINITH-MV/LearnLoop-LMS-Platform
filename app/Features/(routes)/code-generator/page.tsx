@@ -69,7 +69,7 @@ export default function CodeGenerator() {
     <div className="px-4 lg:px-8 py-4">
       <div className="flex justify-end mb-4">
         <Button>
-          <Link href="/code-generator/code-history" className="flex items-center gap-x-1">
+          <Link href="/Features/code-generator/code-history" className="flex items-center gap-x-1">
             <History className="w-5 h-5"/>
             History
           </Link>
