@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Cousine, Poppins, Nunito, Anek_Devanagari, PT_Sans } from 'next/font/google';
-
+import {
+  Inter,
+  Cousine,
+  Poppins,
+  Nunito,
+  Anek_Devanagari,
+  PT_Sans,
+} from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
+import { ToastProvider } from "@/components/providers/toaster-provider";
 import "./styles/globals.css";
 
 export const metadata: Metadata = {
@@ -33,8 +41,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">          
-      <body className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable}`}>{children}</body>
-    </html>
+    <ClerkProvider>
+     
+      <html lang="en">
+        <body
+          className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable}`}
+        > 
+        <ToastProvider />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

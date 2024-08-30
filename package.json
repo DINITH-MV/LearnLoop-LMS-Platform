@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.26.0",
-    "@clerk/nextjs": "^5.3.1",
+    "@clerk/nextjs": "^5.3.7",
     "@google/generative-ai": "^0.17.1",
     "@hello-pangea/dnd": "^16.6.0",
     "@hookform/resolvers": "^3.9.0",
