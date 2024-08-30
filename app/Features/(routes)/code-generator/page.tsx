@@ -66,7 +66,7 @@ export default function CodeGenerator() {
   }
 
   return (
-    <div className="px-4 lg:px-8 py-4">
+    <div suppressHydrationWarning className="px-4 lg:px-8 py-4">
       <div className="flex justify-end mb-4">
         <Button>
           <Link href="/Features/code-generator/code-history" className="flex items-center gap-x-1">

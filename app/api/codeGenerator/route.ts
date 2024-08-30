@@ -1,11 +1,12 @@
 import { db } from "@/lib/db";
-import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import { generateCode } from "./codeGeneratorModel";
 
 export async function POST(req: Request) {
-  const { userId } = auth();
+  const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
   const { prompt } = await req.json();
+
+  console.log(userId)
 
   console.log(prompt);
 

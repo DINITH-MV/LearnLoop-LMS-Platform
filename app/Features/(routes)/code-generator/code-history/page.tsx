@@ -1,64 +1,37 @@
-"use client";
-
+import { ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import axios from "axios";
-import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
-import { EditCodeBlock } from "../code-history/_components/editCodeBlock";
+import Link from "next/link";
+import { db } from "@/lib/db";
+import { redirect } from "next/navigation";
+import { CodeBlock } from "./_components/codeBlock";
 
-interface CodeBlock {
-  id: string;
-  prompt: string;
-  generatedCode: string;
-  // Add other properties if needed
-}
+export default async function CodeHistory() {
 
-interface CodeBlocksProps {
-  data: CodeBlock[];
-}
+const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
 
-export const CodeBlock: React.FC<CodeBlocksProps> = ({ data }) => {
-  const router = useRouter();
-
-  const onDelete = async (codeId: string) => {
-    try {
-      await axios.delete(`/api/codeGenerator/${codeId}`);
-      toast.success("Generated Code deleted");
-      router.refresh();
-    } catch {
-      toast.error("Something went wrong");
-    }
-  };
+  const codeHistory = await db.generatedCode.findMany({
+    where: {
+      userId,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
 
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-        {data.map((code) => (
-          <Card key={code.id}>
-            <CardHeader>
-              <CardTitle className="line-clamp-1">{code.prompt}</CardTitle>
-            </CardHeader>
-            <CardContent className="border border-dashed border-black mx-6 p-5 rounded-md line-clamp-1">
-              {code.generatedCode}
-            </CardContent>
-            <CardFooter className="flex flex-col gap-2 mt-5">
-              {/* <Button className="w-full" variant="outline"> */}
-                <EditCodeBlock dataSet={code} />
-              {/* </Button> */}
-              <Button className="w-full" onClick={() => onDelete(code.id)}>
-                Delete
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
+    <div suppressHydrationWarning className="px-4 lg:px-8 py-4">
+      <div>
+        <Button>
+          <Link href="/Features/code-generator" className="flex items-center gap-x-1">
+            <ChevronLeft className="w-5 h-5" />
+            Back to Code Generator
+          </Link>
+        </Button>
+      </div>
+
+      <div className="mt-12">
+        <CodeBlock data={codeHistory}/>
       </div>
     </div>
   );
-};
+}

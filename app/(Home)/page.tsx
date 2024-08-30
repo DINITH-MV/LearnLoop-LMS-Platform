@@ -1,11 +1,21 @@
+"use client"
+
 import { Features } from "./_sections/features";
 import Head from "next/head";
 import { Hero } from "./_sections/hero";
 import { MoreFeatures } from "./_sections/more-features";
+import { useState, useEffect } from 'react'
 
 export default function Page() {
+
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+      setIsClient(true)
+    }, [])
+
   return (
-    <div>
+    <div suppressHydrationWarning >
       <Head>
         <title>Next js scroll Animations with Framer Motion</title>
         <meta

@@ -43,7 +43,7 @@ export const Hero = () => {
         style={{ scale, position, x: 140, y: 100}}
         className="fixed z-10 flex flex-col"
       >
-        <div className="flex">
+        <div suppressHydrationWarning className="flex">
           <div className="min-w-[570px] md:max-md border text-black">
             <h1 className="ptSans mt-4 mb-9  nunito text-black text-left text-[54px] font-bold leading-[1]">
               Grow Skills Together

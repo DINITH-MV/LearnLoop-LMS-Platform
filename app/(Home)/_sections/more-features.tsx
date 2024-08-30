@@ -71,7 +71,7 @@ export const MoreFeatures = () => {
         style={{ opacity, x }} // Apply x transform instead of y
         className="flex flex-col items-center justify-star "
       >
-        <div className="mt-[5px] w-[540px] text-center py-[28px] bg-[linear-gradient(135deg,#fba946,#ffba7f)] rounded-r-[70px] p-[20px] ml-[0px]">
+        <div suppressHydrationWarning className="mt-[5px] w-[540px] text-center py-[28px] bg-[linear-gradient(135deg,#fba946,#ffba7f)] rounded-r-[70px] p-[20px] ml-[0px]">
           <p className="text-[32pt] text-left ml-[20px] text-[#80643ae5] ptSans font-semibold leading-[1.4]">
             DISCOVER OUR LATEST<br/> AI FEATURES
           </p>

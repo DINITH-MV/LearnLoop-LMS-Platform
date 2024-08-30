@@ -64,7 +64,7 @@ export const Features = () => {
   );
 
   return (
-    <section
+    <section suppressHydrationWarning 
       ref={targetRef}
       className="flex h-[500vh] flex-col items-center justify-start"
     >

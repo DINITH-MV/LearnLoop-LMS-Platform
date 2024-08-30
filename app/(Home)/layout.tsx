@@ -54,7 +54,7 @@ export default function HomeLayout(
   };
 
   return (
-    <html lang="en">
+    <html suppressHydrationWarning>
       <body className={inter.variable}>
         
         <motion.div
