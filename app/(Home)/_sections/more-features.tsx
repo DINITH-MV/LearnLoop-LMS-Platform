@@ -14,15 +14,15 @@ import { stylesWithCssVar } from "../utils/motion";
 const content = [
   {
     icon: Prebuilds,
-    title: "Prebuilds",
+    title: "Image to code",
     text: "CodeSandbox continuously prebuilds your branches.  finish.",
-    link: "/Features/code-generator",
+    link: "/Features/image-to-code",
   },
   {
     icon: Intellisense,
     title: "IntelliSense",
     text: "Go beyond syntax highlighting and autocomplete. ",
-    link: "@/app/Features/code-generator",
+    link: "/Features/code-generator",
   },
   {
     icon: Flow,
@@ -60,19 +60,12 @@ export const MoreFeatures = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.9], [0.9, 1]);
   const x = useTransform(scrollYProgress, [0.8, 1], ["0vw", "50vw"]); // Horizontal movement
 
-  const opacity2 = useTransform(scrollYProgress, [0, 0.9], [0.9, 1]);
-
   const text0Y = useTransform(
     scrollYProgress,
     [3, 4, 5],
     ["-400px", "0px", "400px"]
   );
 
-  const text1Opacity = useTransform(
-    scrollYProgress,
-    [0.1, 0.4, 0.2,0], // when the text will be visible
-    [1, 0.8, 0.9,1] // how long the text will be visible
-  );
   const text1Y = useTransform(
     scrollYProgress,
     [0, 1, 1, 1],
@@ -84,22 +77,7 @@ export const MoreFeatures = () => {
     [0.1, 0.2, 0.9], // when the text will be visible
     [1, 0, 0] // how long the text will be visible
   );
-  const text2Y = useTransform(
-    scrollYProgress,
-    [0.5, 0.6, 0.7],
-    ["100px", "65px", "100px"]
-  );
-
-  const text3Opacity = useTransform(
-    scrollYProgress,
-    [0.7, 0.8, 0.9],
-    [0, 2, 0]
-  );
-  const text3Y = useTransform(
-    scrollYProgress,
-    [0.7, 0.8, 0.9],
-    ["100px", "60px", "100px"]
-  );
+  
 
   return (
     <div>      
