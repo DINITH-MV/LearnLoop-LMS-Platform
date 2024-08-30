@@ -49,9 +49,7 @@ export default function ImageToCode() {
       const response = await axios.post("/api/imageToCode", { imageUrl });
       if (response) {
         console.log(response);
-        setGeneratedCode(
-          response.data.content[0].text
-        );
+        setGeneratedCode(response.data.content[0].text);
       } else {
         throw new Error("Invalid response format");
       }
@@ -64,23 +62,27 @@ export default function ImageToCode() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 m-8 mb-8">
+    <div className="gap-4 mt-[-10px] mb-8  mx-[300px]">
       {/* left */}
-      <div className="border bg-slate-100 rounded-md p-4 h-fit">
-        <div className="font-medium flex items-center justify-between">
-          Image to code
-          <Button variant="ghost" onClick={toggleEdit}>
-            {isEditing && <>Cancel</>}
+      <div className="text-center pt-[40px] mb-[40px] font-bold text-[30pt]">
+        IMAGE TO CODE ANALYZER
+      </div>
+      <div className="bg-[#efefef] p-[30px]">
+        <div className="border bg-slate-100 rounded-md p-4 h-fit">
+          <div className="font-medium flex items-center justify-between">
+            Image to code
+            <Button variant="ghost" onClick={toggleEdit}>
+              {isEditing && <>Cancel</>}
 
-            {!isEditing && (
-              <>
-                <PlusCircle className="h-4 w-4 mr-2" />
-                Add an image
-              </>
-            )}
-          </Button>
+              {!isEditing && (
+                <>
+                  <PlusCircle className="h-4 w-4 mr-2" />
+                  Add an image
+                </>
+              )}
+            </Button>
+          </div>
         </div>
-
         {isEditing && (
           <>
             <FileUpload

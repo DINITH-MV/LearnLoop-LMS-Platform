@@ -87,7 +87,7 @@ export const MoreFeatures = () => {
           style={stylesWithCssVar({
             opacity: text2Opacity,
             "--y": text0Y,
-            marginTop: "200px",
+            marginTop: "230px",
             marginLeft: "390px",
             width: "500px",
             textAlign: "center",
@@ -95,7 +95,7 @@ export const MoreFeatures = () => {
           })}
           className="translate-x-[100px] translate-y-[-350px] absolute top-1/2 left-0"
         >
-          <div className="mt-[5px] w-[520px] text-center py-[40px] bg-[linear-gradient(87deg,#ffe292,#FF7755)] rounded-r-[70px] p-[20px] ml-[0px]">
+          <div className="mt-[-30px] w-[520px] text-center py-[40px] bg-[linear-gradient(87deg,#ffe292,#FF7755)] rounded-r-[70px] p-[20px] ml-[0px]">
             <p className="text-[32pt] text-left ml-[20px] text-[#fffce8]  ptSans font-semibold leading-[1.4]">
               INTRODUCING OUR <br />LATEST AI FEATURES
             </p>

@@ -39,13 +39,13 @@ export const CodeBlock: React.FC<CodeBlocksProps> = ({ data }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full ml-[-250px]">
         {data.map((code) => (
-          <Card key={code.id}>
+          <Card key={code.id} className="w-[400px] p-[px]">
             <CardHeader>
-              <CardTitle className="line-clamp-1">{code.prompt}</CardTitle>
+              <CardTitle className="line-clamp-1 text-[16pt]">{code.prompt}</CardTitle>
             </CardHeader>
-            <CardContent className="border border-dashed border-black mx-6 p-5 rounded-md line-clamp-1">
+            <CardContent className="text-[12pt] border border-dashed border-black mx-6 p-5 rounded-md line-clamp-1 h-[200px]">
               {code.generatedCode}
             </CardContent>
             <CardFooter className="flex flex-col gap-2 mt-5">

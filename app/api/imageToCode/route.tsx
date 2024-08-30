@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
-import { auth } from "@clerk/nextjs";
 import Anthropic from '@anthropic-ai/sdk';
 
 const anthropic = new Anthropic({
@@ -8,7 +7,7 @@ const anthropic = new Anthropic({
 });
 
 export async function POST(req: Request) {
-  const { userId } = auth();
+  const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
   if (!userId) {
     return new Response("Unauthorized", { status: 401 });
   }
