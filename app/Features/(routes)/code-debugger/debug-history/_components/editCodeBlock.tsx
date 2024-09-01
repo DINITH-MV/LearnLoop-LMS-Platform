@@ -1,4 +1,4 @@
-import z from "zod";
+import z, { late } from "zod";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -20,10 +20,11 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const FormSchema = z.object({
-  prompt: z.string().min(10, {
-    message: "Prompt must be at least 10 characters.",
+  language: z.string().min(2, {
+    message: "language must be at least 02 characters.",
   }),
-  generatedCode: z.string().min(10).optional()
+  code: z.string().min(10).optional(),
+  solution: z.string().min(10).optional(),
 });
 
 export const EditCodeBlock = ({ dataSet }: any) => {
@@ -33,8 +34,9 @@ export const EditCodeBlock = ({ dataSet }: any) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      prompt: `${dataSet.prompt}`,
-      generatedCode: `${dataSet.generatedCode}`,	
+      language: `${dataSet.language}`,
+      code: `${dataSet.code}`,
+      solution: `${dataSet.solution}`,
     },
   });
 
@@ -42,10 +44,12 @@ export const EditCodeBlock = ({ dataSet }: any) => {
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
-      await axios.patch(`/api/codeGenerator/${codeId}`, { prompt: data.prompt });
-      toast.success("Prompt Name updated");
+      await axios.patch(`/api/codeDebugger/${codeId}`, {
+        language: data.language,
+        code: data.code,
+      });
+      toast.success("Code Updated");
       console.log(data);
-    //   form.reset();
       setIsDialogOpen(false);
       router.refresh();
     } catch (error) {
@@ -61,11 +65,11 @@ export const EditCodeBlock = ({ dataSet }: any) => {
           onClick={() => setIsDialogOpen(true)}
           className="w-full"
         >
-          <span>Edit Title</span>
+          <span>Update</span>
         </Button>
       </DialogTrigger>
       {isDialogOpen && (
-        <DialogContent className="sm:max-w-[500px] rounded-lg bg-[#cfcfcf]">
+        <DialogContent className="sm:max-w-[800px] rounded-lg">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -73,10 +77,10 @@ export const EditCodeBlock = ({ dataSet }: any) => {
             >
               <FormField
                 control={form.control}
-                name="prompt"
+                name="language"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>PROMPT</FormLabel>
+                    <FormLabel className="text-[#fff]">LANGUAGE</FormLabel>
                     <FormControl>
                     <Textarea
                           rows={5}
@@ -89,23 +93,41 @@ export const EditCodeBlock = ({ dataSet }: any) => {
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name="generatedCode"
-                disabled
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>CODE OUTPUT</FormLabel>
-                    <FormControl>
-                    <Textarea
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <FormField
+                  control={form.control}
+                  name="code"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Code</FormLabel>
+                      <FormControl>
+                      <Textarea
                           {...field}
                           className="border rounded-[11px] text-[14pt] bg-[#fff] text-[#000] h-[400px] resize-none"
                         />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="solution"
+                  disabled
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Solution</FormLabel>
+                      <FormControl>
+                      <Textarea
+                          {...field}
+                          className="border rounded-[11px] text-[14pt] bg-[#fff] text-[#000] h-[400px] resize-none"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
               <Button type="submit" className="w-full">
                 Update
               </Button>

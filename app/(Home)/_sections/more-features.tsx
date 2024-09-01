@@ -5,30 +5,31 @@ import { Flow } from "../icons/flow";
 import { Intellisense } from "../icons/intellisense";
 import { Keyboard } from "../icons/keyboard";
 import { MagicBranch } from "../icons/magic-branch";
-import { Prebuilds } from "../icons/prebuilds";
+import ImageConverter from "../icons/image";
 import { Preview } from "../icons/preview";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { stylesWithCssVar } from "../utils/motion";
+import CodeGenerator from "../icons/CodeGenerator";
 
 const content = [
   {
-    icon: Prebuilds,
-    title: "Image to code",
+    icon: ImageConverter,
+    title: "IMAGE TO CODE ANALYZER",
     text: "CodeSandbox continuously prebuilds your branches.  finish.",
     link: "/Features/image-to-code",
   },
   {
-    icon: Intellisense,
-    title: "IntelliSense",
+    icon: CodeGenerator,
+    title: "CODE GENERATOR",
     text: "Go beyond syntax highlighting and autocomplete. ",
     link: "/Features/code-generator",
   },
   {
     icon: Flow,
-    title: "Built for flow",
+    title: "CODE DEBUGGER",
     text: "A completely redesigned experience to keep you in flow.",
-    link: "@/app/Features/code-generator",
+    link: "/Features/code-debugger",
   },
   {
     icon: MagicBranch,
@@ -87,7 +88,7 @@ export const MoreFeatures = () => {
           style={stylesWithCssVar({
             opacity: text2Opacity,
             "--y": text0Y,
-            marginTop: "230px",
+            marginTop: "255px",
             marginLeft: "390px",
             width: "500px",
             textAlign: "center",
@@ -95,7 +96,7 @@ export const MoreFeatures = () => {
           })}
           className="translate-x-[100px] translate-y-[-350px] absolute top-1/2 left-0"
         >
-          <div className="mt-[-30px] w-[520px] text-center py-[40px] bg-[linear-gradient(87deg,#ffe292,#FF7755)] rounded-r-[70px] p-[20px] ml-[0px]">
+          <div className="mt-[-55px] w-[520px] text-center py-[40px] bg-[linear-gradient(87deg,#ffe292,#FF7755)] rounded-r-[70px] p-[20px] ml-[0px]">
             <p className="text-[32pt] text-left ml-[20px] text-[#fffce8]  ptSans font-semibold leading-[1.4]">
               INTRODUCING OUR <br />LATEST AI FEATURES
             </p>
@@ -127,7 +128,7 @@ export const MoreFeatures = () => {
                 className="bg-[#fff] rounded-tl-[40px] rounded-br- [40px]  rounded-bl-[8px] rounded-tr-[8px] rounded-br-[40px] h-[220px] w-[340px] p-[10px] m-[10px]"
               >
                 <span className="mb-4 flex h-32 w-32 items-center justify-center rounded-tl-[30px] rounded-tr-[4px] rounded-bl-[4px] rounded-br-[4px] bg-gradient-to-r from-[#ba654f] to-[#cb6866] ...">
-                  <Icon className="h-12 w-12" />
+                  <Icon className="h-12 w-12 " />
                 </span>
                 <a href={link} className="text-[#000]">
                   <h3 className="mb-2 text-xl text-black">{title}</h3>

@@ -25,7 +25,7 @@ export default function Page() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="h-[5120px]">
+      <main className="h-[5140px]">
         <Header/>
         <Hero />
           <div className="relative z-10 w-full overflow-x-clip">

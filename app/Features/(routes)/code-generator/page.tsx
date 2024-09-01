@@ -67,14 +67,14 @@ export default function CodeGenerator() {
     <div className="h-[1100px] lg:px-8 py-4">
       <div className="flex justify-end mb-4"></div>
       <div className="text-center mb-[40px] font-bold text-[30pt]">CODE GENERATOR</div>
-      <Button className="float-right mr-[20px] text-[#444444] bg-[#f0d643] hover:bg-[#b6aa5d] hover:text-[#fff] w-[250px] h-[80px] rounded-[9px]">
+      <Button className="float-right mr-[120px] text-[#444444] bg-[#f0d643] hover:bg-[#b6aa5d] hover:text-[#fff] w-[160px] h-[60px] rounded-[9px]">
         <Link
           href="/Features/code-generator/code-history"
           className="flex items-center gap-x-1"
         >
-          <History className="w-8 h-8 mr-[5px]" />
+          <History className="w-6 h-6 mr-[5px]" />
           
-          <div className="text-[18pt] font-semibold">HISTORY</div>
+          <div className="text-[16pt] font-semibold">HISTORY</div>
         </Link>
       </Button>
       <Card>
@@ -90,15 +90,15 @@ export default function CodeGenerator() {
                   name="prompt"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-[18pt] font-normal">
-                        INPUT YOUR PROMPT BELOW
+                      <FormLabel className="text-[18pt] font-semibold">
+                        INPUT YOUR PROMPT
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           rows={5}
                           placeholder="E.g: Generate a python code to verify email address"
                           {...field}
-                          className="border rounded-[8px] text-[14pt] h-[180px] appearance-none"
+                          className="border rounded-[8px] text-[14pt] text-[#fff] h-[180px] bg-[#000]"
                         />
                       </FormControl>
                       <FormMessage />
@@ -116,11 +116,11 @@ export default function CodeGenerator() {
           </Form>
           <div className="bg-[#fff] p-[30px] rounded-[7px]">
             <div>
-              <div className="text-[18pt] mb-[10px]">
-                YOUR CODE WILL DISPLAY HERE
+              <div className="text-[18pt] font-semibold mb-[10px]">
+                PROMPT OUTPUT
               </div>
               {generatedCode && (
-                <div className="overflow-auto border mb-8 p-5 bg-[#fff] rounded-[12px]">
+                <div className="overflow-auto border mb-8 p-5 bg-[#000] rounded-[12px]">
                   <pre className="text-[12pt]">{generatedCode}</pre>
                 </div>
               )}
@@ -129,7 +129,7 @@ export default function CodeGenerator() {
                 (loading ? (
                   <div className="p-5 overflow-auto h-[400px] bg-[#fff] rounded-[12px]">
                     <pre></pre>
-                    <div className="bg-[#fff] space-y-2 mt-2">
+                    <div className="bg-[#000] space-y-2 mt-2">
                       <Skeleton className="h-4 w-[550px] bg-slate-400" />
                       <Skeleton className="h-4 w-[500px] bg-slate-400" />
                       <Skeleton className="h-4 w-[525px] bg-slate-400" />
@@ -140,7 +140,7 @@ export default function CodeGenerator() {
                     </div>
                   </div>
                 ) : (
-                  <pre className="text-[14pt] p-5 h-[400px] border bg-[#fff] rounded-[8px]">
+                  <pre className="text-[14pt] p-5 h-[400px] border bg-[#000] rounded-[8px]">
                     <pre> </pre>
                   </pre>
                 ))}
