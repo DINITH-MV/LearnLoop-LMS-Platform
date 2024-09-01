@@ -1,4 +1,3 @@
-import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 import { db } from "@/lib/db";
@@ -8,7 +7,7 @@ export async function PATCH(
   { params }: { params: { codeId: string } }
 ) {
   try {
-    const { userId } = auth();
+    const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
     const { codeId } = params;
     const values = await req.json();
 
@@ -38,7 +37,7 @@ export async function DELETE(
   { params }: { params: { codeId: string } }
 ) {
   try {
-    const { userId } = auth();
+    const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
 
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });

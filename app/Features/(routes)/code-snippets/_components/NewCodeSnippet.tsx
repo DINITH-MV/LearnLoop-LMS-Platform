@@ -67,23 +67,25 @@ export const NewCodeSnippet = () => {
         </Button>
       </DialogTrigger>
       {isDialogOpen && (
-        <DialogContent className="sm:max-w-[500px] rounded-lg">
+        <DialogContent className="sm:max-w-[500px] rounded-lg bg-[#dcdbdb]" >
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="w-full space-y-6"
+              className="w-full space-y-6 "
             >
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel className="text-[#000]">CODE SNIPPET</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="Python code to verify email address."
-                        {...field}
-                      />
+                    <Textarea
+                          rows={5}
+                          placeholder="E.g: Generate a python code to verify email address"
+                          {...field}
+                          className="border rounded-[8px] text-[14pt] text-[#000] h-[80px] bg-[#fff]"
+                        />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -95,14 +97,14 @@ export const NewCodeSnippet = () => {
                 name="code"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Code</FormLabel>
+                    <FormLabel>CODE</FormLabel>
                     <FormControl>
-                      <Textarea
-                        placeholder="Paste code here"
-                        className="resize-none"
-                        rows={20}
-                        {...field}
-                      />
+                    <Textarea
+                          rows={5}
+                          placeholder="Paste your code here"
+                          {...field}
+                          className="border rounded-[8px] text-[14pt] text-[#000] h-[180px] bg-[#fff]"
+                        />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

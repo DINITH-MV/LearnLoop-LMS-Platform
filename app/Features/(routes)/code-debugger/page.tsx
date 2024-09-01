@@ -142,7 +142,7 @@ export default function CodeDebugger() {
         {/* right */}
         <div className="border bg-[#efefef] p-[30px] rounded-[14px] h-fit">
           {translatedCode && (
-            <div className="overflow-auto p-5 border rounded-[14px] text-[#fff] text-[14pt] border-dashed border-black">
+            <div className="overflow-auto p-5 border rounded-[14px] text-[#000] text-[14pt] border-dashed border-black">
               <pre>{translatedCode}</pre>
             </div>
           )}

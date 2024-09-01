@@ -71,7 +71,7 @@ export const EditDialogBox = ({ dataSet }: any) => {
         </Button>
       </DialogTrigger>
       {isDialogOpen && (
-        <DialogContent className="sm:max-w-[500px] rounded-lg">
+        <DialogContent className="sm:max-w-[500px] rounded-lg bg-[#b9b9b9]">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -82,12 +82,13 @@ export const EditDialogBox = ({ dataSet }: any) => {
                 name="title"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Code Snippet</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="Python code to verify email address."
-                        {...field}
-                      />
+                    <Textarea
+                          rows={5}
+                          {...field}
+                          className="border rounded-[8px] text-[14pt] text-[#000] h-[40px] bg-[#fff]"
+                        />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -101,12 +102,11 @@ export const EditDialogBox = ({ dataSet }: any) => {
                   <FormItem>
                     <FormLabel>Code</FormLabel>
                     <FormControl>
-                      <Textarea
-                        placeholder="Paste code here"
-                        className="resize-none"
-                        rows={20}
-                        {...field}
-                      />
+                    <Textarea
+                          rows={5}
+                          {...field}
+                          className="border rounded-[8px] text-[14pt] text-[#000] h-[180px] bg-[#fff]"
+                        />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

@@ -120,7 +120,7 @@ export default function CodeGenerator() {
                 PROMPT OUTPUT
               </div>
               {generatedCode && (
-                <div className="overflow-auto border mb-8 p-5 bg-[#000] rounded-[12px]">
+                <div className="overflow-auto border mb-8 p-5 text-[#fff] bg-[#000] rounded-[12px]">
                   <pre className="text-[12pt]">{generatedCode}</pre>
                 </div>
               )}
@@ -140,7 +140,7 @@ export default function CodeGenerator() {
                     </div>
                   </div>
                 ) : (
-                  <pre className="text-[14pt] p-5 h-[400px] border bg-[#000] rounded-[8px]">
+                  <pre className="text-[14pt] p-5 h-[400px] border  text-[#fff] bg-[#000] rounded-[8px]">
                     <pre> </pre>
                   </pre>
                 ))}

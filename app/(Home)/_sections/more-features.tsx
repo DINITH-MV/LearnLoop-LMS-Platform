@@ -16,13 +16,13 @@ const content = [
   {
     icon: ImageConverter,
     title: "IMAGE TO CODE ANALYZER",
-    text: "CodeSandbox continuously prebuilds your branches.  finish.",
+    text: "A completely redesigned experience to keep you in flow.",
     link: "/Features/image-to-code",
   },
   {
-    icon: CodeGenerator,
+    icon: Preview,
     title: "CODE GENERATOR",
-    text: "Go beyond syntax highlighting and autocomplete. ",
+    text: "A completely redesigned experience to keep you in flow.",
     link: "/Features/code-generator",
   },
   {
@@ -33,21 +33,15 @@ const content = [
   },
   {
     icon: MagicBranch,
-    title: "Magic Branch Management",
+    title: "Code Snippets",
     text: "Organize your development workflow and help your team move work forward",
-    link: "@/app/Features/code-generator",
+    link: "/Features/code-snippets",
   },
   {
-    icon: Keyboard,
-    title: "Keyboard first design",
-    text: "Quick access makes for an efficient workflow.",
-    link: "@/app/Features/code-generator",
-  },
-  {
-    icon: Preview,
-    title: "Live preview",
-    text: "See changes as you make them. With Hot reload Previews see your changes instantly. ",
-    link: "@/app/Features/code-generator",
+    icon: MagicBranch,
+    title: "AI CODE ASSISTANT",
+    text: "Organize your development workflow and help your team move work forward",
+    link: "/Features/code-snippets",
   },
 ];
 
