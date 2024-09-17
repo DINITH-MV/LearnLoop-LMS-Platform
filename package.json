@@ -45,6 +45,7 @@
     "framer-motion": "^11.3.28",
     "learnloop": "file:",
     "lucide-react": "^0.436.0",
+    "openai": "^4.61.1",
     "postcss-load-config": "^6.0.1",
     "radix-ui": "^1.0.1",
     "react": "^18",

@@ -58,7 +58,8 @@ export default function CodeTranslator() {
       setLoading(true);
       const response = await axios.post("/api/codeTranslator", data);
       if (response) {
-        setTranslatedCode(response.data.candidates[0].content.parts[0].text);
+        setTranslatedCode(response.data.content);
+        console.log(response);
       } else {
         throw new Error("Invalid response format");
       }

@@ -1,12 +1,5 @@
+import OpenAI from "openai";
 import { NextResponse } from "next/server";
-const {
-  GoogleGenerativeAI,
-  HarmCategory,
-  HarmBlockThreshold,
-} = require("@google/generative-ai");
-
-const MODEL_NAME = "gemini-1.0-pro";
-const API_KEY = process.env.GEMINI_API;
 
 export async function POST(req: Request) {
   const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
@@ -17,51 +10,32 @@ export async function POST(req: Request) {
   }
 
   try {
-    const genAI = new GoogleGenerativeAI(API_KEY);
-    const model = genAI.getGenerativeModel({ model: MODEL_NAME });
-
-    const generationConfig = {
-      temperature: 0.9,
-      topK: 1,
-      topP: 1,
-      maxOutputTokens: 2048,
-    };
-
-    const safetySettings = [
-      {
-        category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-      },
-      {
-        category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-      },
-      {
-        category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-      },
-      {
-        category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-      },
-    ];
-
-    const parts = [
-      {
-        text: `Translate the following code from ${fromLanguage} to ${toLanguage}: ${code}`,
-      },
-    ];
-
-    const result = await model.generateContent({
-      contents: [{ role: "user", parts }],
-      generationConfig,
-      safetySettings,
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY, // Use an environment variable instead of hardcoding
     });
 
-    const response = result.response;
-    return NextResponse.json(response);
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4", // Use a valid model name
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a helpful, informative, and safe assistant. Please answer the following question without providing any harmful, offensive, or unsafe content.",
+        },
+        {
+          role: "user",
+          content: `Translate the following code from ${fromLanguage} to ${toLanguage}: ${code}`,
+        },
+      ],
+      temperature: 0.3, // Lower temperature for more deterministic responses
+    });
+
+    const response = completion.choices[0].message.content; // Ensure the response structure is correct
+    console.log(response);
+    return NextResponse.json({ content: response });
+
   } catch (error) {
-    console.log("[CodeTranslator]", error);
+    console.error("[CodeTranslator]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
