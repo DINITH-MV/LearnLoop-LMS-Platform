@@ -1,19 +1,18 @@
-"use client"
+"use client";
 
 import { Features } from "./_sections/features";
 import Head from "next/head";
 import { Hero } from "./_sections/hero";
 import { MoreFeatures } from "./_sections/more-features";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import Header from "./_components/Header";
 
 export default function Page() {
-
-  const [isClient, setIsClient] = useState(false)
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-      setIsClient(true)
-    }, [])
+    setIsClient(true);
+  }, []);
 
   return (
     <div>
@@ -26,10 +25,10 @@ export default function Page() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className="h-[5140px]">
-        <Header/>
+        <Header />
         <Hero />
-          <div className="relative z-10 w-full overflow-x-clip">
-            <Features />
+        <div className="relative z-10 w-full overflow-x-clip">
+          <Features />
             <MoreFeatures />
         </div>
       </main>
