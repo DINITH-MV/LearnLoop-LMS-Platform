@@ -44,9 +44,9 @@ const content = [
   },
   {
     icon: MagicBranch,
-    title: "AI Code Assistant",
+    title: "Code Translator",
     text: "Organize your development workflow and help your team move work forward",
-    link: "/Features/code-snippets",
+    link: "/Features/code-translator",
   },
 ];
 
