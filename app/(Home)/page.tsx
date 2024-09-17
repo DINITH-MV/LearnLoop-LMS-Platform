@@ -32,7 +32,7 @@ export default function Page() {
           <Features />
           <MoreFeatures />
         </div>
-        <div className="z-[10] relative">
+        <div className="z-[100] relative">
           <Footer/>
         </div>
       </main>

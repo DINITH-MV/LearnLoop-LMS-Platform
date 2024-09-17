@@ -16,30 +16,35 @@ const content = [
   {
     icon: ImageConverter,
     title: "IMAGE TO CODE ANALYZER",
-    text: "A completely redesigned experience to keep you in flow.",
+    text: "Convert images into readable code for analysis",
     link: "/Features/image-to-code",
   },
   {
     icon: Preview,
     title: "CODE GENERATOR",
-    text: "A completely redesigned experience to keep you in flow.",
+    text: (
+      <>
+        Generate code quickly using <br />
+        AI-powered automation
+      </>
+    ),
     link: "/Features/code-generator",
   },
   {
     icon: Flow,
     title: "CODE DEBUGGER",
-    text: "A completely redesigned experience to keep you in flow.",
+    text: "Efficiently resolve code errors with streamlined debugging.",
     link: "/Features/code-debugger",
   },
   {
     icon: MagicBranch,
     title: "Code Snippets",
-    text: "Organize your development workflow and help your team move work forward",
+    text: "Organize, store, and share reusable code snippets.",
     link: "/Features/code-snippets",
   },
   {
     icon: MagicBranch,
-    title: "AI CODE ASSISTANT",
+    title: "AI Code Assistant",
     text: "Organize your development workflow and help your team move work forward",
     link: "/Features/code-snippets",
   },
@@ -61,7 +66,7 @@ export const MoreFeatures = () => {
   const text2Opacity = useTransform(
     scrollYProgress,
     [0.4, 0.8, 0.9], // when the text will be visible
-    [1,-10, -2] // how long the text will be visible
+    [1, -10, -2] // how long the text will be visible
   );
 
   const text4Opacity = useTransform(
@@ -95,8 +100,8 @@ export const MoreFeatures = () => {
 
       <section
         ref={targetRef}
-        className="sticky top-[-11vh] h-[66.8vh] px-16 text-2xl leading-[1] text-white [&_p]:w-[45rem] [&_p]:max-w-[90%]">   >
-       
+        className="sticky top-[-11vh] h-[66.8vh] px-16 text-2xl leading-[1] text-white [&_p]:w-[45rem] [&_p]:max-w-[90%]"
+      >
         <motion.div
           style={stylesWithCssVar({
             opacity: text4Opacity,
@@ -109,18 +114,20 @@ export const MoreFeatures = () => {
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
-          <div className="mt-[440px] rounded-tl-[50px] rounded-br-[50px] grid rounded-bl-[8px] rounded-tr-[8px]  w-[780px] bg-gradient-to-r from-[#cb6866] to-[#ffe292] ... border px-[15px] max-w-[120rem] grid-cols-2 py-[15px]">
+          <div className="mt-[440px] rounded-tl-[80px] rounded-tr-[30px] rounded-br-[80px] grid rounded-bl-[30px] w-[820px] bg-gradient-to-r from-[#cb6866] to-[#ffe292] ... border-[20px] border-white px-[15px] max-w-[120rem] grid-cols-2 py-[15px]">
             {content.map(({ icon: Icon, title, text, link }) => (
               <div
                 key={title}
-                className="bg-[#fff] rounded-tl-[35px] rounded-br- [40px]  rounded-bl-[8px] rounded-tr-[8px] rounded-br-[40px] h-[220px] w-[340px] p-[15px] my-[15px] ml-[15px]"
+                className="bg-[#fff] rounded-tl-[35px] rounded-br- [40px]  rounded-bl-[8px] rounded-tr-[8px] rounded-br-[40px] h-[218px] w-[340px] p-[15px] my-[15px] ml-[15px]"
               >
                 <span className="mb-4 flex h-32 w-32 items-center justify-center rounded-tl-[27px] rounded-tr-[4px] rounded-bl-[4px] rounded-br-[4px] bg-gradient-to-r from-[#ba654f] to-[#cb6866] ...">
                   <Icon className="h-12 w-12 " />
                 </span>
                 <a href={link} target="_blank" className="text-[#000]">
                   <h3 className="mb-2 text-xl text-black">{title}</h3>
-                  <p className="text-md text-black max-w-[300px]">{text}</p>
+                  <div className="max-w-[320px] bg-[#ffe292] rounded-t-[6px] rounded-bl-[6px] rounded-br-[25px] h-[66px] p-[11px] pl-[15px] pr-[20px]">
+                    <p className="text-[17px] text-[#000000] text-justify leading-[23px]">{text}</p>
+                  </div>
                 </a>
               </div>
             ))}
