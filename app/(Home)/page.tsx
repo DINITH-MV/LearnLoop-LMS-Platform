@@ -6,6 +6,7 @@ import { Hero } from "./_sections/hero";
 import { MoreFeatures } from "./_sections/more-features";
 import { useState, useEffect } from "react";
 import Header from "./_components/Header";
+import Footer from "./_components/Footer";
 
 export default function Page() {
   const [isClient, setIsClient] = useState(false);
@@ -24,12 +25,15 @@ export default function Page() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="h-[5140px]">
+      <main className="h-[5140px] ">
         <Header />
         <Hero />
-        <div className="relative z-10 w-full overflow-x-clip">
+        <div className="relative z-10 w-full">
           <Features />
-            <MoreFeatures />
+          <MoreFeatures />
+        </div>
+        <div className="z-[10] relative">
+          <Footer/>
         </div>
       </main>
     </div>

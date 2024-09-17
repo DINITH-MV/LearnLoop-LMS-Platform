@@ -55,19 +55,19 @@ export const MoreFeatures = () => {
   const text1Y = useTransform(
     scrollYProgress,
     [0, 1, 1, 1],
-    ["200px", "0px", "0px", "0px"]
+    ["200px", "0px", "0px", "200px"]
   );
 
   const text2Opacity = useTransform(
     scrollYProgress,
-    [0.1, 0.2, 0.9], // when the text will be visible
-    [1, -10, 0] // how long the text will be visible
+    [0.4, 0.8, 0.9], // when the text will be visible
+    [1,-10, -2] // how long the text will be visible
   );
 
   const text4Opacity = useTransform(
     scrollYProgress,
-    [0.1, 0.2, 0.8], // when the text will be visible
-    [1, 1, 0] // how long the text will be visible
+    [0.4, 1], // when the text will be visible
+    [1, 0] // how long the text will be visible
   );
 
   return (
@@ -77,7 +77,7 @@ export const MoreFeatures = () => {
           style={stylesWithCssVar({
             opacity: text2Opacity,
             marginTop: "255px",
-            marginLeft: "390px",
+            marginLeft: "90px",
             width: "500px",
             textAlign: "center",
             borderRadius: "30px",
@@ -95,8 +95,8 @@ export const MoreFeatures = () => {
 
       <section
         ref={targetRef}
-        className="bg-[#fff] flex h-[500vh] flex-col items-center justify-start"
-      >
+        className="sticky top-[-11vh] h-[66.8vh] px-16 text-2xl leading-[1] text-white [&_p]:w-[45rem] [&_p]:max-w-[90%]">   >
+       
         <motion.div
           style={stylesWithCssVar({
             opacity: text4Opacity,
@@ -105,7 +105,7 @@ export const MoreFeatures = () => {
             width: "350px",
             size: "24pt",
             marginLeft: "400px",
-            marginTop: "60px",
+            marginTop: "-400px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
         >
