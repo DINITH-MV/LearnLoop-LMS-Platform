@@ -16,7 +16,6 @@ export async function POST(req: Request) {
 
   try {
     const imageResponse = await fetch(imageUrl);
-    console.log(imageUrl)
     const imageBuffer = await imageResponse.arrayBuffer();
     const imageBase64 = Buffer.from(imageBuffer).toString('base64');
 
