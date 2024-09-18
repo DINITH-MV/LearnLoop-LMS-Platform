@@ -2,7 +2,7 @@
 
 import * as z from "zod";
 import axios from "axios";
-import { ImageIcon } from "lucide-react";
+import { ImageIcon, PlusCircle, PlusIcon } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -19,7 +19,9 @@ const formSchema = z.object({
 });
 
 export default function ImageToCode() {
-  const [submittedImageUrl, setSubmittedImageUrl] = useState<string | null>(null);
+  const [submittedImageUrl, setSubmittedImageUrl] = useState<string | null>(
+    null
+  );
   const [generatedCode, setGeneratedCode] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -60,72 +62,61 @@ export default function ImageToCode() {
   };
 
   return (
-    <div className="gap-4 mt-[-10px] mb-8 mx-[300px]">
+    <div className="gap-4 mt-[-10px] mb-8 mx-[300px] bg-[#fbf6f2] h-[1000px]">
       {/* Header */}
-      <div className="text-center pt-[40px] mb-[40px] font-bold text-[30pt]">
+      <div className="text-center pt-[40px] mb-[20px] font-bold text-[30pt]">
         IMAGE TO CODE ANALYZER
       </div>
 
       {/* Drag and Drop Upload Area */}
-      <div className="bg-[#efefef] p-[30px] rounded-[41px]">
-        {!submittedImageUrl ? (
-          <div>
-            <FileUpload
-              endpoint="imageToCode"
-              onChange={(url) => {
-                if (url) {
-                  onSubmit({ imageUrl: url });
-                }
-              }}
-            />
-            <div className="text-xs text-muted-foreground mt-4 text-red-400 tracking-wide font-medium">
-              Blur image not recommended
-            </div>
-          </div>
-        ) : (
-          <div className="relative aspect-video mt-2">
-            <Image
-              src={submittedImageUrl}
-              alt="Submitted Image"
-              className="object-cover rounded-md"
-              width={400}
-              height={300}
-            />
-          </div>
-        )}
-      </div>
-
-      {/* Generated Code Output */}
-      <div>
-        {generatedCode ? (
-          <div className="overflow-auto mb-8 p-5 border border-dashed border-black rounded-md">
-            <pre>{generatedCode}</pre>
-
-            {/* New Button After Code Generation */}
-            <div className="mt-4 flex justify-center">
-              <Button onClick={handleNewImageUpload} className="bg-blue-500 text-white">
-                Upload New Image
-              </Button>
-            </div>
-          </div>
-        ) : (
-          <div className="p-5 border border-dashed border-black rounded-md">
-            <pre>Code Line Here</pre>
-            {loading ? (
-              <div className="space-y-2 mt-2">
-                <Skeleton className="h-4 w-[550px] bg-slate-400" />
-                <Skeleton className="h-4 w-[500px] bg-slate-400" />
-                <Skeleton className="h-4 w-[525px] bg-slate-400" />
-                <Skeleton className="h-4 w-[450px] bg-slate-400" />
-                <Skeleton className="h-4 w-[500px] bg-slate-400" />
-                <Skeleton className="h-4 w-[550px] bg-slate-400" />
-                <Skeleton className="h-4 w-[400px] bg-slate-400" />
+      <div className="min-h-[600px] flex items-center justify-center flex-col">
+        <div className="bg-[#efefef] px-[30px] py-[65px] rounded-[41px] border-[#fff] border-[5px] h-[450px] w-[800px] text-center mx-auto">
+          {!submittedImageUrl ? (
+            <div>
+              <FileUpload
+                endpoint="imageToCode"
+                onChange={(url) => {
+                  if (url) {
+                    onSubmit({ imageUrl: url });
+                  }
+                }}
+              />
+              <div className="text-[15px] text-muted-foreground mt-4 text-red-400 tracking-wide font-medium text-center">
+                Blur image not recommended
               </div>
-            ) : (
-              <div>Upload an image to generate the code.</div>
-            )}
-          </div>
-        )}
+            </div>
+          ) : (
+            <div className="relative h-[360px] mt-[-30px]">
+              <Image
+                src={submittedImageUrl}
+                alt="Submitted Image"
+                className="object-cover rounded-[24px]"
+                width={720}
+                height={300}
+              />
+              {/* New Button for Uploading a New Image */}
+              <div className="absolute top-[-15px] right-[-10px]">
+              
+                <button
+                  onClick={handleNewImageUpload}
+                  className="bg-gradient-to-tl from-[#896fffe3] to-[#ea1aba] text-[14pt] border-[4px] border-white w-[190px] h-[55px] rounded-[20px] text-white"
+                > Upload New Image
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Generated Code Output */}
+        <div className="w-[800px]">
+          {generatedCode ? (
+            <div className="px-[40px] py-[30px] mt-[10px] border-[#fff] border-[5px] rounded-[37px] min-h-[200px] text-[18px] bg-[#efefef]">
+              <pre>{generatedCode}</pre>
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </div>
   );

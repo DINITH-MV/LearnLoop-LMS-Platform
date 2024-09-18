@@ -1,8 +1,11 @@
 const {nextui} = require('@nextui-org/theme');
+const { withUt } = require("uploadthing/tw");
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+module.exports = withUt({
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",    
+    './src/**/*.{ts,tsx}',
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "// Or if using src directory:\n    ./src/**/*.{js,ts,jsx,tsx,mdx}",
@@ -70,4 +73,4 @@ module.exports = {
     },
   },
   plugins: [nextui()],
-}
+});
