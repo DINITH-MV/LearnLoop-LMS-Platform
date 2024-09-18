@@ -42,6 +42,7 @@
     "cmdk": "^1.0.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
+    "firebase-admin": "^12.5.0",
     "framer-motion": "^11.3.28",
     "learnloop": "file:",
     "lucide-react": "^0.436.0",
@@ -62,10 +63,12 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5",
     "uploadthing": "^6.13.2",
+    "uuid": "^10.0.0",
     "zod": "^3.23.8",
     "zustand": "^4.5.5"
   },
   "devDependencies": {
+    "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
     "prisma": "^5.19.0",

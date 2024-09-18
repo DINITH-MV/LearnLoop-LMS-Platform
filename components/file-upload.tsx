@@ -15,7 +15,12 @@ export const FileUpload = ({
   endpoint
 }: FileUploadProps) => {
   return (
+    <>
     <UploadDropzone
+    className="bg-gradient-to-br from-[#ff3a96] via-[#8c1ff7] to-[#511aea] 
+    ut-label:text-2xl 
+    ut-button:text-[24pt] 
+    w-[700px] rounded-[26px] text-center mx-auto"
       endpoint={endpoint}
       onClientUploadComplete={(res) => {
         onChange(res?.[0].url);
@@ -24,5 +29,7 @@ export const FileUpload = ({
         toast.error(`${error?.message}`);
       }}
     />
+    
+    </>
   )
 }

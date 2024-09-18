@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "827203329932",
+    "project_id": "learnloop-e20e4",
+    "storage_bucket": "learnloop-e20e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827203329932:android:2e4e0d90c080a5a4de00a9",
+        "android_client_info": {
+          "package_name": "com.eco360.learnloop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9i-yh5IvUTr8n8GtXOzErPfrlQbBxs1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
