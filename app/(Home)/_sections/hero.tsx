@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 export const Hero = () => {
   const router = useRouter();
   const handleRedirectToDashboard = () => {
-    router.push('/Modules/dashboard'); // Navigates to the dashboard page
+    router.push('/Dashboard'); // Navigates to the dashboard page
   };
 
   const targetRef = useRef<HTMLDivElement | null>(null);

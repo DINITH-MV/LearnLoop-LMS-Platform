@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@/app/Modules/components/ui/button";
+import { Button } from "../../";
 import {
   Form,
   FormControl,
@@ -13,16 +13,16 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/app/Modules/components/ui/form";
+} from "@/components/ui/form";
 
-import { Textarea } from "@/app/Modules/components/ui/textarea";
+import { Textarea } from "@/components/ui/textarea";
 
 import toast from "react-hot-toast";
-import { Input } from "@/app/Modules/components/ui/input";
+import { Input } from "@/components/ui/input";
 import { Sparkles } from "lucide-react";
 import axios from "axios";
 import { useState } from "react";
-import { Skeleton } from "@/app/Modules/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useRouter } from "next/navigation";
 
 const FormSchema = z.object({

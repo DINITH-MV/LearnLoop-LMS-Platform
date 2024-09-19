@@ -8,9 +8,9 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-import { FileUpload } from "@/app/Modules/components/file-upload";
-import { Skeleton } from "@/app/Modules/components/ui/skeleton";
-import { Button } from "@/app/Modules/components/ui/button"; // Assuming you have a Button component
+import { FileUpload } from "@/components/file-upload";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button"; // Assuming you have a Button component
 
 const formSchema = z.object({
   imageUrl: z.string().min(1, {

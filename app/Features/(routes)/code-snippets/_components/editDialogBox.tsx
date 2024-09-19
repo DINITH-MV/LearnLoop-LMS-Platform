@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import axios from "axios";
 
-import { Button } from "@/app/Modules/components/ui/button";
-import { Input } from "@/app/Modules/components/ui/input";
-import { Textarea } from "@/app/Modules/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import toast from "react-hot-toast";
 
 import {
@@ -17,13 +17,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/app/Modules/components/ui/form";
+} from "@/components/ui/form";
 
-import {
-  DialogContent,
-  DialogTrigger,
-  Dialog,
-} from "@/app/Modules/components/ui/dialog";
+import { DialogContent, DialogTrigger, Dialog } from "@/components/ui/dialog";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 

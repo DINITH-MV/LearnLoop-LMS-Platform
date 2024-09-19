@@ -3,9 +3,9 @@ import { redirect } from "next/navigation";
 import { File } from "lucide-react";
 
 import { getChapter } from "@/actions/get-chapter";
-import { Banner } from "@/app/Modules/components/banner";
-import { Separator } from "@/app/Modules/components/ui/separator";
-import { Preview } from "@/app/Modules/components/preview";
+import { Banner } from "@/components/banner";
+import { Separator } from "@/components/ui/separator";
+import { Preview } from "@/components/preview";
 
 import { VideoPlayer } from "./_components/video-player";
 import { CourseEnrollButton } from "./_components/course-enroll-button";

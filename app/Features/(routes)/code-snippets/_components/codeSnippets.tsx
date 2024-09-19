@@ -3,14 +3,14 @@
 import * as React from "react";
 import axios from "axios";
 
-import { Button } from "@/app/Modules/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/app/Modules/components/ui/card";
+} from "@/components/ui/card";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { EditDialogBox } from "./editDialogBox";

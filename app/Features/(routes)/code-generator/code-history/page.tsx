@@ -1,5 +1,5 @@
 import { ChevronLeft } from "lucide-react";
-import { Button } from "@/app/Modules/components/ui/button";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";

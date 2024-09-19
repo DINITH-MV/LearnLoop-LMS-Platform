@@ -3,13 +3,9 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/app/Modules/components/ui/button";
+import { Button } from "@/components/ui/button";
 
-import {
-  DialogContent,
-  DialogTrigger,
-  Dialog,
-} from "@/app/Modules/components/ui/dialog";
+import { DialogContent, DialogTrigger, Dialog } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -17,9 +13,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/app/Modules/components/ui/form";
-import { Input } from "@/app/Modules/components/ui/input";
-import { Textarea } from "@/app/Modules/components/ui/textarea";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
 import toast from "react-hot-toast";
 

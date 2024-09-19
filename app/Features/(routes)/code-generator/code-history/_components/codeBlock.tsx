@@ -1,13 +1,13 @@
 "use client";
 
-import { Button } from "@/app/Modules/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/app/Modules/components/ui/card";
+} from "@/components/ui/card";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";

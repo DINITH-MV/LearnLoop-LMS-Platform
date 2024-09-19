@@ -1,0 +1,10 @@
+
+    * {
+      --color-primary: #276a22;
+      --color-secondary: #dccd6b;
+      --color-heading: #f5f5f7;
+      --color-text: rgba(0, 0, 0, 0.6);
+      --color-background: #000000;
+  
+      font-size: 100%;
+    }

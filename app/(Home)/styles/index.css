@@ -1,34 +1,43 @@
-
 .mask1 {
-    -webkit-mask-image: url(../../../public/mask8.png);
-    mask-image: url(../../../public/mask8.png);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;    
-  }
+  -webkit-mask-image: url(../../../public/mask8.png);
+  mask-image: url(../../../public/mask8.png);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
 
-  * {
-    cursor: none;
-  }
-  
-  .App {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: yellow;
-  }
-  
-  .title {
-    font-size: 10rem;
-  }
-  
-  .cursor {
-    background-color: #111;
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-  }
+* {
+  cursor: none;
+}
+
+:root {
+  --color-primary: #276a22;
+  --color-secondary: #dccd6b;
+  --color-heading: #f5f5f7;
+  --color-text: rgba(0, 0, 0, 0.6);
+  --color-background: #000000;
+
+  font-size: 62.5%;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: yellow;
+}
+
+.title {
+  font-size: 10rem;
+}
+
+.cursor {
+  background-color: #111;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}

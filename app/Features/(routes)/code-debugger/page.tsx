@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/app/Modules/components/ui/button";
+import { Button } from "@/components/ui/button";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -13,14 +13,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/app/Modules/components/ui/form";
-import { Textarea } from "@/app/Modules/components/ui/textarea";
+} from "@/components/ui/form";
+import { Textarea } from "@/components/ui/textarea";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Input } from "@/app/Modules/components/ui/input";
-import { Skeleton } from "@/app/Modules/components/ui/skeleton";
+import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 
 const FormSchema = z.object({

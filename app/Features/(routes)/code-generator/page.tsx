@@ -11,15 +11,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/app/Modules/components/ui/form";
+} from "@/components/ui/form";
 
-import { Button } from "@/app/Modules/components/ui/button";
-import { Card, CardContent } from "@/app/Modules/components/ui/card";
-import { Input } from "@/app/Modules/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useState } from "react";
-import { Skeleton } from "@/app/Modules/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { History } from "lucide-react";
 import { Textarea } from "@nextui-org/input";
