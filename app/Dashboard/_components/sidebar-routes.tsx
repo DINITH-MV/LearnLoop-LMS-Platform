@@ -17,36 +17,6 @@ const guestRoutes = [
     href: "/search",
   },
   {
-    icon: Code,
-    label: "Code Generator",
-    href: "/code-generator",
-  },
-  {
-    icon: Braces,
-    label: "Code Debugger",
-    href: "/code-debugger",
-  },
-  {
-    icon: Bot,
-    label: "Code Assistant",
-    href: "/code-assistant",
-  },
-  {
-    icon: Languages,
-    label: "AI Code Translator",
-    href: "/code-translator",
-  },
-  {
-    icon: Terminal,
-    label: "Online Complier",
-    href: "/online-compiler",
-  },
-  {
-    icon: FileCheck,
-    label: "Coding Snippets",
-    href: "/code-snippets",
-  },
-  {
     icon: Image,
     label: "Image to Code",
     href: "/image-to-code",

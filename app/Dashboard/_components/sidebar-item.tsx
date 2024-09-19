@@ -46,7 +46,7 @@ export const SidebarItem = ({
             isActive && "text-sky-700"
           )}
         />
-        {label}
+        <p className="text-[13pt]">{label}</p>
       </div>
       <div
         className={cn(
