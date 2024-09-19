@@ -33,7 +33,7 @@ export default function Page() {
           <MoreFeatures />
         </div>
         <div className="z-[100] relative">
-          <Footer/>
+          <Footer />
         </div>
       </main>
     </div>

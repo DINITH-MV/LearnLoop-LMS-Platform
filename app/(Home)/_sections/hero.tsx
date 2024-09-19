@@ -3,8 +3,14 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import "../styles/index.css";
+import { useRouter } from 'next/router';
 
 export const Hero = () => {
+  const router = useRouter();
+  const handleRedirectToDashboard = () => {
+    router.push('/dashboard'); // Navigates to the dashboard page
+  };
+
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -54,7 +60,7 @@ export const Hero = () => {
                 Learning Together
               </p>
 
-              <button className="mt-[40px] mr-[20px] text-[18px] font-semibold bg-[#94e689] py-[10px] px-[20px] rounded-[11px]">
+              <button onClick={handleRedirectToDashboard} className="mt-[40px] mr-[20px] text-[18px] font-semibold bg-[#94e689] py-[10px] px-[20px] rounded-[11px]">
                 Check it out
               </button>
               <button className="mt-[40px] text-[18px] font-semibold border-black border-[2px] py-[9px] px-[18px] rounded-[11px]">
