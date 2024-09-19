@@ -38,13 +38,13 @@ const content = [
   },
   {
     icon: MagicBranch,
-    title: "Code Snippets",
+    title: "CODE SNIPPETS",
     text: "Organize, store, and share reusable code snippets.",
     link: "/Features/code-snippets",
   },
   {
     icon: MagicBranch,
-    title: "Code Translator",
+    title: "CODE TRANSLATOR",
     text: "Organize your development workflow and help your team move work forward",
     link: "/Features/code-translator",
   },

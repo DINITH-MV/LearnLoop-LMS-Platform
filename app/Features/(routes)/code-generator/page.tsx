@@ -108,7 +108,7 @@ export default function CodeGenerator() {
               </div>
               <Button
                 type="submit"
-                className="w-[740px] h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
+                className="w-[100%] h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
               >
                 GENERATE CODE
               </Button>
