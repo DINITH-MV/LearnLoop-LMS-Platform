@@ -79,7 +79,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <ClerkProvider>
+      <ClerkProvider >
         <body
           className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable} ${inter.variable}`}
         >
@@ -101,7 +101,7 @@ export default function RootLayout({
           />
           {children}
         </body>
-      </ClerkProvider>
+      </ClerkProvider >
     </html>
   );
 }

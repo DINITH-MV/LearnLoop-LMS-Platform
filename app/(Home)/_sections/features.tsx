@@ -92,7 +92,7 @@ export const Features = () => {
           className="translate-x-[100px] translate-y-[-350px] absolute top-1/2 left-0"
         >
           <div className="bg-[linear-gradient(140deg,#ff8f93,#ffbe77)] ... rounded-r-[80px] py-[28pt] p-[20px]">
-          <p className="text-[#ffffffd8] ml-[20px] text-justify ptSans font-semibold leading-[1.4]">
+          <p className="text-[#ffffffd8] text-[32pt]  ml-[20px] text-justify ptSans font-semibold leading-[1.4]">
             BUILDING LEARNING <br/> CULTURE WITH AI
           </p>
           </div>

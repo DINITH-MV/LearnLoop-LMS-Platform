@@ -27,7 +27,7 @@ export const NavbarRoutes = () => {
         </div>
       )}
       <div className="flex gap-x-2 ml-auto items-center">
-        <ModeToggle/>
+        <ModeToggle />
         {isTeacherPage || isCoursePage ? (
           <Link href="/">
             <Button size="sm" variant="ghost">
@@ -42,8 +42,10 @@ export const NavbarRoutes = () => {
             </Button>
           </Link>
         ) : null}
-        <UserButton />
+        <div className="w-[45px] h-[55px] rounded-[6px] bg-[#17842f] flex justify-center items-center">
+          <UserButton/>
+        </div>
       </div>
     </>
-  )
-}
+  );
+};

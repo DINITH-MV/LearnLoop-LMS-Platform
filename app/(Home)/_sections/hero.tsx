@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 export const Hero = () => {
   const router = useRouter();
   const handleRedirectToDashboard = () => {
-    router.push('/Dashboard'); // Navigates to the dashboard page
+    router.push('/Dashboard/progress'); // Navigates to the dashboard page
   };
 
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -51,7 +51,7 @@ export const Hero = () => {
           className="fixed z-10 flex flex-col"
         >
           <div className="flex" id="first-section">
-            <div className="min-w-[570px] md:max-md border text-black">
+            <div className="min-w-[570px] md:max-md text-black">
               <h1 className="ptSans mt-4 mb-9  nunito text-black text-left text-[54px] font-bold leading-[1]">
                 Grow Skills Together
               </h1>

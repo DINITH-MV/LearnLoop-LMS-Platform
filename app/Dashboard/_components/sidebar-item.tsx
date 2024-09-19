@@ -40,13 +40,13 @@ export const SidebarItem = ({
     >
       <div className="flex items-center gap-x-2 py-4">
         <Icon
-          size={22}
+          size={24}
           className={cn(
             "text-slate-500",
             isActive && "text-sky-700"
           )}
         />
-        <p className="text-[13pt]">{label}</p>
+        <p className="text-[17pt]">{label}</p>
       </div>
       <div
         className={cn(
