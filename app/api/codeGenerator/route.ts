@@ -6,7 +6,7 @@ export async function POST(req: Request) {
   const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
   const { prompt } = await req.json();
 
-  console.log(userId)
+  console.log(userId);
 
   console.log(prompt);
 

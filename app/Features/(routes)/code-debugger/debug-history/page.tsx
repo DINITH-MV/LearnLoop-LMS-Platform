@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import { CodeBlock } from "./_components/codeBlock";
 
 export default async function DebugHistory() {
-  const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
+  const { userId } = auth();
   if (!userId) {
     return redirect("/");
   }
@@ -23,8 +23,11 @@ export default async function DebugHistory() {
   return (
     <div className="px-4 lg:px-8 py-4 h-[1100px]">
       <div>
-      <Button className="ml-[50px] mt-[20px]">
-      <Link href="/Features/code-debugger" className="flex items-center gap-x-1">
+        <Button className="ml-[50px] mt-[20px]">
+          <Link
+            href="/Features/code-debugger"
+            className="flex items-center gap-x-1"
+          >
             <ChevronLeft className="w-5 h-5" />
             Back to Code Debugger
           </Link>
@@ -32,7 +35,7 @@ export default async function DebugHistory() {
       </div>
 
       <div className="mt-12">
-        <CodeBlock data={codeHistory}/>
+        <CodeBlock data={codeHistory} />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-
+import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { CheckCircle, Clock } from "lucide-react";
 
@@ -8,10 +8,10 @@ import { CoursesList } from "@/components/courses-list";
 import { InfoCard } from "./_components/info-card";
 
 export default async function Dashboard() {
-  const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
+  const { userId } = auth();
 
   if (!userId) {
-    return redirect("/");
+    return redirect("/Modules/sign-in");
   }
 
   const {

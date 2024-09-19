@@ -3,12 +3,12 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import "../styles/index.css";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export const Hero = () => {
   const router = useRouter();
   const handleRedirectToDashboard = () => {
-    router.push('/dashboard'); // Navigates to the dashboard page
+    router.push('/Modules/dashboard'); // Navigates to the dashboard page
   };
 
   const targetRef = useRef<HTMLDivElement | null>(null);

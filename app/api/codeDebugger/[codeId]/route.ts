@@ -7,7 +7,7 @@ export async function PATCH(
   { params }: { params: { codeId: string } }
 ) {
   try {
-    const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
+    const { userId } = auth();
     const { codeId } = params;
     const values = await req.json();
 
@@ -26,7 +26,7 @@ export async function PATCH(
       },
       data: {
         ...values,
-        solution
+        solution,
       },
     });
 
@@ -42,7 +42,7 @@ export async function DELETE(
   { params }: { params: { codeId: string } }
 ) {
   try {
-    const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
+    const { userId } = auth();
 
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });

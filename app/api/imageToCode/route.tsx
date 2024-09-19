@@ -23,7 +23,10 @@ export async function POST(req: Request) {
         {
           role: "user",
           content: [
-            { type: "text", text: "Give me the code of the above image with proper indentation and do not give any explanation. Do not add any special characters (e.g: ```, ```html, ```python etc) at the beginning and end of the code block." },
+            {
+              type: "text",
+              text: "Give me the code of the above image with proper indentation and do not give any explanation. Do not add any special characters (e.g: ```, ```html, ```python etc) at the beginning and end of the code block.",
+            },
             {
               type: "image_url",
               image_url: {

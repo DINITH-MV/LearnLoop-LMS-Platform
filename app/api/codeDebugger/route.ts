@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { debugCode } from "./codeDebuggerModel";
 
 export async function POST(req: Request) {
-  const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
+  const { userId } = auth();
   const { proLanguage, code } = await req.json();
 
   if (!userId) {

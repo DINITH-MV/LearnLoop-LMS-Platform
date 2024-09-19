@@ -2,7 +2,7 @@ import OpenAI from "openai";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
+  const { userId } = auth();
   const { fromLanguage, toLanguage, code } = await req.json();
 
   if (!userId) {
@@ -33,7 +33,6 @@ export async function POST(req: Request) {
     const response = completion.choices[0].message.content; // Ensure the response structure is correct
     console.log(response);
     return NextResponse.json({ content: response });
-
   } catch (error) {
     console.error("[CodeTranslator]", error);
     return new NextResponse("Internal Error", { status: 500 });
