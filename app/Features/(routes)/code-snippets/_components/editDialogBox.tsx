@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import axios from "axios";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/app/Modules/components/ui/button";
+import { Input } from "@/app/Modules/components/ui/input";
+import { Textarea } from "@/app/Modules/components/ui/textarea";
 import toast from "react-hot-toast";
 
 import {
@@ -17,9 +17,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@/app/Modules/components/ui/form";
 
-import { DialogContent, DialogTrigger, Dialog } from "@/components/ui/dialog";
+import {
+  DialogContent,
+  DialogTrigger,
+  Dialog,
+} from "@/app/Modules/components/ui/dialog";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -84,11 +88,11 @@ export const EditDialogBox = ({ dataSet }: any) => {
                   <FormItem>
                     <FormLabel>Code Snippet</FormLabel>
                     <FormControl>
-                    <Textarea
-                          rows={5}
-                          {...field}
-                          className="border rounded-[8px] text-[14pt] text-[#000] h-[40px] bg-[#fff]"
-                        />
+                      <Textarea
+                        rows={5}
+                        {...field}
+                        className="border rounded-[8px] text-[14pt] text-[#000] h-[40px] bg-[#fff]"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -102,11 +106,11 @@ export const EditDialogBox = ({ dataSet }: any) => {
                   <FormItem>
                     <FormLabel>Code</FormLabel>
                     <FormControl>
-                    <Textarea
-                          rows={5}
-                          {...field}
-                          className="border rounded-[8px] text-[14pt] text-[#000] h-[180px] bg-[#fff]"
-                        />
+                      <Textarea
+                        rows={5}
+                        {...field}
+                        className="border rounded-[8px] text-[14pt] text-[#000] h-[180px] bg-[#fff]"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

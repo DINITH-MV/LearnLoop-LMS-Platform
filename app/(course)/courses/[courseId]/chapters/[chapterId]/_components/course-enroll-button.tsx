@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/Modules/components/ui/button";
 import { formatPrice } from "@/lib/format";
 
 interface CourseEnrollButtonProps {
@@ -23,7 +23,7 @@ export const CourseEnrollButton = ({
       setIsLoading(true);
 
       const response = await axios.post(`/api/courses/${courseId}/checkout`, {
-        courseId
+        courseId,
       });
 
       // Log the response to ensure it has the expected format
@@ -48,7 +48,7 @@ export const CourseEnrollButton = ({
     } finally {
       setIsLoading(false);
     }
-  }
+  };
 
   return (
     <Button
@@ -60,4 +60,4 @@ export const CourseEnrollButton = ({
       Enroll for {formatPrice(price)}
     </Button>
   );
-}
+};

@@ -1,6 +1,7 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { debugCode } from "./codeDebuggerModel";
+import { auth } from '@clerk/nextjs/server';
 
 export async function POST(req: Request) {
   const { userId } = auth();

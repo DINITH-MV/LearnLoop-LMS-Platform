@@ -3,7 +3,7 @@ import { Chapter, Course, UserProgress } from "@prisma/client";
 import { redirect } from "next/navigation";
 
 import { db } from "@/lib/db";
-import { CourseProgress } from "@/components/course-progress";
+import { CourseProgress } from "@/app/Modules/components/course-progress";
 
 import { CourseSidebarItem } from "./course-sidebar-item";
 

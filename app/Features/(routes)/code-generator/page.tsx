@@ -11,15 +11,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@/app/Modules/components/ui/form";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/app/Modules/components/ui/button";
+import { Card, CardContent } from "@/app/Modules/components/ui/card";
+import { Input } from "@/app/Modules/components/ui/input";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/app/Modules/components/ui/skeleton";
 import Link from "next/link";
 import { History } from "lucide-react";
 import { Textarea } from "@nextui-org/input";
@@ -66,14 +66,16 @@ export default function CodeGenerator() {
   return (
     <div className="h-[1100px] lg:px-8 py-4">
       <div className="flex justify-end mb-4"></div>
-      <div className="text-center mb-[40px] font-bold text-[30pt]">CODE GENERATOR</div>
+      <div className="text-center mb-[40px] font-bold text-[30pt]">
+        CODE GENERATOR
+      </div>
       <Button className="float-right mr-[120px] text-[#444444] bg-[#f0d643] hover:bg-[#b6aa5d] hover:text-[#fff] w-[160px] h-[60px] rounded-[9px]">
         <Link
           href="/Features/code-generator/code-history"
           className="flex items-center gap-x-1"
         >
           <History className="w-6 h-6 mr-[5px]" />
-          
+
           <div className="text-[16pt] font-semibold">HISTORY</div>
         </Link>
       </Button>

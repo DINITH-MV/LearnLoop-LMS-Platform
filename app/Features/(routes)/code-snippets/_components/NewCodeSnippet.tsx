@@ -6,9 +6,9 @@ import { z } from "zod";
 import axios from "axios";
 
 import { PlusCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/app/Modules/components/ui/button";
+import { Input } from "@/app/Modules/components/ui/input";
+import { Textarea } from "@/app/Modules/components/ui/textarea";
 import toast from "react-hot-toast";
 
 import {
@@ -18,9 +18,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@/app/Modules/components/ui/form";
 
-import { DialogContent, DialogTrigger, Dialog } from "@/components/ui/dialog";
+import {
+  DialogContent,
+  DialogTrigger,
+  Dialog,
+} from "@/app/Modules/components/ui/dialog";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -67,7 +71,7 @@ export const NewCodeSnippet = () => {
         </Button>
       </DialogTrigger>
       {isDialogOpen && (
-        <DialogContent className="sm:max-w-[500px] rounded-lg bg-[#dcdbdb]" >
+        <DialogContent className="sm:max-w-[500px] rounded-lg bg-[#dcdbdb]">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -80,12 +84,12 @@ export const NewCodeSnippet = () => {
                   <FormItem>
                     <FormLabel className="text-[#000]">CODE SNIPPET</FormLabel>
                     <FormControl>
-                    <Textarea
-                          rows={5}
-                          placeholder="E.g: Generate a python code to verify email address"
-                          {...field}
-                          className="border rounded-[8px] text-[14pt] text-[#000] h-[80px] bg-[#fff]"
-                        />
+                      <Textarea
+                        rows={5}
+                        placeholder="E.g: Generate a python code to verify email address"
+                        {...field}
+                        className="border rounded-[8px] text-[14pt] text-[#000] h-[80px] bg-[#fff]"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -99,12 +103,12 @@ export const NewCodeSnippet = () => {
                   <FormItem>
                     <FormLabel>CODE</FormLabel>
                     <FormControl>
-                    <Textarea
-                          rows={5}
-                          placeholder="Paste your code here"
-                          {...field}
-                          className="border rounded-[8px] text-[14pt] text-[#000] h-[180px] bg-[#fff]"
-                        />
+                      <Textarea
+                        rows={5}
+                        placeholder="Paste your code here"
+                        {...field}
+                        className="border rounded-[8px] text-[14pt] text-[#000] h-[180px] bg-[#fff]"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

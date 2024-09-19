@@ -3,14 +3,14 @@
 import * as React from "react";
 import axios from "axios";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/Modules/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/app/Modules/components/ui/card";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { EditDialogBox } from "./editDialogBox";
@@ -44,16 +44,18 @@ export const CodeSnippets: React.FC<CodeSnippetsProps> = ({ data }) => {
     <div className="h-[1100px] lg:px-8 py-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full ml-[-250px]">
         {data.map((codeSnippet) => (
-          <Card key={codeSnippet.id}className="w-[400px] p-[px]">
+          <Card key={codeSnippet.id} className="w-[400px] p-[px]">
             <CardHeader>
-              <CardTitle className="line-clamp-1 text-[26px]">{codeSnippet.title}</CardTitle>
+              <CardTitle className="line-clamp-1 text-[26px]">
+                {codeSnippet.title}
+              </CardTitle>
             </CardHeader>
             <CardContent className="border border-dashed border-black mx-6 p-5 rounded-md line-clamp-1">
               {codeSnippet.code}
             </CardContent>
             <CardFooter className="flex flex-col gap-2 mt-5">
               {/* <Button className="w-full" variant="outline"> */}
-                <EditDialogBox dataSet={codeSnippet}/>
+              <EditDialogBox dataSet={codeSnippet} />
               {/* </Button> */}
               <Button
                 className="w-full"

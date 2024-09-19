@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import Header from "./_components/Header";
-import { motion } from 'framer-motion';
-import { ToastProvider } from "@/components/providers/toaster-provider";
+import { motion } from "framer-motion";
+import { ToastProvider } from "@/app/Modules/components/providers/toaster-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,16 +13,14 @@ const inter = Inter({
   display: "swap",
 });
 
-export default function HomeLayout(
-  {  
-  children,  
+export default function HomeLayout({
+  children,
 }: {
-  children: React.ReactNode;  
-}
-) {
+  children: React.ReactNode;
+}) {
   const [mousePosition, setMousePosition] = useState({
     x: 0,
-    y: 0
+    y: 0,
   });
 
   const [cursorVariant, setCursorVariant] = useState("default");
@@ -31,7 +29,7 @@ export default function HomeLayout(
     const mouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: e.clientX,
-        y: e.clientY
+        y: e.clientY,
       });
     };
 
@@ -51,13 +49,12 @@ export default function HomeLayout(
         stiffness: 1400, // Increase this value for faster movement
         damping: 70, // Lower this value to reduce "lag" when stopping
       },
-    }
+    },
   };
 
   return (
     <html lang="en">
       <body className={inter.variable}>
-        
         <motion.div
           className="cursor"
           variants={variants}
@@ -73,7 +70,7 @@ export default function HomeLayout(
             backgroundColor: "#00000060",
             pointerEvents: "none",
           }}
-        />        
+        />
         <ToastProvider />
         {children}
       </body>

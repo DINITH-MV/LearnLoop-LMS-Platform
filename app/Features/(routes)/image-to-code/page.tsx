@@ -8,9 +8,9 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-import { FileUpload } from "@/components/file-upload";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Button } from "@/components/ui/button"; // Assuming you have a Button component
+import { FileUpload } from "@/app/Modules/components/file-upload";
+import { Skeleton } from "@/app/Modules/components/ui/skeleton";
+import { Button } from "@/app/Modules/components/ui/button"; // Assuming you have a Button component
 
 const formSchema = z.object({
   imageUrl: z.string().min(1, {
@@ -96,11 +96,12 @@ export default function ImageToCode() {
               />
               {/* New Button for Uploading a New Image */}
               <div className="absolute top-[-15px] right-[-10px]">
-              
                 <button
                   onClick={handleNewImageUpload}
                   className="bg-gradient-to-tl from-[#896fffe3] to-[#ea1aba] text-[14pt] border-[4px] border-white w-[190px] h-[55px] rounded-[20px] text-white"
-                > Upload New Image
+                >
+                  {" "}
+                  Upload New Image
                 </button>
               </div>
             </div>

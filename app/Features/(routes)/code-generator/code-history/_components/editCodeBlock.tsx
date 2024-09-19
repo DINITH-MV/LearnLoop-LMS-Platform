@@ -3,9 +3,13 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/Modules/components/ui/button";
 
-import { DialogContent, DialogTrigger, Dialog } from "@/components/ui/dialog";
+import {
+  DialogContent,
+  DialogTrigger,
+  Dialog,
+} from "@/app/Modules/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -13,9 +17,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+} from "@/app/Modules/components/ui/form";
+import { Input } from "@/app/Modules/components/ui/input";
+import { Textarea } from "@/app/Modules/components/ui/textarea";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -23,7 +27,7 @@ const FormSchema = z.object({
   prompt: z.string().min(10, {
     message: "Prompt must be at least 10 characters.",
   }),
-  generatedCode: z.string().min(10).optional()
+  generatedCode: z.string().min(10).optional(),
 });
 
 export const EditCodeBlock = ({ dataSet }: any) => {
@@ -34,7 +38,7 @@ export const EditCodeBlock = ({ dataSet }: any) => {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       prompt: `${dataSet.prompt}`,
-      generatedCode: `${dataSet.generatedCode}`,	
+      generatedCode: `${dataSet.generatedCode}`,
     },
   });
 
@@ -42,10 +46,12 @@ export const EditCodeBlock = ({ dataSet }: any) => {
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
-      await axios.patch(`/api/codeGenerator/${codeId}`, { prompt: data.prompt });
+      await axios.patch(`/api/codeGenerator/${codeId}`, {
+        prompt: data.prompt,
+      });
       toast.success("Prompt Name updated");
       console.log(data);
-    //   form.reset();
+      //   form.reset();
       setIsDialogOpen(false);
       router.refresh();
     } catch (error) {
@@ -78,11 +84,11 @@ export const EditCodeBlock = ({ dataSet }: any) => {
                   <FormItem>
                     <FormLabel>PROMPT</FormLabel>
                     <FormControl>
-                    <Textarea
-                          rows={5}
-                          {...field}
-                          className="border rounded-[8px] text-[14pt] bg-[#fff] text-[#000] h-[010px] appearance-none"
-                        />
+                      <Textarea
+                        rows={5}
+                        {...field}
+                        className="border rounded-[8px] text-[14pt] bg-[#fff] text-[#000] h-[010px] appearance-none"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -97,10 +103,10 @@ export const EditCodeBlock = ({ dataSet }: any) => {
                   <FormItem>
                     <FormLabel>CODE OUTPUT</FormLabel>
                     <FormControl>
-                    <Textarea
-                          {...field}
-                          className="border rounded-[11px] text-[14pt] bg-[#fff] text-[#000] h-[400px] resize-none"
-                        />
+                      <Textarea
+                        {...field}
+                        className="border rounded-[11px] text-[14pt] bg-[#fff] text-[#000] h-[400px] resize-none"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
