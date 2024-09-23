@@ -70,9 +70,9 @@ export default function ImageToCode() {
 
       {/* Drag and Drop Upload Area */}
       <div className="min-h-[600px] flex items-center justify-center flex-col">
-        <div className="bg-[#efefef] px-[30px] py-[65px] rounded-[41px] border-[#fff] border-[5px] h-[450px] w-[800px] text-center mx-auto">
+        <div className="bg-[#efefef] px-[30px] py-[65px] rounded-[41px] border-[#fff] border-[5px] h-[490px] w-[800px] text-center mx-auto">
           {!submittedImageUrl ? (
-            <div>
+            <div className="border mt-[-40px]">
               <FileUpload
                 endpoint="imageToCode"
                 onChange={(url) => {
@@ -80,6 +80,7 @@ export default function ImageToCode() {
                     onSubmit({ imageUrl: url });
                   }
                 }}
+                
               />
               <div className="text-[15px] text-muted-foreground mt-4 text-red-400 tracking-wide font-medium text-center">
                 Blur image not recommended

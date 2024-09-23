@@ -9,4 +9,6 @@
       font-size: 100%;
     }
 
-    
+    * {
+      cursor: none;
+    }

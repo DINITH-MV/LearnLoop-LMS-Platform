@@ -115,16 +115,20 @@ export const MoreFeatures = () => {
         >
           <div className="mt-[440px] rounded-tl-[80px] rounded-tr-[30px] rounded-br-[80px] grid rounded-bl-[30px] w-[820px] bg-gradient-to-r from-[#cb6866] to-[#ffe292] ... border-[20px] border-white px-[15px] max-w-[120rem] grid-cols-2 py-[15px]">
             {content.map(({ icon: Icon, title, text, link }) => (
-              
-                <span className="mb-4 flex h-[80px] w-[80px] items-center justify-center rounded-tl-[27px] rounded-tr-[4px] rounded-bl-[4px] rounded-br-[4px] bg-gradient-to-r from-[#ba654f] to-[#cb6866] ...">
+              <div 
+                key={title}
+                className="bg-[#fff] rounded-tl-[35px] rounded-br- [40px]  rounded-bl-[8px] rounded-tr-[8px] rounded-br-[40px] h-[218px] w-[340px] p-[15px] my-[15px] ml-[15px]"
+              >
+                <span className="mb-[14px] flex h-[72px] w-[72px] items-center justify-center rounded-tl-[27px] rounded-tr-[4px] rounded-bl-[4px] rounded-br-[4px] bg-gradient-to-r from-[#ba654f] to-[#cb6866] ...">
                   <Icon className="h-7 w-7 " />
                 </span>
                 <a href={link} target="_blank" className="text-[#000]">
-                  <h3 className="mb-2 text-xl text-black">{title}</h3>
+                  <h3 className="mb-2 text-[22px] text-black">{title}</h3>
                   <div className="max-w-[320px] bg-[#ffe292] rounded-t-[6px] rounded-bl-[6px] rounded-br-[25px] h-[66px] p-[11px] pl-[15px] pr-[20px]">
                     <p className="text-[17px] text-[#000000] text-justify leading-[23px]">{text}</p>
                   </div>
                 </a>
+              </div>
             ))}
           </div>
         </motion.div>
