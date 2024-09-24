@@ -58,21 +58,21 @@ export const TitleForm = ({ initialData, courseId }: TitleFormProps) => {
   };
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
+    <div className="mt-6 border bg-slate-100 rounded-md p-4 w-[500px]">
+      <div className="font-medium text-[14pt] flex items-center justify-between">
         Course title
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <><p className="text-[14pt]">Cancel</p></>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit title
+              <Pencil className="h-3 w-3 mr-2" />
+              <p className=" text-[15pt]">Edit title</p>
             </>
           )}
         </Button>
       </div>
-      {!isEditing && <p className="text-sm mt-2">{initialData.title}</p>}
+      {!isEditing && <p className="text-[14pt] mt-2">{initialData.title}</p>}
       {isEditing && (
         <Form {...form}>
           <form
@@ -86,6 +86,7 @@ export const TitleForm = ({ initialData, courseId }: TitleFormProps) => {
                 <FormItem>
                   <FormControl>
                     <Input
+                    className="text-[14pt]"
                       disabled={isSubmitting}
                       placeholder="e.g. 'Advanced web development'"
                       {...field}

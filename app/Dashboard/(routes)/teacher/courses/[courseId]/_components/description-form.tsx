@@ -63,16 +63,16 @@ export const DescriptionForm = ({
   };
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
-        Course description
+    <div className="mt-6 border bg-slate-100 rounded-md p-4  w-[500px]">
+      <div className="font-medium text-[14pt] flex items-center justify-between">
+        Course Description
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <><p className="text-[14pt]">Cancel</p></>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit description
+              <Pencil className="h-3 w-3 mr-2" />
+              <p className=" text-[15pt]">Edit Description</p>
             </>
           )}
         </Button>
@@ -80,7 +80,7 @@ export const DescriptionForm = ({
       {!isEditing && (
         <p
           className={cn(
-            "text-sm mt-2",
+            "text-[14pt] mt-2",
             !initialData.description && "text-slate-500 italic"
           )}
         >

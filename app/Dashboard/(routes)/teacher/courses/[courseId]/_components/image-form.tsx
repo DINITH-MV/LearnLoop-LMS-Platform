@@ -11,6 +11,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
+import { FileUploadCourses } from "@/components/file-upload-courses";
 
 interface ImageFormProps {
   initialData: Course;
@@ -42,15 +43,15 @@ export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
   };
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
+    <div className="mt-6 border bg-slate-100 w-[500px] rounded-md p-4">
+      <div className="font-medium text-[14pt] flex items-center justify-between">
         Course image
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && <>Cancel</>}
           {!isEditing && !initialData.imageUrl && (
             <>
-              <PlusCircle className="h-4 w-4 mr-2" />
-              Add an image
+              <PlusCircle className="h-3 w-3 mr-2 " />
+              <p className="text-[14pt]">Add an image</p>
             </>
           )}
           {!isEditing && initialData.imageUrl && (
@@ -78,7 +79,7 @@ export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
         ))}
       {isEditing && (
         <div>
-          <FileUpload
+          <FileUploadCourses
             endpoint="courseImage"
             onChange={(url) => {
               if (url) {

@@ -12,7 +12,7 @@ const backgroundVariants = cva(
         success: "bg-emerald-100",
       },
       size: {
-        default: "p-2",
+        default: "p-1",
         sm: "p-1",
       }
     },
@@ -32,8 +32,8 @@ const iconVariants = cva(
         success: "text-emerald-700",
       },
       size: {
-        default: "h-6 w-6",
-        sm: "h-3 w-3"
+        default: "h-4 w-4",
+        sm: "h-1 w-1"
       },
     },
     defaultVariants: {

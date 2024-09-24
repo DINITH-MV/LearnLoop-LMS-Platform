@@ -68,16 +68,16 @@ export const CategoryForm = ({
   );
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
+    <div className="mt-6 border bg-slate-100 rounded-md w-[500px] p-4">
+      <div className="font-medium text-[14pt] flex items-center justify-between">
         Course category
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit category
+              <Pencil className="h-3 w-3 mr-2" />
+              <p className="text-[14pt]">Edit category</p>
             </>
           )}
         </Button>
@@ -85,7 +85,7 @@ export const CategoryForm = ({
       {!isEditing && (
         <p
           className={cn(
-            "text-sm mt-2",
+            "mt-2 text-[14pt]",
             !initialData.categoryId && "text-slate-500 italic"
           )}
         >
@@ -104,7 +104,11 @@ export const CategoryForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Combobox options={...options} {...field} />
+                    <Combobox 
+                      options={options} 
+                      value={field.value} 
+                      onChange={field.onChange} 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
