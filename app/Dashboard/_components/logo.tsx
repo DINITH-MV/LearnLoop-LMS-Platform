@@ -1,12 +1,16 @@
-import Image from "next/image";
+import { Combo } from "next/font/google";
+
+const combo = Combo({
+  subsets: ["latin"],
+  variable: "--font-combo",
+  display: "swap",
+  weight: "400",
+});
 
 export const Logo = () => {
   return (
-    <Image
-      height={130}
-      width={130}
-      alt="logo"
-      src="/public/next.svg"
-    />
+    <div className={`${combo.variable} h-[100px] text-[30px]`}>
+      LearnLoop
+      </div>
   )
 }

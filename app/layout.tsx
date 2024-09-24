@@ -10,8 +10,16 @@ import {
   Nunito,
   Anek_Devanagari,
   PT_Sans,
+  Combo,
 } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+
+const combo = Combo({
+  subsets: ["latin"],
+  variable: "--font-combo",
+  display: "swap",
+  weight: "400",
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -81,7 +89,7 @@ export default function RootLayout({
     <html lang="en">
       <ClerkProvider >
         <body
-          className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable} ${inter.variable}`}
+          className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable} ${inter.variable} ${combo.variable}`}
         >
           <motion.div
             className="cursor"
