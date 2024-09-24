@@ -11,8 +11,16 @@ import {
   Anek_Devanagari,
   PT_Sans,
   Combo,
+  Englebert,
 } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+
+const englebert = Englebert({
+  subsets: ["latin"],
+  variable: "--font-englebert",
+  display: "swap",
+  weight: "400",
+})
 
 const combo = Combo({
   subsets: ["latin"],
@@ -89,7 +97,7 @@ export default function RootLayout({
     <html lang="en">
       <ClerkProvider >
         <body
-          className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable} ${inter.variable} ${combo.variable}`}
+          className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable} ${inter.variable} ${combo.variable} ${englebert.variable}`}
         >
           <motion.div
             className="cursor"

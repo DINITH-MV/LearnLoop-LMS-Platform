@@ -1,15 +1,8 @@
-import { Combo } from "next/font/google";
 
-const combo = Combo({
-  subsets: ["latin"],
-  variable: "--font-combo",
-  display: "swap",
-  weight: "400",
-});
 
 export const Logo = () => {
   return (
-    <div className={`${combo.variable} h-[100px] text-[30px]`}>
+    <div className="englebert mt-[20px] mb-[115px] h-[65px] w-[185px] font-semibold rounded-[7px] text-[#ffffff] text-center bg-gradient-to-r from-[#ff7e5b] to-[#ffc697] ... text-[40px]">
       LearnLoop
       </div>
   )

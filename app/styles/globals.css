@@ -36,3 +36,11 @@
 .ptSans {
   font-family: var(--font-pt-sans);
 }
+
+.combo {
+  font-family: var(--font-combo);
+}
+
+.englebert {
+  font-family: var(--font-englebert);
+}
