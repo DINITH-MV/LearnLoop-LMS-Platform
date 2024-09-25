@@ -6,6 +6,7 @@ import { db } from "@/lib/db";
 import { CourseProgress } from "@/components/course-progress";
 
 import { CourseSidebarItem } from "./course-sidebar-item";
+import { Logo } from "../../../../Dashboard/_components/logo";
 
 interface CourseSidebarProps {
   course: Course & {
@@ -36,9 +37,12 @@ export const CourseSidebar = async ({
   });
 
   return (
-    <div className="h-full border-r flex flex-col overflow-y-auto shadow-sm">
-      <div className="p-8 flex flex-col border-b">
-        <h1 className="font-semibold">{course.title}</h1>
+    <div className="h-full border-r flex flex-col overflow-y-auto bg-[#fff] w-[270px] shadow-sm">
+      <div className="text-center mx-auto mt-[10px]">
+        <Logo />
+      </div>
+      <div className="flex flex-col border-b mt-[-90px] p-[10px] bg-[#ff7e5b] px-[30px]">
+        <h1 className="font-semibold text-[16pt]">{course.title}</h1>
         {purchase && (
           <div className="mt-10">
             <CourseProgress variant="success" value={progressCount} />

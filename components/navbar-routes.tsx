@@ -30,9 +30,9 @@ export const NavbarRoutes = () => {
         <ModeToggle />
         {isTeacherPage || isCoursePage ? (
           <Link href="/">
-            <Button size="sm" variant="ghost">
-              <LogOut className="h-4 w-4 mr-2" />
-              Exit
+            <Button size="default" variant="ghost">
+              <LogOut className="h-3 w-3 mr-2" />
+              <p className="text-[14pt]">Exit</p>
             </Button>
           </Link>
         ) : isTeacher(userId) ? (
