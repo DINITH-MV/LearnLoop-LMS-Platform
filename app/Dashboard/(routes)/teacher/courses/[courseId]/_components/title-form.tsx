@@ -67,7 +67,7 @@ export const TitleForm = ({ initialData, courseId }: TitleFormProps) => {
           ) : (
             <>
               <Pencil className="h-3 w-3 mr-2" />
-              <p className=" text-[15pt]">Edit title</p>
+              <p className="text-[14pt]">Edit title</p>
             </>
           )}
         </Button>

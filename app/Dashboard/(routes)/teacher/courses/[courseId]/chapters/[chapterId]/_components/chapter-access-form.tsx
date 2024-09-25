@@ -74,7 +74,9 @@ export const ChapterAccessForm = ({
         Chapter access
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <>
+              <p className="text-[14pt]">Cancel</p>
+            </>
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />

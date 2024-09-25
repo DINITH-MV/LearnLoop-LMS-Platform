@@ -64,11 +64,13 @@ export const PriceForm = ({ initialData, courseId }: PriceFormProps) => {
         Course price
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <>
+              <p className="text-[14pt]">Cancel</p>
+            </>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit price
+              <Pencil className="h-3 w-3 mr-2" />
+              <p className="text-[14pt]">Edit price</p>
             </>
           )}
         </Button>
@@ -76,7 +78,7 @@ export const PriceForm = ({ initialData, courseId }: PriceFormProps) => {
       {!isEditing && (
         <p
           className={cn(
-            "text-sm mt-2",
+            "text-[14pt] mt-2",
             !initialData.price && "text-slate-500 italic"
           )}
         >

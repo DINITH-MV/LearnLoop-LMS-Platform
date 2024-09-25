@@ -95,7 +95,9 @@ export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
         Course chapters
         <Button onClick={toggleCreating} variant="ghost">
           {isCreating ? (
-            <>Cancel</>
+            <>
+              <p className="text-[14pt]">Cancel</p>
+            </>
           ) : (
             <>
               <PlusCircle className="h-3 w-3 mr-2" />
@@ -135,7 +137,7 @@ export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
       {!isCreating && (
         <div
           className={cn(
-            "text-sm mt-2",
+            "text-[14pt] mt-2",
             !initialData.chapters.length && "text-slate-500 italic"
           )}
         >

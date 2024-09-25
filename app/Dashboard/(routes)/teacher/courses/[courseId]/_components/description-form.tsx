@@ -71,8 +71,8 @@ export const DescriptionForm = ({
             <><p className="text-[14pt]">Cancel</p></>
           ) : (
             <>
-              <Pencil className="h-3 w-3 mr-2" />
-              <p className=" text-[15pt]">Edit Description</p>
+               <Pencil className="h-3 w-3 mr-2" />
+               <p className="text-[14pt]">Edit description</p>
             </>
           )}
         </Button>

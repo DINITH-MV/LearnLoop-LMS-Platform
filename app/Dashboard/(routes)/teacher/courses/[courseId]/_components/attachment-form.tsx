@@ -11,6 +11,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
+import { FileUploadAttachment } from "@/components/file-upload-attachment";
 
 interface AttachmentFormProps {
   initialData: Course & { attachments: Attachment[] };
@@ -61,11 +62,15 @@ export const AttachmentForm = ({
       <div className="font-medium flex items-center justify-between">
         Course attachments
         <Button onClick={toggleEdit} variant="ghost">
-          {isEditing && <>Cancel</>}
+          {isEditing && (
+            <>
+              <p className="text-[14pt]">Cancel</p>
+            </>
+          )}
           {!isEditing && (
             <>
-              <PlusCircle className="h-4 w-4 mr-2" />
-              Add a file
+              <PlusCircle className="h-3 w-3 mr-2" />
+              <p className="text-[14pt]">Add a file</p>
             </>
           )}
         </Button>
@@ -73,7 +78,7 @@ export const AttachmentForm = ({
       {!isEditing && (
         <>
           {initialData.attachments.length === 0 && (
-            <p className="text-sm mt-2 text-slate-500 italic">
+            <p className="text-[14pt] mt-2 text-slate-500 italic">
               No attachments yet
             </p>
           )}
@@ -82,7 +87,7 @@ export const AttachmentForm = ({
               {initialData.attachments.map((attachment) => (
                 <div
                   key={attachment.id}
-                  className="flex items-center p-3 w-full bg-sky-100 border-sky-200 border text-sky-700 rounded-md"
+                  className="flex items-center p-3 w-full bg-sky-100 border-sky-200 border text-sky-700 mt-[20px] rounded-md"
                 >
                   <File className="h-4 w-4 mr-2 flex-shrink-0" />
                   <p className="text-xs line-clamp-1">{attachment.name}</p>
@@ -107,7 +112,7 @@ export const AttachmentForm = ({
       )}
       {isEditing && (
         <div>
-          <FileUpload
+          <FileUploadAttachment
             endpoint="courseAttachment"
             onChange={(url) => {
               if (url) {

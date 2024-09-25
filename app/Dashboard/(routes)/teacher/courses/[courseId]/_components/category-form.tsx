@@ -73,7 +73,9 @@ export const CategoryForm = ({
         Course category
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <>
+              <p className="text-[14pt]">Cancel</p>
+            </>
           ) : (
             <>
               <Pencil className="h-3 w-3 mr-2" />
@@ -104,10 +106,10 @@ export const CategoryForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Combobox 
-                      options={options} 
-                      value={field.value} 
-                      onChange={field.onChange} 
+                    <Combobox
+                      options={options}
+                      value={field.value}
+                      onChange={field.onChange}
                     />
                   </FormControl>
                   <FormMessage />
