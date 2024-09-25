@@ -37,12 +37,12 @@ export const NavbarRoutes = () => {
           </Link>
         ) : isTeacher(userId) ? (
           <Link href="/Dashboard/teacher/courses">
-            <Button size="sm" variant="ghost">
-              Teacher mode
+            <Button size="default" variant="ghost">
+              <p className="text-[14pt] dark:text-[#000] ">Teacher mode</p>
             </Button>
           </Link>
         ) : null}
-        <div className="w-[45px] h-[55px] rounded-[6px] bg-[rgb(150,255,173)] flex justify-center items-center">
+        <div className="w-[43px] h-[54px] rounded-[6px] bg-[rgb(223,223,223)] border-[3px] border-white flex justify-center items-center">
           <UserButton/>
         </div>
       </div>

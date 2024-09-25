@@ -6,6 +6,12 @@ import "./styles/index.css";
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="h-full">
+      <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
       <div className="h-[100px] md:pl-[255px] rounded-[20px] fixed inset-y-0 w-[1510px] z-50">
         <Navbar />
       </div>
@@ -15,6 +21,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <main className="md:pl-[280px] pt-[80px] w-[190vh] bg-[#fbf6f2] h-[100vh]">        
           {children}
       </main>
+      </ThemeProvider>
     </div>
   );
 };

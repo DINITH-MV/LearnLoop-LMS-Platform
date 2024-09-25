@@ -38,12 +38,12 @@ export const Combobox = ({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between"
-        >
+          className="w-full justify-between h-full"
+        ><p className="text-white text-[14pt]">
           {value
             ? options.find((option) => option.value === value)?.label
             : "Select option..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" /></p>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">

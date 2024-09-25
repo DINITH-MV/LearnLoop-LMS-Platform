@@ -4,6 +4,7 @@ import { BarChart, Braces, Code, Compass, Bot, Layout, List, MessageSquareHeart 
 import { usePathname } from "next/navigation";
 
 import { SidebarItem } from "./sidebar-item";
+import { color } from 'framer-motion';
 
 const guestRoutes = [
   {
@@ -44,7 +45,7 @@ export const SidebarRoutes = () => {
   const routes = isTeacherPage ? teacherRoutes : guestRoutes;
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-[103%] ">
       {routes.map((route) => (
         <SidebarItem
           key={route.href}

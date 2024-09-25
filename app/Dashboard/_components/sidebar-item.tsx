@@ -34,7 +34,7 @@ export const SidebarItem = ({
       onClick={onClick}
       type="button"
       className={cn(
-        "flex items-center gap-x-2 text-slate-500 text-sm font-[500] pl-6 transition-all hover:text-slate-600 hover:bg-slate-300/20",
+        "flex dark:text-white items-center gap-x-2 text-slate-500 text-sm font-[500] pl-6 transition-all hover:text-slate-600 hover:bg-slate-300/20",
         isActive && "text-sky-700 bg-sky-200/20 hover:bg-sky-200/20 hover:text-sky-700"
       )}
     >
@@ -42,16 +42,16 @@ export const SidebarItem = ({
         <Icon
           size={24}
           className={cn(
-            "text-slate-500",
-            isActive && "text-sky-700"
+            "text-slate-500 dark:text-[#ffdaf7]",
+            isActive && "dark:text-[#dc86c9]"
           )}
         />
         <p className="text-[17pt]">{label}</p>
       </div>
       <div
         className={cn(
-          "ml-auto opacity-0 border-2 border-sky-700 h-full transition-all",
-          isActive && "opacity-100"
+          "ml-auto dark:text-white opacity-0 border-2 border-sky-700 h-full transition-all",
+          isActive && "opacity-100 dark:text-[#fff5ff] dark:border-[#ffc5ff]"
         )}
       />
     </button>
