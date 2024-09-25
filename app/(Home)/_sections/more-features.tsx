@@ -123,8 +123,8 @@ export const MoreFeatures = () => {
                   <Icon className="h-7 w-7 " />
                 </span>
                 <a href={link} target="_blank" className="text-[#000]">
-                  <h3 className="mb-2 text-[22px] text-black">{title}</h3>
-                  <div className="max-w-[320px] bg-[#ffe292] rounded-t-[6px] rounded-bl-[6px] rounded-br-[25px] h-[66px] p-[11px] pl-[15px] pr-[20px]">
+                  <div className="max-w-[320px] bg-[#ffe292] rounded-t-[6px] rounded-bl-[6px] rounded-br-[25px] h-[102px] p-[11px] pl-[15px] pr-[20px]">
+                  <h3 className="mb-2 text-[22px] text-black font-bold w-[340px]">{title}</h3>
                     <p className="text-[17px] text-[#000000] text-justify leading-[23px]">{text}</p>
                   </div>
                 </a>

@@ -73,89 +73,97 @@ export default function CodeTranslator() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 m-8 mb-8">
-      {/* left */}
-      <div className="border bg-slate-100 rounded-md p-4 h-fit">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <FormField
-              control={form.control}
-              name="fromLanguage"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>From: Programming Language</FormLabel>
-                  <FormControl>
-                    <Input placeholder="e.g: Javascript" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="toLanguage"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>To: Programming Language</FormLabel>
-                  <FormControl>
-                    <Input placeholder="e.g: Python" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="code"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Code</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="e.g: const number = 4"
-                      className="resize-none"
-                      rows={15}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" className="w-full">
-              Translate
-              <Sparkles className="w-5 h-5" />
-            </Button>
-          </form>
-        </Form>
+    <div>
+      <div className="text-center pt-[40px] mb-[80px] font-bold text-[30pt]">
+        CODE TRANSLATOR
       </div>
+      <div className="flex justify-around bg-[#efefef] mx-[45px] p-[25px] rounded-[40px]">
+        <div className="border bg-white rounded-[20px] p-4 h-fit w-[670px]">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <FormField
+                control={form.control}
+                name="fromLanguage"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="float-left mb-[10px]">
+                      From: Programming Language
+                    </FormLabel>
+                    <FormControl>
+                      <Input placeholder="e.g: Javascript" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="toLanguage"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="float-left mb-[10px]">
+                      To: Programming Language
+                    </FormLabel>
+                    <FormControl>
+                      <Input placeholder="e.g: Python" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="code"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Code</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="e.g: const number = 4"
+                        className="resize-none"
+                        rows={15}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" className="w-full">
+                Translate
+                <Sparkles className="w-5 h-5" />
+              </Button>
+            </form>
+          </Form>
+        </div>
 
-      {/* right */}
-      <div className="border bg-slate-100 rounded-md p-4 h-fit">
-        {translatedCode && (
-          <div className="overflow-auto p-5 border border-dashed border-black rounded-md">
-            <pre>{translatedCode}</pre>
-          </div>
-        )}
-        {!translatedCode &&
-          (loading ? (
-            <div className="p-5 overflow-auto border border-dashed border-black rounded-md">
-              <pre>Code Line Here</pre>
-              <div className="space-y-2 mt-2">
-                <Skeleton className="h-4 w-[550px] bg-slate-400" />
-                <Skeleton className="h-4 w-[500px] bg-slate-400" />
-                <Skeleton className="h-4 w-[525px] bg-slate-400" />
-                <Skeleton className="h-4 w-[450px] bg-slate-400" />
-                <Skeleton className="h-4 w-[500px] bg-slate-400" />
-                <Skeleton className="h-4 w-[550px] bg-slate-400" />
-                <Skeleton className="h-4 w-[400px] bg-slate-400" />
+        {/* right */}
+        <div className="border bg-white rounded-[20px] p-4 h-fit w-[670px]">
+          {translatedCode && (
+            <div className="overflow-auto p-5 border border-dashed border-black rounded-md">
+              <pre>{translatedCode}</pre>
+            </div>
+          )}
+          {!translatedCode &&
+            (loading ? (
+              <div className="p-5 overflow-auto border border-dashed border-black rounded-md">
+                <pre>Code Line Here</pre>
+                <div className="space-y-2 mt-2">
+                  <Skeleton className="h-4 w-[550px] bg-slate-400" />
+                  <Skeleton className="h-4 w-[500px] bg-slate-400" />
+                  <Skeleton className="h-4 w-[525px] bg-slate-400" />
+                  <Skeleton className="h-4 w-[450px] bg-slate-400" />
+                  <Skeleton className="h-4 w-[500px] bg-slate-400" />
+                  <Skeleton className="h-4 w-[550px] bg-slate-400" />
+                  <Skeleton className="h-4 w-[400px] bg-slate-400" />
+                </div>
               </div>
-            </div>
-          ) : (
-            <div className="p-5 border border-dashed border-black rounded-md">
-              <pre>Code Line Here</pre>
-            </div>
-          ))}
+            ) : (
+              <div className="p-5 border border-dashed border-black rounded-md">
+                <pre>Code Line Here</pre>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
