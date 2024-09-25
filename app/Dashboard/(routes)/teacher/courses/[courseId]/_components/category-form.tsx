@@ -66,7 +66,6 @@ export const CategoryForm = ({
   const selectedOption = options.find(
     (option) => option.value === initialData.categoryId
   );
-
   return (
     <div className="mt-6 border bg-slate-100 rounded-md w-[500px] p-4">
       <div className="font-medium text-[14pt] flex items-center justify-between">
@@ -118,7 +117,7 @@ export const CategoryForm = ({
             />
             <div className="flex items-center gap-x-2">
               <Button disabled={!isValid || isSubmitting} type="submit">
-                Save
+                <p className="text-[14pt]">Save</p>
               </Button>
             </div>
           </form>

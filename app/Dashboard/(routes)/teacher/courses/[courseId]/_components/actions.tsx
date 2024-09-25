@@ -50,7 +50,7 @@ export const Actions = ({ disabled, courseId, isPublished }: ActionsProps) => {
 
       toast.success("Course deleted");
       router.refresh();
-      router.push(`/teacher/courses`);
+      router.push(`/Dashboard/teacher/courses`);
     } catch {
       toast.error("Something went wrong");
     } finally {

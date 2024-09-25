@@ -24,8 +24,8 @@ export const columns: ColumnDef<Course>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Title
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <p className="text-[20px]">Title</p>
+          <ArrowUpDown className="ml-2 h-3 w-3" />
         </Button>
       );
     },
@@ -38,8 +38,8 @@ export const columns: ColumnDef<Course>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Price
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <p className="text-[20px]">Price</p>
+          <ArrowUpDown className="ml-2 h-3 w-3" />
         </Button>
       );
     },
@@ -61,8 +61,8 @@ export const columns: ColumnDef<Course>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Published
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <p className="text-[20px]">Published</p>
+          <ArrowUpDown className="ml-2 h-3 w-3" />
         </Button>
       );
     },

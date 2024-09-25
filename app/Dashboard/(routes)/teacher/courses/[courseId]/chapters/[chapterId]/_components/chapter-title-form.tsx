@@ -105,7 +105,7 @@ export const ChapterTitleForm = ({
             />
             <div className="flex items-center gap-x-2">
               <Button disabled={!isValid || isSubmitting} type="submit">
-                Save
+                <p className="text-[14pt]">Save</p>
               </Button>
             </div>
           </form>

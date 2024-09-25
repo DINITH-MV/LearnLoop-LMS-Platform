@@ -18,7 +18,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <div className="hidden bg-[#ffffff] md:flex h-full text-[14pt] w-[240px] flex-col fixed inset-y-0 z-50">
         <Sidebar />
       </div>
-      <main className="md:pl-[280px] pt-[80px] w-[190vh] bg-[#fbf6f2] h-[100vh]">        
+      <main className="md:pl-[280px] pt-[80px] w-[190vh] bg-[#fbf6f2] h-[100%]">        
           {children}
       </main>
       </ThemeProvider>

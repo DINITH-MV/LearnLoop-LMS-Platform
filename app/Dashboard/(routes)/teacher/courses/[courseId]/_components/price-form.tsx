@@ -59,8 +59,8 @@ export const PriceForm = ({ initialData, courseId }: PriceFormProps) => {
   };
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
-      <div className="font-medium flex items-center justify-between">
+    <div className="mt-6 border w-[500px] bg-slate-100 rounded-md p-4">
+      <div className="font-medium text-[14pt] flex items-center justify-between">
         Course price
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
@@ -111,7 +111,7 @@ export const PriceForm = ({ initialData, courseId }: PriceFormProps) => {
             />
             <div className="flex items-center gap-x-2">
               <Button disabled={!isValid || isSubmitting} type="submit">
-                Save
+                <p className="text-[14pt]">Save</p>
               </Button>
             </div>
           </form>
