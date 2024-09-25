@@ -81,7 +81,7 @@ export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
   };
 
   const onEdit = (id: string) => {
-    router.push(`/teacher/courses/${courseId}/chapters/${id}`);
+    router.push(`/Dashboard/teacher/courses/${courseId}/chapters/${id}`);
   };
 
   return (
@@ -98,8 +98,8 @@ export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
             <>Cancel</>
           ) : (
             <>
-              <PlusCircle className="h-4 w-4 mr-2" />
-              Add a chapter
+              <PlusCircle className="h-3 w-3 mr-2" />
+              <p className="text-[14pt]">Add a chapter</p>
             </>
           )}
         </Button>

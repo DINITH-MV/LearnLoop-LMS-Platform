@@ -68,7 +68,7 @@ const ChapterIdPage = async ({
         </div>
         <div>
           <div className="p-4 flex flex-col md:flex-row items-center justify-between">
-            <h2 className="text-2xl font-semibold mb-2">{chapter.title}</h2>
+            <h2 className="text-[18pt] font-semibold mb-2">{chapter.title}</h2>
             {purchase ? (
               <CourseProgressButton
                 chapterId={params.chapterId}
@@ -84,8 +84,8 @@ const ChapterIdPage = async ({
             )}
           </div>
           <Separator />
-          <div>
-            <Preview value={chapter.description!} />
+          <div className="ml-[26px]">
+            <p>chapter.description!</p>
           </div>
           {!!attachments.length && (
             <>

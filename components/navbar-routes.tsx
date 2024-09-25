@@ -42,7 +42,7 @@ export const NavbarRoutes = () => {
             </Button>
           </Link>
         ) : null}
-        <div className="w-[43px] h-[54px] rounded-[6px] bg-[rgb(223,223,223)] border-[3px] border-white flex justify-center items-center">
+        <div className="w-[44px] h-[54px] rounded-[6px] bg-[rgb(223,223,223)] border-[3px] border-white flex justify-center items-center">
           <UserButton/>
         </div>
       </div>
