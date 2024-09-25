@@ -150,3 +150,13 @@ model CodeDebugger {
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt
 }
+
+model feedback {
+  id     String @id @default(uuid())
+  userId String
+  messages  String
+  reply   String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

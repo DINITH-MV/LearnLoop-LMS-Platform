@@ -41,6 +41,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
+    "date-fns": "^4.1.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "firebase-admin": "^12.5.0",

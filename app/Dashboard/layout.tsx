@@ -5,7 +5,7 @@ import "./styles/index.css";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="h-full">
+    <div className="h-[800px]">
       <ThemeProvider
           attribute="class"
           defaultTheme="system"
