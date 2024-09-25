@@ -60,8 +60,8 @@ export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
           )}
           {!isEditing && initialData.imageUrl && (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit image
+              <Pencil className="h-3 w-3 mr-2" />
+              <p className="text-[14pt]">Edit image</p>
             </>
           )}
         </Button>
