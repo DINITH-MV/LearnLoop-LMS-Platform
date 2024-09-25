@@ -65,7 +65,7 @@ export const Newfeedback = () => {
       <DialogTrigger asChild>
         <Button variant="default"  className="bg-black" onClick={() => setIsDialogOpen(true)}>
           <PlusCircle className="h-4 w-4 mr-2" />
-          <span className="hidden sm:inline">New feedback</span>
+          <span className="hidden sm:inline text-[14pt]">New feedback</span>
         </Button>
       </DialogTrigger>
       {isDialogOpen && (

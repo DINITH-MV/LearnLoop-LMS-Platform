@@ -20,7 +20,7 @@ const guestRoutes = [
   {
     icon: MessageSquareHeart,
     label: "Feedback",
-    href: "/image-to-code",
+    href: "/Dashboard/feedback",
   },
 ];
 
@@ -35,7 +35,12 @@ const teacherRoutes = [
     label: "Analytics",
     href: "/Dashboard/teacher/analytics",
   },
-]
+  {
+    icon: MessageSquareHeart,
+    label: "Feedback",
+    href: "/Dashboard/teacher/feedback",
+  },
+];
 
 export const SidebarRoutes = () => {
   const pathname = usePathname();

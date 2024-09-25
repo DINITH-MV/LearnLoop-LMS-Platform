@@ -61,7 +61,7 @@ export const EditDialogBox = ({ dataSet }: any) => {
   // Check if the current user is a teacher and if the reply field is empty
   const isReplyFieldEmpty = !form.getValues("reply");
   const buttonText = isTeacher ? (isReplyFieldEmpty ? <p className="text-[14pt]">Reply</p> : <p className="text-[14pt]">Update</p>) : <p className="text-[14pt]">Update</p>;
-
+  
   return (
     <Dialog>
       <DialogTrigger asChild>

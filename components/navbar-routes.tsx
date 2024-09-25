@@ -17,6 +17,8 @@ export const NavbarRoutes = () => {
 
   const isTeacherPage = pathname?.startsWith("/teacher");
   const isCoursePage = pathname?.includes("/courses");
+  const isAnalyticsPage = pathname?.includes("/analytics");
+  const isFeedbackPage = pathname?.endsWith("teacher/feedback");
   const isSearchPage = pathname === "/search";
 
   return (
@@ -28,8 +30,8 @@ export const NavbarRoutes = () => {
       )}
       <div className="flex gap-x-2 ml-auto items-center">
         <ModeToggle />
-        {isTeacherPage || isCoursePage ? (
-          <Link href="/">
+        {isTeacherPage || isCoursePage || isAnalyticsPage || isFeedbackPage ? (
+          <Link href="/Dashboard/progress">
             <Button size="default" variant="ghost">
               <LogOut className="h-3 w-3 mr-2" />
               <p className="text-[14pt]">Exit</p>

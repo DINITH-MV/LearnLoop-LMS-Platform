@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Feedback } from "./feedback";
+import ReportGeneration from "./ReportGeneration";
 import { format } from "date-fns";
-import { Newfeedback } from './Newfeedback';
 
 type FeedbackWithFormattedDate = {
   id: string;
@@ -50,12 +50,13 @@ const FeedbackClient: React.FC<FeedbackClientProps> = ({ formattedFeedbacks, isT
             onChange={(e) => setReplyQuery(e.target.value)}
           />
         </div>
-        <Newfeedback />
       </div>
       <div className="mt-12">
         <Feedback data={filteredFeedbacks} />
       </div>
-     
+      <div>
+        {isTeacher && <ReportGeneration feedbacks={filteredFeedbacks} />} {/* Pass filtered feedbacks */}
+      </div>
     </div>
   );
 };

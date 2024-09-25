@@ -117,9 +117,9 @@ const ReportGeneration = ({ feedbacks }: ReportGenerationProps) => {
         type="month"
         value={selectedMonth}
         onChange={(e) => setSelectedMonth(e.target.value)}
-        className="max-w-sm"
+        className="w-[200px] h-9"
       />
-      <Button onClick={generatePDF}>View PDF Report</Button>
+      <Button onClick={generatePDF} size="default">View PDF Report</Button>
     </div>
   );
 };

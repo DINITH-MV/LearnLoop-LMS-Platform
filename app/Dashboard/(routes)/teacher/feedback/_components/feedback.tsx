@@ -59,7 +59,7 @@ export const Feedback: React.FC<FeedbackProps> = ({ data }) => {
           {data.map((feedback) => (
             <tr key={feedback.id}>
              
-              <td className="px-6 w-32 py-4 whitespace-nowrap text-[14pt] text-gray-500">{feedback.messages}</td>
+             <td className="px-6 w-32 py-4 whitespace-nowrap text-[14pt] text-gray-500">{feedback.messages}</td>
               <td className="px-6 py-4 whitespace-nowrap text-[14pt] text-gray-500">{feedback.reply}</td>
               <td className="px-6 py-4 whitespace-nowrap text-right text-[14pt] font-medium">
               {feedback.reply&&!isTeacher  ? (
