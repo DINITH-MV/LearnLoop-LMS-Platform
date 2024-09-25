@@ -45,7 +45,7 @@ const content = [
   {
     icon: MagicBranch,
     title: "CODE TRANSLATOR",
-    text: "Organize your development workflow and help your team move work forward",
+    text: "Converts code between programming languages",
     link: "/Features/code-translator",
   },
 ];

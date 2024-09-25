@@ -105,7 +105,7 @@ export const Features = () => {
             color: "black",
             width: "350px",
             size: "24pt",
-            marginLeft: "60px",
+            marginLeft: "99px",
             marginTop: "-40px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
@@ -130,7 +130,7 @@ export const Features = () => {
             "--y": text2Y,            
             width: "360px",
             color: "black",
-            marginLeft: "50px",
+            marginLeft: "89px",
             marginTop: "-70px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-60px]"
@@ -155,7 +155,7 @@ export const Features = () => {
             "--y": text3Y,
             width: "340px",
             color: "black",
-            marginLeft: "80px",
+            marginLeft: "119px",
             marginTop: "-40px",
           })}
           className="translate-y-centered-offset absolute top-1/2 left-[-70px]"
