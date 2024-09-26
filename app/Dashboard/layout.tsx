@@ -2,10 +2,12 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "./_components/navbar";
 import { Sidebar } from "./_components/sidebar";
 import "./styles/index.css";
+import { ToastProvider } from "@/components/providers/toaster-provider";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="h-[800px]">
+    <div className="h-[800px]" >
+      <ToastProvider />
       <ThemeProvider
           attribute="class"
           defaultTheme="system"

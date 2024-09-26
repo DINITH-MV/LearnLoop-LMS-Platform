@@ -95,7 +95,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link
           rel="stylesheet"
@@ -107,8 +107,7 @@ export default function RootLayout({
         />
         <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"/>
       </head>
-      <ClerkProvider>        
-      <ToastProvider />
+      <ClerkProvider> 
         <body
           className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable} ${inter.variable} ${combo.variable} ${englebert.variable}`}
         >

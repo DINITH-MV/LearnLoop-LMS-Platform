@@ -13,10 +13,10 @@ export default function HomeLayout({
 }) {
 
   return (
-    <html lang="en">
+    <div>
       <body>
         {children}        
       </body>
-    </html>
+    </div>
   );
 }
