@@ -81,60 +81,6 @@ export default function CodeAssistant() {
               </p>
               <p>How can I help you today?</p>
             </div>
-
-            {/* cards */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-5">
-              <div
-                className="h-52 p-4 bg-[#f0f4f9] rounded-md relative cursor-pointer hover:bg-[#dfe4ea]"
-                onClick={() =>
-                  handleSuggestionClick(
-                    "How to become a frontend developer in 2024 and get a job"
-                  )
-                }
-              >
-                <p className="text-[#585858] text-lg">
-                  How to become a frontend developer in 2024 and get a job
-                </p>
-                <Aperture className="w-8 h-8 p-1 absolute bg-white rounded-md bottom-2 right-2" />
-              </div>
-              <div
-                className="h-52 p-4 bg-[#f0f4f9] rounded-md relative cursor-pointer hover:bg-[#dfe4ea]"
-                onClick={() =>
-                  handleSuggestionClick("How to write test cases for API with JEST, Mocha and Chai")
-                }
-              >
-                <p className="text-[#585858] text-lg">
-                  How to write test cases for NextJs API with JEST, Mocha and Chai
-                </p>
-                <Aperture className="w-8 h-8 p-1 absolute bg-white rounded-md bottom-2 right-2" />
-              </div>
-              <div
-                className="h-52 p-4 bg-[#f0f4f9] rounded-md relative cursor-pointer hover:bg-[#dfe4ea]"
-                onClick={() =>
-                  handleSuggestionClick(
-                    "How to train a machine learning model with langchain in 5 minutes"
-                  )
-                }
-              >
-                <p className="text-[#585858] text-lg">
-                  How to train a machine learning model with langchain in 5 minutes
-                </p>
-                <Aperture className="w-8 h-8 p-1 absolute bg-white rounded-md bottom-2 right-2" />
-              </div>
-              <div
-                className="h-52 p-4 bg-[#f0f4f9] rounded-md relative cursor-pointer hover:bg-[#dfe4ea]"
-                onClick={() =>
-                  handleSuggestionClick(
-                    "How to level up coding skills with Python and JavaScript"
-                  )
-                }
-              >
-                <p className="text-[#585858] text-lg">
-                  How to level up coding skills with Python and JavaScript
-                </p>
-                <Aperture className="w-8 h-8 p-1 absolute bg-white rounded-md bottom-2 right-2" />
-              </div>
-            </div>
           </div>
         )}
 

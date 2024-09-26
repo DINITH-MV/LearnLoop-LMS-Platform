@@ -7,7 +7,7 @@ import { MoreFeatures } from "./(Home)/_sections/more-features";
 import { useState, useEffect } from "react";
 import Header from "./(Home)/_components/Header";
 import Footer from "./(Home)/_components/Footer";
-import AIAssistant from "./(Home)/_sections/AI-Assistant";
+import AIAssistant from "./(Home)/_components/AI-Assistant";
 
 export default function Page() {
   const [isClient, setIsClient] = useState(false);
