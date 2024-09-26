@@ -20,6 +20,8 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
+import { AiInput } from "@/components/ui/aiInput";
+import { Textarea } from "@nextui-org/input";
 
 const FormSchema = z.object({
   question: z.string().min(2, {
@@ -31,13 +33,10 @@ type FormData = {
   question: string;
 };
 
-export default function CodeAssistant() {
+export default function AssistantFunction() {
   const [loading, setLoading] = useState(false);
   const [question, setQuestion] = useState<string | null>(null);
   const [answer, setAnswer] = useState<string | null>(null);
-
-  const formRef = useRef(null);
-  const { handleSubmit, control } = useForm<FormData>();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -45,10 +44,6 @@ export default function CodeAssistant() {
       question: "",
     },
   });
-
-  function handleSuggestionClick(text: string) {
-    handleSubmit((formData) => onSubmit({ ...formData, question: text }))();
-  }
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
@@ -69,21 +64,8 @@ export default function CodeAssistant() {
 
   return (
     <div className="px-4 lg:px-8">
-      <div className="max-w-[900px] m-auto w-full">
-        {!question && (
-          <div>
-            {/* heading */}
-            <div className="my-8 text-2xl md:text-4xl lg:text-6xl text-[#c4c7c5] font-medium p-5">
-              <p>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
-                  Hello, Dev.
-                </span>
-              </p>
-              <p>How can I help you today?</p>
-            </div>
-          </div>
-        )}
-
+      <div className="max-w-[900px] m-auto w-full ml-[-130px]">
+        
         {question &&
           (loading ? (
             <div className="mt-12">
@@ -96,15 +78,15 @@ export default function CodeAssistant() {
                     height={45}
                     className="rounded-full"
                   />
-                  <p className="text-md font-medium">{question}</p>
+                  <p className="text-md font-medium text-white">{question}</p>
                 </div>
 
                 <div className="flex gap-5 max-w-[900px]">
                   <Image
                     src="/star.png"
                     alt="user"
-                    width={45}
-                    height={45}
+                    width={35}
+                    height={35}
                     className="rounded-full h-fit"
                   />
                   <div className="space-y-2 mt-2 h-full overflow-y-auto overflow-x-auto md:overflow-x-hidden">
@@ -127,7 +109,7 @@ export default function CodeAssistant() {
                     height={45}
                     className="rounded-full"
                   />
-                  <p className="text-md font-medium">{question}</p>
+                  <p className="text-md font-medium text-white">{question}</p>
                 </div>
 
                 {/* Answer */}
@@ -139,7 +121,7 @@ export default function CodeAssistant() {
                     height={45}
                     className="rounded-full h-fit"
                   />
-                  <pre className="max-w-[900px] max-h-[500px] h-full overflow-y-auto md:overflow-x-hidden overflow-scroll whitespace-pre-wrap">
+                  <pre className="max-w-[900px] max-h-[500px] h-full overflow-y-auto md:overflow-x-hidden text-white overflow-scroll whitespace-pre-wrap">
                     {answer}
                   </pre>
                 </div>
@@ -148,8 +130,8 @@ export default function CodeAssistant() {
           ))}
 
         {/* search input */}
-        <div className="p-5">
-          <div className="mb-10 absolute bottom-0">
+        <div className="p-5 pt-[40px]">
+          <div className="mb-5 absolute bottom-0">
             <div className="max-w-[900px] mx-auto">
               <Form {...form}>
                 <form
@@ -161,8 +143,8 @@ export default function CodeAssistant() {
                     name="question"
                     render={({ field }) => (
                       <FormItem className="flex-grow">
-                        <FormControl className="flex-grow">
-                          <Input
+                        <FormControl className="flex-grow h-[104px] w-[300px] rounded-[11px] border-[3px] border-[#ffffff] text-[14pt] bg-[#fff]">
+                          <Textarea
                             placeholder="How to become a good developer?"
                             {...field}
                           />
@@ -171,9 +153,9 @@ export default function CodeAssistant() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit">
-                    <Send />
-                  </Button>
+                  <button className="h-[60px] w-[60px] border-[3px] border-white rounded-[11px] bg-gradient-to-r from-[#cb6866] to-[#dda815] ... flex justify-center items-center" type="submit">
+                    <Send className="text-white"/>
+                  </button>
                 </form>
               </Form>
             </div>
