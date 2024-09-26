@@ -67,7 +67,7 @@ export default function AIAssistant() {
         </button>
       </DialogTrigger>
       {isDialogOpen && (
-        <DialogContent className="sm:max-w-[600px] rounded-[30px] bg-gradient-to-r border-white border-[3px] bg-[#fff0] min-h-[200px]">
+        <DialogContent className="sm:max-w-[600px] mt-[-40px] rounded-[30px] bg-gradient-to-r border-none bg-[#fff0] min-h-[200px] max-h-[580px]">
           <div className="px-4 lg:px-8 ">
             <AssistantFunction />
           </div>

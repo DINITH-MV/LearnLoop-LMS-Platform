@@ -10,8 +10,12 @@ export async function POST(req: Request) {
     return new NextResponse("Unauthorized", { status: 401 });
   }
 
+  // Add instructions to the question
+  const instructions = "Please follow these guidelines: Do not add '*' or '**' marks to the response.";
+  const modifiedQuestion = `${instructions} Question: ${question}`;
+
   try {
-    const response = await getAssistant(question);
+    const response = await getAssistant(modifiedQuestion);
     return NextResponse.json(response);
   } catch (error) {
     console.log("[CodeAssistant]", error);
