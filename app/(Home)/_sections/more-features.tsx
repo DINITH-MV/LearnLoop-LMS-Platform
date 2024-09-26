@@ -11,6 +11,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { stylesWithCssVar } from "../utils/motion";
 import CodeGenerator from "../icons/CodeGenerator";
+import refactor from "../icons/refactor";
+import generator from "../icons/generator";
+import debug from "../icons/debug";
 
 const content = [
   {
@@ -20,7 +23,13 @@ const content = [
     link: "/Features/image-to-code",
   },
   {
-    icon: Preview,
+    icon: refactor,
+    title: "CODE REFACTOR",
+    text: "Java code refactoring tool with customization",
+    link: "/Features/code-refactor",
+  },
+  {
+    icon: generator,
     title: "CODE GENERATOR",
     text: (
       <>
@@ -31,7 +40,7 @@ const content = [
     link: "/Features/code-generator",
   },
   {
-    icon: Flow,
+    icon: debug,
     title: "CODE DEBUGGER",
     text: "Efficiently resolve code errors with streamlined debugging.",
     link: "/Features/code-debugger",

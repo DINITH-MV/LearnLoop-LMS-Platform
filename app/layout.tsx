@@ -98,12 +98,13 @@ export default function RootLayout({
       <head>
         <link
           rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+          href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
         />
         <link
           rel="stylesheet"
           href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
         />
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"/>
       </head>
       <ClerkProvider>
         <body
