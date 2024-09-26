@@ -15,7 +15,7 @@ export default function HomeLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        {children}        
       </body>
     </html>
   );

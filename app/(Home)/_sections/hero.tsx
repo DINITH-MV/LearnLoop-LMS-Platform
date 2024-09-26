@@ -44,7 +44,7 @@ export const Hero = () => {
       <motion.section
         style={{ opacity }}
         ref={targetRef}
-        className="relative mt-[-40px] mb-[300px] h-screen py-16 text-white before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100px)_var(--y,_100px),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-60"
+        className="relative mt-[-50px] mb-[300px] h-screen py-16 text-white before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100px)_var(--y,_100px),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-60"
       >
         <motion.div
           style={{ scale, position, x: 140, y: 100 }}

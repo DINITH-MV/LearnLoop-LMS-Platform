@@ -20,7 +20,7 @@ const englebert = Englebert({
   variable: "--font-englebert",
   display: "swap",
   weight: "400",
-})
+});
 
 const combo = Combo({
   subsets: ["latin"],
@@ -95,7 +95,17 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <ClerkProvider >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+        />
+      </head>
+      <ClerkProvider>
         <body
           className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable} ${inter.variable} ${combo.variable} ${englebert.variable}`}
         >
@@ -117,7 +127,7 @@ export default function RootLayout({
           />
           {children}
         </body>
-      </ClerkProvider >
+      </ClerkProvider>
     </html>
   );
 }
