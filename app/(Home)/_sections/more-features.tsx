@@ -1,19 +1,14 @@
 "use client";
 
-import { link } from "fs";
-import { Flow } from "../icons/flow";
-import { Intellisense } from "../icons/intellisense";
-import { Keyboard } from "../icons/keyboard";
-import { MagicBranch } from "../icons/magic-branch";
 import ImageConverter from "../icons/image";
-import { Preview } from "../icons/preview";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { stylesWithCssVar } from "../utils/motion";
-import CodeGenerator from "../icons/CodeGenerator";
 import refactor from "../icons/refactor";
 import generator from "../icons/generator";
 import debug from "../icons/debug";
+import snippets from "../icons/snippets";
+import subtitles from "../icons/subtitles";
 
 const content = [
   {
@@ -46,13 +41,13 @@ const content = [
     link: "/Features/code-debugger",
   },
   {
-    icon: MagicBranch,
+    icon: snippets,
     title: "CODE SNIPPETS",
     text: "Organize, store, and share reusable code snippets.",
     link: "/Features/code-snippets",
   },
   {
-    icon: MagicBranch,
+    icon: subtitles,
     title: "CODE TRANSLATOR",
     text: "Converts code between programming languages",
     link: "/Features/code-translator",
