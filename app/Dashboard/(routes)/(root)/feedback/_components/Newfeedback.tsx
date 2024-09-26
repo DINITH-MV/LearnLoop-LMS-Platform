@@ -26,7 +26,7 @@ import { useRouter } from "next/navigation";
 
 const FormSchema = z.object({
   name: z.string().min(5, {
-    message: "name must be at least 2 characters.",
+    message: "Feedback must be at least 2 characters.",
   }),
   code: z.string().min(0, {
     
@@ -80,7 +80,7 @@ export const Newfeedback = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel className="text-white">Feedback</FormLabel>
                     <FormControl>
                     
                       <Textarea
@@ -90,7 +90,7 @@ export const Newfeedback = () => {
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-[14pt] text-white"/>
                   </FormItem>
                 )}
               />
@@ -110,7 +110,7 @@ export const Newfeedback = () => {
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-[14pt] text-white"/>
                   </FormItem>
                 )}
               />

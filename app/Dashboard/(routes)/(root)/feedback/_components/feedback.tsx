@@ -44,30 +44,24 @@ export const Feedback: React.FC<FeedbackProps> = ({ data }) => {
         <thead className="bg-gray-50">
           <tr>
         
-            <th scope="col" className="px-6 py-3 w-230 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          <th scope="col" className="px-[20px] py-3 w-[300px] text-center border text-xs font-medium text-gray-500 uppercase tracking-wider">
               Feedback
             </th>
-            <th scope="col" className="px-6 py-3 w-230 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" className="px-[20px] py-3 w-[300px] text-center border text-xs font-medium text-gray-500 uppercase tracking-wider">
               Reply
             </th>
-            <th scope="col" className="px-6 py-3 w-230 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Actions
-            </th>
+            <th scope="col" className="px-[20px] py-3 w-[20px] text-center border text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {data.map((feedback) => (
             <tr key={feedback.id}>
              
-              <td className="px-6 w-32 py-4 whitespace-nowrap text-[14pt] text-gray-500">{feedback.messages}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-[14pt] text-gray-500">{feedback.reply}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-right text-[14pt] font-medium">
-              {feedback.reply&&!isTeacher  ? (
-        <span className="text-gray-500">Replied</span> 
-      ) : (
-        <EditDialogBox dataSet={feedback} />
-      )}
-               { !isTeacher && <Button className="ml-2 bg-red-500" onClick={() => onDeletef(feedback.id)}>
+             <td className="px-3 py-2 w-[300px] whitespace-nowrap text-[14pt] text-gray-500">{feedback.messages}</td>
+              <td className="px-3 py-2 w-[300px] whitespace-nowrap text-[14pt] text-gray-500">{feedback.reply}</td>
+              <td className="px-6 py-2 w-[20px] whitespace-nowrap text-center text-[14pt] font-medium">
+              
+               { isTeacher && <Button className="ml-2 bg-red-500" onClick={() => onDeletef(feedback.id)}>
                   Delete
                 </Button>}
               </td>
