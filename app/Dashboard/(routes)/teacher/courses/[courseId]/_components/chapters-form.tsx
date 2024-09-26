@@ -122,6 +122,7 @@ export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}
+                      className="text-[14pt]"
                     />
                   </FormControl>
                   <FormMessage />

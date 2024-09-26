@@ -12,6 +12,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
+import { FileUploadChapter } from "@/components/file-upload-chapter";
 
 interface ChapterVideoFormProps {
   initialData: Chapter & { muxData?: MuxData | null };
@@ -49,9 +50,9 @@ export const ChapterVideoForm = ({
   };
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
+    <div className="mt-6 border bg-slate-100 rounded-md p-4 w-[500px]">
       <div className="font-medium flex items-center justify-between">
-        Chapter video
+      <p className="text-[15pt] ">Chapter video</p>
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && (
             <>
@@ -60,21 +61,21 @@ export const ChapterVideoForm = ({
           )}
           {!isEditing && !initialData.videoUrl && (
             <>
-              <PlusCircle className="h-4 w-4 mr-2" />
-              Add a video
+              <PlusCircle className="h-3 w-3 mr-2" />
+              <p className="text-[14pt]">Add a video</p>
             </>
           )}
           {!isEditing && initialData.videoUrl && (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit video
+              <Pencil className="h-3 w-3 mr-2" />
+              <p className="text-[14pt]">Edit video</p>
             </>
           )}
         </Button>
       </div>
       {!isEditing &&
         (!initialData.videoUrl ? (
-          <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
+          <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md mt-[20px]">
             <Video className="h-10 w-10 text-slate-500" />
           </div>
         ) : (
@@ -83,8 +84,8 @@ export const ChapterVideoForm = ({
           </div>
         ))}
       {isEditing && (
-        <div>
-          <FileUpload
+        <div className="mt-[20px]">
+          <FileUploadChapter
             endpoint="chapterVideo"
             onChange={(url) => {
               if (url) {

@@ -135,7 +135,7 @@ export const MoreFeatures = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.div>        
       </section>
     </div>
   );

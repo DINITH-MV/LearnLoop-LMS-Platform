@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import Header from "./(Home)/_components/Header";
 import Footer from "./(Home)/_components/Footer";
 import AIAssistant from "./(Home)/_components/AI-Assistant";
+import TopScrollButton from "./(Home)/_components/TopScrollButton";
 
 export default function Page() {
   const [isClient, setIsClient] = useState(false);
@@ -37,6 +38,7 @@ export default function Page() {
           <Footer />
         </div>
         <AIAssistant/>
+        <TopScrollButton/>
       </main>
     </div>
   );

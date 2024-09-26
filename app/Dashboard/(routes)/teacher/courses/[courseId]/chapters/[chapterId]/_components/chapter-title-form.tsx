@@ -64,9 +64,9 @@ export const ChapterTitleForm = ({
   };
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
+    <div className="mt-6 border bg-slate-100 rounded-md p-4 w-[500px]">
       <div className="font-medium flex items-center justify-between">
-        Chapter title
+        <p className="text-[15pt] ">Chapter title</p>
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>
@@ -80,7 +80,7 @@ export const ChapterTitleForm = ({
           )}
         </Button>
       </div>
-      {!isEditing && <p className="text-sm mt-2">{initialData.title}</p>}
+      {!isEditing && <p className="text-[14pt] mt-2">{initialData.title}</p>}
       {isEditing && (
         <Form {...form}>
           <form
@@ -97,6 +97,7 @@ export const ChapterTitleForm = ({
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}
+                      className="text-[14pt]"
                     />
                   </FormControl>
                   <FormMessage />

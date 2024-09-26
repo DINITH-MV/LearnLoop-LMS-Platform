@@ -65,6 +65,7 @@ export const Actions = ({ disabled, courseId, isPublished }: ActionsProps) => {
         disabled={disabled || isLoading}
         variant="outline"
         size="sm"
+        className="text-[14pt] text-white"
       >
         {isPublished ? "Unpublish" : "Publish"}
       </Button>

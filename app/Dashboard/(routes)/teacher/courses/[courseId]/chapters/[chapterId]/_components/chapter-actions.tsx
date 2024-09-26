@@ -72,7 +72,7 @@ export const ChapterActions = ({
         disabled={disabled || isLoading}
         variant="outline"
         size="sm"
-        className="text-[14pt]"
+        className="text-[14pt] text-white"
       >
         {isPublished ? "Unpublish" : "Publish"}
       </Button>

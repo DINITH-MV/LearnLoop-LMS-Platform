@@ -69,9 +69,9 @@ export const ChapterAccessForm = ({
   };
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
+    <div className="mt-6 border bg-slate-100 rounded-md p-4  w-[500px]">
       <div className="font-medium flex items-center justify-between">
-        Chapter access
+      <p className="text-[15pt] ">Chapter access</p>
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>
@@ -79,8 +79,8 @@ export const ChapterAccessForm = ({
             </>
           ) : (
             <>
-              <Pencil className="h-4 w-4 mr-2" />
-              Edit access
+              <Pencil className="h-3 w-3 mr-2" />
+              <p className="text-[14pt]">Edit access</p>
             </>
           )}
         </Button>
@@ -88,7 +88,7 @@ export const ChapterAccessForm = ({
       {!isEditing && (
         <p
           className={cn(
-            "text-sm mt-2",
+            "text-[14pt] mt-2",
             !initialData.isFree && "text-slate-500 italic"
           )}
         >
@@ -116,10 +116,10 @@ export const ChapterAccessForm = ({
                       onCheckedChange={field.onChange}
                     />
                   </FormControl>
-                  <div className="space-y-1 leading-none">
+                  <div className="space-y-1 leading-none text-[14pt]">
                     <FormDescription>
-                      Check this box if you want to make this chapter free for
-                      preview
+                      <p className="text-[14pt]">Check this box if you want to make this chapter free for
+                      preview</p>
                     </FormDescription>
                   </div>
                 </FormItem>
