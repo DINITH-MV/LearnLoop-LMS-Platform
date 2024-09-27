@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Feedback } from "./feedback";
 import ReportGeneration from "./ReportGeneration";
 import { format } from "date-fns";
+import { InputFeedback } from '@/components/ui/inputFeedback';
 
 type FeedbackWithFormattedDate = {
   id: string;
@@ -33,19 +34,19 @@ const FeedbackClient: React.FC<FeedbackClientProps> = ({ formattedFeedbacks, isT
 
   return (
     <div className="px-6 py-10">
-      <div className="flex gap-4 mb-4">
+      <div className="flex gap-2 w-[900px]">
         <div className="flex-1">
-          <Input
-            placeholder="Filter feedbacks by message"
-            className="w-full"
+          <InputFeedback
+            placeholder="Search feedbacks by message"
+            className="w-[400px] text-[14pt]"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
         <div className="flex-1">
-          <Input
-            placeholder="Filter feedbacks by reply"
-            className="w-full"
+          <InputFeedback
+            placeholder="Search feedbacks by reply"
+            className="w-[400px] text-[14pt]"
             value={replyQuery}
             onChange={(e) => setReplyQuery(e.target.value)}
           />

@@ -98,13 +98,13 @@ export default function AssistantFunction() {
                     <p className="text-md font-medium text-white">{question}</p>
                   </div>
 
-                  <div className="flex gap-5 max-w-[900px]">
+                  <div className="flex gap-5">
                     <Image
                       src="/bot.svg"
                       alt="assistant"
                       width={35}
                       height={35}
-                      className="rounded-full h-fit"
+                      className="w-[40px] h-[40px]"
                     />
                     <div className="space-y-2 mt-2 h-full overflow-y-auto overflow-x-auto md:overflow-x-hidden">
                       <Skeleton className="h-4 w-[400px] bg-slate-400" />
@@ -135,12 +135,12 @@ export default function AssistantFunction() {
                       <Image
                         src="/bot.svg"
                         alt="user"
-                        width={35}
-                        height={35}
-                        className="rounded-full"
+                        width={70}
+                        height={80}
+                        className="w-[60px]"
                       />
                     </div>
-                    <pre className="max-w-[900px] overflow-x-auto ... scroll-mr-[35px] max-h-[240px] mb-[60px] text-justify h-full md:overflow-x-hidden text-white overflow-scroll whitespace-pre-wrap">
+                    <pre className="w-[600px] overflow-x-auto ... scroll-mr-[35px] max-h-[240px] mb-[60px] text-justify h-full md:overflow-x-hidden text-white overflow-scroll">
                       {answer}
                     </pre>
                   </div>
@@ -166,7 +166,7 @@ export default function AssistantFunction() {
                       <FormItem className="flex-grow">
                         <FormControl className="flex-grow h-[120px] w-[400px] rounded-[11px] border-[3px] border-[#ffffff] text-[14pt] bg-[#fff]">
                           <Textarea
-                            placeholder="How to become a good developer?"
+                            placeholder="What the unique funtions?"
                             {...field}
                           />
                         </FormControl>

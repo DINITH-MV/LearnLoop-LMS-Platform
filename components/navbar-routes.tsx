@@ -19,7 +19,7 @@ export const NavbarRoutes = () => {
   const isCoursePage = pathname?.includes("/courses");
   const isAnalyticsPage = pathname?.includes("/analytics");
   const isFeedbackPage = pathname?.endsWith("teacher/feedback");
-  const isSearchPage = pathname === "/search";
+  const isSearchPage = pathname === "/Dashboard/search";
 
   return (
     <>

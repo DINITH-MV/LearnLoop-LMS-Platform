@@ -45,13 +45,13 @@ export const CategoryItem = ({
     <button
       onClick={onClick}
       className={cn(
-        "py-2 px-3 text-sm border border-slate-200 rounded-full flex items-center gap-x-1 hover:border-sky-700 transition dark:bg-[#751c60]",
+        "py-1 px-3 text-sm border border-[#ffffff] bg-[#ffc5c5] rounded-full flex items-center gap-x-1 hover:border-sky-700 transition dark:bg-[#751c60]",
         isSelected && "border-sky-700 bg-sky-200/20 text-sky-800 dark:bg-[#050505] dark:text-white"
       )}
       type="button"
     >
       {Icon && <Icon size={20} />}
-      <div className="truncate">
+      <div className="truncate text-[14pt]">
         {label}
       </div>
     </button>
