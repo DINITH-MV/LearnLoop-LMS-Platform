@@ -87,15 +87,15 @@ export default function AssistantFunction() {
             {loading ? (
               <div className="mt-[0px] ">
                 <div className="max-w-[900px] m-auto w-full space-y-8">
-                  <div className="flex gap-5 items-center">
+                  <div className="flex gap-5 items-center  w-[600px] ml-[5px]">
                     <Image
-                      src="/bot.svg"
+                      src="/user.svg"
                       alt="user"
                       width={35}
                       height={35}
-                      className="rounded-full"
+                      className="w-[28px]"
                     />
-                    <p className="text-md font-medium text-white">{question}</p>
+                    <p className="ptSans ml-[10px] text-[18pt] w-[600px] font-bold text-white">{question}</p>
                   </div>
 
                   <div className="flex gap-5">
@@ -106,27 +106,28 @@ export default function AssistantFunction() {
                       height={35}
                       className="w-[40px] h-[40px]"
                     />
-                    <div className="space-y-2 mt-2 h-full overflow-y-auto overflow-x-auto md:overflow-x-hidden">
-                      <Skeleton className="h-4 w-[400px] bg-slate-400" />
-                      <Skeleton className="h-4 w-[400px] bg-slate-400" />
-                      <Skeleton className="h-4 w-[400px] bg-slate-400" />
+                    <div className="space-y-2 mt-2 h-full overflow-y-auto overflow-x-auto ptSans block whitespace-pre-wrap w-[600px] mr-[-90px] text-[15pt] ... scroll-ml-[35px] max-h-[240px] mb-[40px] text-justify text-white overflow-scroll pr-4">
+                      <Skeleton className="h-3 w-[400px] bg-slate-400" />
+                      <Skeleton className="h-3 w-[400px] bg-slate-400" />
+                      <Skeleton className="h-3 w-[400px] bg-slate-400" />
+                      <Skeleton className="h-3 w-[400px] bg-slate-400" />
                     </div>
                   </div>
                 </div>
               </div>
             ) : (
-              <div className="mt-[0px]">
+              <div className="mt-[30px]">
                 <div className="max-w-[900px] m-auto w-full space-y-8">
                   {/* User's question */}
-                  <div className="flex gap-5 items-center">
+                  <div className="flex gap-5 items-center w-[600px] ml-[5px]">
                     <Image
-                      src="/bot.svg"
+                      src="/user.svg"
                       alt="user"
                       width={35}
                       height={35}
-                      className="rounded-full"
+                      className="w-[28px]"
                     />
-                    <p className="text-md font-medium text-white">{question}</p>
+                    <p className="ptSans ml-[10px] text-[18pt] w-[600px] font-bold text-white">{question}</p>
                   </div>
 
                   {/* Assistant's answer */}
@@ -137,10 +138,10 @@ export default function AssistantFunction() {
                         alt="user"
                         width={70}
                         height={80}
-                        className="w-[60px]"
+                        className="w-[47px]"
                       />
                     </div>
-                    <pre className="w-[600px] overflow-x-auto ... scroll-mr-[35px] max-h-[240px] mb-[60px] text-justify h-full md:overflow-x-hidden text-white overflow-scroll">
+                    <pre className="ptSans block whitespace-pre-wrap w-[600px] mr-[-90px] text-[15pt] ... scroll-ml-[35px] max-h-[240px] mb-[60px] text-justify h-full overflow-x-hidden text-white overflow-scroll pr-4">
                       {answer}
                     </pre>
                   </div>

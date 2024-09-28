@@ -11,7 +11,7 @@ export async function POST(req: Request) {
   }
 
   // Add instructions to the question
-  const instructions = "Please follow these guidelines: Do not add '*' or '**' marks to the response.";
+  const instructions = "Please follow these guidelines: Do not provide responses in bold words. Ex:**AI Functions:**. use numbers if needed. Ex: 1. AI Functions. 2. AI Functions. 3. AI Functions.";
   const modifiedQuestion = `${instructions} Question: ${question}`;
 
   try {
