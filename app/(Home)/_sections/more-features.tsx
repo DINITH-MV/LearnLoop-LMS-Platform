@@ -32,29 +32,29 @@ const content = [
         AI-powered automation
       </>
     ),
-    link: "/Features/code-generator",
+    link: "/Section02/code-generator",
   },
   {
     icon: debug,
     title: "CODE DEBUGGER",
     text: "Efficiently resolve code errors with streamlined debugging.",
-    link: "/Features/code-debugger",
+    link: "/Section02/code-debugger",
   },
   {
     icon: snippets,
     title: "CODE SNIPPETS",
     text: "Organize, store, and share reusable code snippets.",
-    link: "/Features/code-snippets",
+    link: "/Section02/code-snippets",
   },
   {
     icon: subtitles,
     title: "CODE TRANSLATOR",
     text: "Converts code between programming languages",
-    link: "/Features/code-translator",
+    link: "/Section02/code-translator",
   },
 ];
 
-export const MoreFeatures = () => {
+export const MoreSection02 = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -119,7 +119,7 @@ export const MoreFeatures = () => {
         >
           <div className="mt-[440px] rounded-tl-[80px] rounded-tr-[30px] rounded-br-[80px] grid rounded-bl-[30px] w-[820px] bg-gradient-to-r from-[#cb6866] to-[#ffe292] ... border-[20px] border-white px-[15px] max-w-[120rem] grid-cols-2 py-[15px]">
             {content.map(({ icon: Icon, title, text, link }) => (
-              <div 
+              <div
                 key={title}
                 className="bg-[#fff] rounded-tl-[35px] rounded-br- [40px]  rounded-bl-[8px] rounded-tr-[8px] rounded-br-[40px] h-[218px] w-[340px] p-[15px] my-[15px] ml-[15px]"
               >
@@ -128,14 +128,18 @@ export const MoreFeatures = () => {
                 </span>
                 <a href={link} target="_blank" className="text-[#000]">
                   <div className="max-w-[320px] bg-[#ffe292] rounded-t-[6px] rounded-bl-[6px] rounded-br-[25px] h-[102px] p-[11px] pl-[15px] pr-[20px]">
-                  <h3 className="mb-2 text-[22px] text-black font-bold w-[340px]">{title}</h3>
-                    <p className="text-[17px] text-[#000000] text-justify leading-[23px]">{text}</p>
+                    <h3 className="mb-2 text-[22px] text-black font-bold w-[340px]">
+                      {title}
+                    </h3>
+                    <p className="text-[17px] text-[#000000] text-justify leading-[23px]">
+                      {text}
+                    </p>
                   </div>
                 </a>
               </div>
             ))}
           </div>
-        </motion.div>        
+        </motion.div>
       </section>
     </div>
   );

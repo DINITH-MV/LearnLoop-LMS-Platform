@@ -1,9 +1,9 @@
 "use client";
 
-import { Features } from "./(Home)/_sections/features";
+import { Section02 } from "./(Home)/_sections/Section02";
 import Head from "next/head";
-import { Hero } from "./(Home)/_sections/hero";
-import { MoreFeatures } from "./(Home)/_sections/more-features";
+import { Section01 } from "./(Home)/_sections/section01";
+import { MoreSection02 } from "./(Home)/_sections/more-features";
 import { useState, useEffect } from "react";
 import Header from "./(Home)/_components/Header";
 import Footer from "./(Home)/_components/Footer";
@@ -29,16 +29,16 @@ export default function Page() {
       </Head>
       <main className="h-[5140px] ">
         <Header />
-        <Hero />
+        <Section01 />
         <div className="relative z-10 w-full">
-          <Features />
-          <MoreFeatures />
+          <Section02 />
+          <MoreSection02 />
         </div>
         <div className="z-[100] relative">
           <Footer />
         </div>
-        <AIAssistant/>
-        <TopScrollButton/>
+        <AIAssistant />
+        <TopScrollButton />
       </main>
     </div>
   );

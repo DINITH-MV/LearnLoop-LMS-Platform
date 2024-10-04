@@ -4,7 +4,7 @@ import { stylesWithCssVar } from "../utils/motion";
 import { useScroll, useTransform, motion, color } from "framer-motion";
 import { useRef } from "react";
 
-export const Features = () => {
+export const Section02 = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,

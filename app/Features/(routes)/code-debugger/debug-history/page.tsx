@@ -4,6 +4,7 @@ import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { CodeBlock } from "./_components/codeBlock";
+import { auth } from "@clerk/nextjs/server";
 
 export default async function DebugHistory() {
   const { userId } = auth();

@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import "../styles/index.css";
 import { useRouter } from 'next/navigation';
 
-export const Hero = () => {
+export const Section01 = () => {
   const router = useRouter();
   const handleRedirectToDashboard = () => {
     router.push('/Dashboard/progress'); // Navigates to the dashboard page
