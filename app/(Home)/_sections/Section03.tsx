@@ -54,7 +54,7 @@ const content = [
   },
 ];
 
-export const MoreSection02 = () => {
+export const Section03 = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
