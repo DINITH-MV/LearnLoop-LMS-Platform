@@ -20,6 +20,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
+import { CourseTextarea } from "@/components/ui/CourseTextarea";
 
 interface DescriptionFormProps {
   initialData: Course;
@@ -101,7 +102,7 @@ export const DescriptionForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Textarea
+                    <CourseTextarea
                       disabled={isSubmitting}
                       placeholder="e.g. 'This course is about...'"
                       {...field}

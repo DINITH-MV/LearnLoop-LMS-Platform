@@ -22,6 +22,7 @@ import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 
 import { ChaptersList } from "./chapters-list";
+import { CourseInput } from "@/components/ui/CourseInput";
 
 interface ChaptersFormProps {
   initialData: Course & { chapters: Chapter[] };
@@ -118,7 +119,7 @@ export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input
+                    <CourseInput
                       disabled={isSubmitting}
                       placeholder="e.g. 'Introduction to the course'"
                       {...field}

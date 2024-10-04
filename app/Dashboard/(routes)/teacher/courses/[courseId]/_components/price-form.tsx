@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { formatPrice } from "@/lib/format";
+import { CourseInput } from "@/components/ui/CourseInput";
 
 interface PriceFormProps {
   initialData: Course;
@@ -97,7 +98,7 @@ export const PriceForm = ({ initialData, courseId }: PriceFormProps) => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input
+                    <CourseInput
                       type="number"
                       step="0.01"
                       disabled={isSubmitting}

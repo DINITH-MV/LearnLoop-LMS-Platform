@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { CourseInput } from "@/components/ui/CourseInput";
 
 const formSchema = z.object({
   title: z.string().min(1, {
@@ -67,10 +68,11 @@ const CreatePage = () => {
                 <FormItem>
                   <FormLabel>Course title</FormLabel>
                   <FormControl>
-                    <Input
+                    <CourseInput
                       disabled={isSubmitting}
                       placeholder="e.g. 'Advanced web development'"
                       {...field}
+                      className="text-black"
                     />
                   </FormControl>
                   <FormDescription>
