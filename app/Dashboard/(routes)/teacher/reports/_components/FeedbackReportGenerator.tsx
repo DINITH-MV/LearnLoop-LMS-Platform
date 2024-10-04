@@ -17,7 +17,7 @@ type ReportGenerationProps = {
   feedbacks: Feedback[];
 };
 
-const ReportGeneration = ({ feedbacks }: ReportGenerationProps) => {
+const FeedbackReportGenerator = ({ feedbacks }: ReportGenerationProps) => {
   const [selectedMonth, setSelectedMonth] = useState<string>(format(new Date(), 'yyyy-MM'));
 
   const generatePDF = () => {
@@ -117,11 +117,11 @@ const ReportGeneration = ({ feedbacks }: ReportGenerationProps) => {
         type="month"
         value={selectedMonth}
         onChange={(e) => setSelectedMonth(e.target.value)}
-        className="w-[160px] h-9 text-[14pt]"
+        className="w-[160px] h-9 text-[14pt] text-black"
       />
       <Button onClick={generatePDF} size="default" className="font-normal text-[14pt]">View PDF Report</Button>
     </div>
   );
 };
 
-export default ReportGeneration;
+export default FeedbackReportGenerator;

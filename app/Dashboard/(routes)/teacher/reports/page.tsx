@@ -2,9 +2,16 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import { format } from "date-fns";
-import FeedbackClient from "./_components/FeedbackClient";
-import { Button } from "@/components/ui/button";
-
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import FeedbackReport from "./_components/FeedbackReport";
 type FeedbackWithFormattedDate = {
   id: string;
   messages: string;
@@ -43,22 +50,30 @@ const reports = async () => {
 
   return (
     <div>
-      <table className="mt-[40px]">
-        <thead>
-          <tr>
-            <th>Topic</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Feedback</td>
-            <td>
-              <FeedbackClient formattedFeedbacks={formattedFeedbacks} />
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <Table className="mt-[40px] w-[670px]">
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[220px]">Topic</TableHead>
+            <TableHead>Actions</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell className="font-medium">Course Analytics</TableCell>
+            <TableCell>
+              {" "}
+              <FeedbackReport formattedFeedbacks={formattedFeedbacks} />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Feedback</TableCell>
+            <TableCell>
+              {" "}
+              <FeedbackReport formattedFeedbacks={formattedFeedbacks} />
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
     </div>
   );
 };
