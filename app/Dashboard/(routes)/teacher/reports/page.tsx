@@ -12,6 +12,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import FeedbackReport from "./_components/FeedbackReport";
+import CourseReport from "./_components/CourseReport";
 type FeedbackWithFormattedDate = {
   id: string;
   messages: string;
@@ -62,7 +63,7 @@ const reports = async () => {
             <TableCell className="font-medium">Course Analytics</TableCell>
             <TableCell>
               {" "}
-              <FeedbackReport formattedFeedbacks={formattedFeedbacks} />
+              <CourseReport />
             </TableCell>
           </TableRow>
           <TableRow>

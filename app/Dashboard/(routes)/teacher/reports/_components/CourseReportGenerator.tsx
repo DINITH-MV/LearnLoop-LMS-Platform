@@ -39,7 +39,7 @@ const CourseReportGenerator = ({ feedbacks }: ReportGenerationProps) => {
 
     // Set PDF Title (Learn Loop)
     doc.setFontSize(18);
-    doc.text("LEARN LOOP FEEDBACK REPORT", startX + 40, startY + 15); // Title next to the logo
+    doc.text("LEARNLOOP FEEDBACK REPORT", startX + 40, startY + 15); // Title next to the logo
 
     // Add month selector
     doc.setFontSize(15);
