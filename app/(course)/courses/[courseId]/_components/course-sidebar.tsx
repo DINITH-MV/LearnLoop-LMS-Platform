@@ -6,7 +6,7 @@ import { db } from "@/lib/db";
 import { CourseProgress } from "@/components/course-progress";
 
 import { CourseSidebarItem } from "./course-sidebar-item";
-import { Logo } from "../../../../Dashboard/_components/logo";
+import { Logo } from "@/app/Dashboard/_components/logo";
 
 interface CourseSidebarProps {
   course: Course & {

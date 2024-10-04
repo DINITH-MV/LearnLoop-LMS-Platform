@@ -67,7 +67,7 @@ export const Feedback: React.FC<FeedbackProps> = ({ data }) => {
       ) : (
         <EditDialogBox dataSet={feedback} />
       )}
-               { !isTeacher && <Button className="ml-2 bg-red-500" onClick={() => onDeletef(feedback.id)}>
+               { !isTeacher && <Button className="ml-2 bg-red-500 text-[14pt]" onClick={() => onDeletef(feedback.id)}>
                   Delete
                 </Button>}
               </td>

@@ -2,7 +2,7 @@
 
 import { Section02 } from "./(Home)/_sections/Section02";
 import Head from "next/head";
-import { Section01 } from "./(Home)/_sections/section01";
+import { Section01 } from "./(Home)/_sections/Section01";
 import { Section03 } from "./(Home)/_sections/Section03";
 import { useState, useEffect } from "react";
 import Header from "./(Home)/_components/Header";

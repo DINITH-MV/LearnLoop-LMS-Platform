@@ -61,7 +61,7 @@ export const Feedback: React.FC<FeedbackProps> = ({ data }) => {
               <td className="px-3 py-2 w-[300px] whitespace-nowrap text-[14pt] text-gray-500">{feedback.reply}</td>
               <td className="px-6 py-2 w-[20px] whitespace-nowrap text-center text-[14pt] font-medium">
               
-               { isTeacher && <Button className="ml-2 bg-red-500" onClick={() => onDeletef(feedback.id)}>
+               { isTeacher && <Button className="ml-2 bg-red-500 text-[14pt]" onClick={() => onDeletef(feedback.id)}>
                   Delete
                 </Button>}
               </td>

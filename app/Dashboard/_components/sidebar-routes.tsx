@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart, Braces, Code, Compass, Bot, Layout, List, MessageSquareHeart } from "lucide-react";
+import { BarChart, Braces, Code, Compass, Bot, Layout, List, MessageSquareHeart, FileText } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { SidebarItem } from "./sidebar-item";
@@ -22,6 +22,7 @@ const guestRoutes = [
     label: "Feedback",
     href: "/Dashboard/feedback",
   },
+  
 ];
 
 const teacherRoutes = [
@@ -39,6 +40,11 @@ const teacherRoutes = [
     icon: MessageSquareHeart,
     label: "Feedback",
     href: "/Dashboard/teacher/feedback",
+  },
+  {
+    icon: FileText,
+    label: "Reports",
+    href: "/Dashboard/teacher/reports",
   },
 ];
 
