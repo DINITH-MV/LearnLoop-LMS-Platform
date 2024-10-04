@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Feedback } from "./feedback";
-import ReportGeneration from "./ReportGeneration";
 import { format } from "date-fns";
 import { InputFeedback } from '@/components/ui/inputFeedback';
 
@@ -54,9 +53,6 @@ const FeedbackClient: React.FC<FeedbackClientProps> = ({ formattedFeedbacks, isT
       </div>
       <div className="mt-12">
         <Feedback data={filteredFeedbacks} />
-      </div>
-      <div>
-        {isTeacher && <ReportGeneration feedbacks={filteredFeedbacks} />} {/* Pass filtered feedbacks */}
       </div>
     </div>
   );

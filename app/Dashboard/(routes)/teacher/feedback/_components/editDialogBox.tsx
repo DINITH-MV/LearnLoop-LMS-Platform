@@ -78,7 +78,6 @@ export const EditDialogBox = ({ dataSet }: any) => {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="w-full space-y-6"
             >
               <FormField
                 control={form.control}
@@ -89,7 +88,7 @@ export const EditDialogBox = ({ dataSet }: any) => {
                     <FormControl>
                       <Textarea
                         placeholder="Enter your feedback here"
-                        className="resize-none"
+                        className="resize-none text-black"
                         rows={10}
                         {...field}
                         disabled={isTeacher}
@@ -109,8 +108,8 @@ export const EditDialogBox = ({ dataSet }: any) => {
                     <FormControl>
                       <Textarea
                         placeholder="Enter your reply here"
-                        className="resize-none"
-                        rows={10}
+                        className="resize-none text-black"
+                        rows={6}
                         {...field}
                         disabled={!isTeacher} // Make input read-only for non-teachers
                       />

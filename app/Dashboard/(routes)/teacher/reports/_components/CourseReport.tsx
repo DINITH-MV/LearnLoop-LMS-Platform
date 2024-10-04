@@ -7,15 +7,19 @@ import ReportGenerationAnalytics from "./ReportGenerationAnalytics";
 import { getAnalytics } from "@/actions/get-analytics";
 import { auth } from "@clerk/nextjs/server";
 import { getCourses } from "@/actions/get-courses";
+import { getEnrolledCourses } from "@/actions/get-enrolled-courses";
 
 const CourseReport = async () => {
 
   const { totalRevenue, totalSales } = await getAnalytics();
 
+  const enrolledCourses = await getEnrolledCourses();
+
   return (
     <div className="pl-6 ">
         {/* Pass filteredFeedbacks, totalRevenue, and totalSales to the report */}
         <ReportGenerationAnalytics 
+          enrolledCourses={enrolledCourses}
           totalRevenue={totalRevenue} 
           totalSales={totalSales} 
         />
