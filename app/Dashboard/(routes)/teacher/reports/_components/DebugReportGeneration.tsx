@@ -16,7 +16,7 @@ type ReportGenerationProps = {
   enrolledCourses: { title: string }[]; // Define the course structure
 };
 
-const CourseReportGenerationres = ({
+const DebugReportGeneration = ({
   totalRevenue,
   totalSales,
   enrolledCourses,
@@ -183,4 +183,4 @@ const CourseReportGenerationres = ({
   );
 };
 
-export default CourseReportGenerationres;
+export default DebugReportGeneration;

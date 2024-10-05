@@ -108,7 +108,7 @@ export const EditCodeBlock = ({ dataSet }: any) => {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full text-[14pt]">
                 Update
               </Button>
             </form>

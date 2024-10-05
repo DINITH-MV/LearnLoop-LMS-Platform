@@ -39,7 +39,7 @@ export const CodeBlock: React.FC<CodeBlocksProps> = ({ data }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full ml-[-250px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         {data.map((code) => (
           <Card key={code.id} className="w-[400px] p-[px]">
             <CardHeader>

@@ -4,9 +4,15 @@ import Link from "next/link";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import { CodeBlock } from "./_components/codeBlock";
+import { auth } from "@clerk/nextjs/server";
 
 export default async function CodeHistory() {
-  const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
+  const { userId } = auth();
+
+  if (!userId) {
+    redirect("/login");
+    return;
+  }
 
   const codeHistory = await db.generatedCode.findMany({
     where: {
@@ -20,7 +26,7 @@ export default async function CodeHistory() {
   return (
     <div className="px-4 lg:px-8 py-4 h-[1100px]">
       <div>
-        <Button className="ml-[50px] mt-[20px]">
+        <Button className="ml-[50px] mt-[20px] text-[14pt]">
           <Link
             href="/Features/code-generator"
             className="flex items-center gap-x-1"

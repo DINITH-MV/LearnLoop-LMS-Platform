@@ -80,7 +80,7 @@ export const EditCodeBlock = ({ dataSet }: any) => {
                 name="language"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-[#fff]">LANGUAGE</FormLabel>
+                    <FormLabel className="text-[#000]">LANGUAGE</FormLabel>
                     <FormControl>
                       <Textarea
                         rows={5}
@@ -128,7 +128,7 @@ export const EditCodeBlock = ({ dataSet }: any) => {
                   )}
                 />
               </div>
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full text-[14pt]">
                 Update
               </Button>
             </form>
