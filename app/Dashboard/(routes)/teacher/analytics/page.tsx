@@ -5,7 +5,7 @@ import { getAnalytics } from "@/actions/get-analytics";
 
 import { DataCard } from "./_components/data-card";
 import { Chart } from "./_components/chart";
-import ReportGeneration from "../reports/_components/ReportGenerationAnalytics"; // Assuming this handles the PDF generation and chart rendering
+import ReportGeneration from "../reports/_components/CourseReportGeneration"; // Assuming this handles the PDF generation and chart rendering
 
 const AnalyticsPage = async () => {
   const { userId } = auth();

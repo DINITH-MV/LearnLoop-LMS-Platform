@@ -9,7 +9,7 @@ import { auth } from "@clerk/nextjs/server";
 import { getCourses } from "@/actions/get-courses";
 import { getEnrolledCourses } from "@/actions/get-enrolled-courses";
 
-const CourseReport = async () => {
+const DebugReport = async () => {
   const { totalRevenue, totalSales } = await getAnalytics();
 
   const enrolledCourses = await getEnrolledCourses();
@@ -26,7 +26,7 @@ const CourseReport = async () => {
   );
 };
 
-export default CourseReport;
+export default DebugReport;
 function redirect(arg0: string) {
   throw new Error("Function not implemented.");
 }

@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/table";
 import FeedbackReport from "./_components/FeedbackReport";
 import CourseReport from "./_components/CourseReport";
+import DebugReport from "./_components/DebugReport";
 type FeedbackWithFormattedDate = {
   id: string;
   messages: string;
@@ -51,7 +52,7 @@ const reports = async () => {
 
   return (
     <div>
-      <Table className="mt-[40px] w-[670px]">
+      <Table className="mt-[40px] w-[790px]">
         <TableHeader>
           <TableRow>
             <TableHead className="w-[220px]">Topic</TableHead>
@@ -60,17 +61,24 @@ const reports = async () => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableCell className="font-medium">Course Analytics</TableCell>
+            <TableCell className="font-medium w-[320px]">Course Analytics</TableCell>
             <TableCell>
               {" "}
               <CourseReport />
             </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell className="font-medium">Feedback</TableCell>
+            <TableCell className="font-medium w-[320px]">Feedback</TableCell>
             <TableCell>
               {" "}
               <FeedbackReport formattedFeedbacks={formattedFeedbacks} />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium w-[320px]">Debugged Code Analysis</TableCell>
+            <TableCell>
+              {" "}
+              <DebugReport />
             </TableCell>
           </TableRow>
         </TableBody>
