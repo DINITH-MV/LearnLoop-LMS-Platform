@@ -7,9 +7,10 @@ import { Input } from "@/components/ui/input";
 
 import { NewCodeSnippet } from "./_components/NewCodeSnippet";
 import { CodeSnippets } from "./_components/codeSnippets";
+import { auth } from "@clerk/nextjs/server";
 
 const CodeSnippetsPage = async () => {
-  const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
+  const { userId } = auth();
 
   if (!userId) {
     return redirect("/");

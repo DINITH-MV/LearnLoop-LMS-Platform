@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
 import OpenAI from "openai";
+import { auth } from "@clerk/nextjs/server";
 
 export async function POST(req: Request) {
-  const userId = "user_2iyMqRH11q6x04llS91O6mvdPDV";
+  const { userId } = auth();
+
   if (!userId) {
     return new Response("Unauthorized", { status: 401 });
   }
