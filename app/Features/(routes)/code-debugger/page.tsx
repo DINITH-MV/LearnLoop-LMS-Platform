@@ -71,12 +71,12 @@ export default function CodeDebugger() {
         CODE DEBUGGER
       </div>
       <div className="flex justify-end mb-4">
-        <Button>
+        <Button className="bg-[#f0d643] hover:bg-[#b6aa5d] hover:text-[#fff] text-black">
           <Link
             href="/Features/code-debugger/debug-history"
             className="flex items-center gap-x-1"
           >
-            <History className="w-5 h-5" />
+            <History className="w-4 h-4" />
             History
           </Link>
         </Button>
@@ -102,7 +102,7 @@ export default function CodeDebugger() {
                         <Textarea
                           placeholder="E.g: Flutter"
                           {...field}
-                          className="border rounded-[8px] text-[#fff] text-[14pt] h-[30px] appearance-none"
+                          className="border rounded-[8px] text-[#fff] bg-[#000] text-[14pt] h-[30px] appearance-none"
                         />
                       </FormControl>
                       <FormMessage />
@@ -120,7 +120,7 @@ export default function CodeDebugger() {
                       <FormControl>
                         <Textarea
                           placeholder="E.g: cont number = 4"
-                          className="resize-none border rounded-[8px] text-[#fff] text-[14pt]"
+                          className="resize-none border rounded-[8px] text-[#fff] bg-[#000] text-[14pt]"
                           rows={15}
                           {...field}
                         />
@@ -131,7 +131,7 @@ export default function CodeDebugger() {
                 />
                 <Button
                   type="submit"
-                  className="w-[620px] h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
+                  className="w-[585px] h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
                 >
                   DEBUG CODE
                 </Button>

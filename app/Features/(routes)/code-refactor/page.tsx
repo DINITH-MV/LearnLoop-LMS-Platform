@@ -113,7 +113,7 @@ export default function CodeRefactor() {
                 </div>
                 <Button
                   type="submit"
-                  className="w-[100%] h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
+                  className="w-[93.7%] ml-[26px] h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
                 >
                   REFACTOR THE CODE
                 </Button>

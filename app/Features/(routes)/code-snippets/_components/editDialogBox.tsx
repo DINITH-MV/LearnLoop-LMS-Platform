@@ -22,6 +22,7 @@ import {
 import { DialogContent, DialogTrigger, Dialog } from "@/components/ui/dialog";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { clerkMiddleware } from '@clerk/nextjs/server';
 
 const FormSchema = z.object({
   title: z.string().min(5, {
@@ -67,7 +68,7 @@ export const EditDialogBox = ({ dataSet }: any) => {
           onClick={() => setIsDialogOpen(true)}
           className="w-full"
         >
-          <span className="hidden sm:inline">Edit Code</span>
+          <span className="hidden sm:inline text-[14pt]">Edit Code</span>
         </Button>
       </DialogTrigger>
       {isDialogOpen && (
@@ -86,8 +87,8 @@ export const EditDialogBox = ({ dataSet }: any) => {
                     <FormControl>
                       <Textarea
                         rows={5}
-                        {...field}
-                        className="border rounded-[8px] text-[14pt] text-[#000] h-[40px] bg-[#fff]"
+                        {...field}                        
+                        className="border rounded-[8px] h-[160px] text-[14pt] text-[#000] bg-[#fff]"
                       />
                     </FormControl>
                     <FormMessage />
@@ -112,7 +113,7 @@ export const EditDialogBox = ({ dataSet }: any) => {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full text-[14pt]">
                 Update
               </Button>
             </form>

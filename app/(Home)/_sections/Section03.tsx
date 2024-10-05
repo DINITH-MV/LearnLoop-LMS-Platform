@@ -32,25 +32,25 @@ const content = [
         AI-powered automation
       </>
     ),
-    link: "/Section02/code-generator",
+    link: "/Features/code-generator",
   },
   {
     icon: debug,
     title: "CODE DEBUGGER",
     text: "Efficiently resolve code errors with streamlined debugging.",
-    link: "/Section02/code-debugger",
+    link: "/Features/code-debugger",
   },
   {
     icon: snippets,
     title: "CODE SNIPPETS",
     text: "Organize, store, and share reusable code snippets.",
-    link: "/Section02/code-snippets",
+    link: "/Features/code-snippets",
   },
   {
     icon: subtitles,
     title: "CODE TRANSLATOR",
     text: "Converts code between programming languages",
-    link: "/Section02/code-translator",
+    link: "/Features/code-translator",
   },
 ];
 

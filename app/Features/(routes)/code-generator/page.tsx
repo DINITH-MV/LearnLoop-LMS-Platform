@@ -74,7 +74,7 @@ export default function CodeGenerator() {
           href="/Features/code-generator/code-history"
           className="flex items-center gap-x-1"
         >
-          <History className="w-6 h-6 mr-[5px]" />
+          <History className="w-4 h-4 mr-[5px]" />
 
           <div className="text-[16pt] font-semibold">HISTORY</div>
         </Link>
@@ -111,7 +111,7 @@ export default function CodeGenerator() {
                 </div>
                 <Button
                   type="submit"
-                  className="w-[100%] h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
+                  className="w-[93.8%] ml-[25px] h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
                 >
                   GENERATE CODE
                 </Button>
@@ -124,7 +124,7 @@ export default function CodeGenerator() {
                 </div>
                 {generatedCode && (
                   <div className="overflow-auto border mb-8 p-5 text-[#fff] bg-[#000] rounded-[12px]">
-                    <pre className="text-[12pt]">{generatedCode}</pre>
+                    <pre className="text-[14pt]">{generatedCode}</pre>
                   </div>
                 )}
 
@@ -144,7 +144,7 @@ export default function CodeGenerator() {
                     </div>
                   ) : (
                     <pre className="text-[14pt] p-5 h-[400px] border  text-[#fff] bg-[#000] rounded-[8px]">
-                      <pre> </pre>
+                      <pre>Generated code will display here</pre>
                     </pre>
                   ))}
               </div>

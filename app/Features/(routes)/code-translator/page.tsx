@@ -90,7 +90,7 @@ export default function CodeTranslator() {
                       From: Programming Language
                     </FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g: Javascript" {...field} />
+                      <Input placeholder="e.g: Javascript" {...field} className="bg-[#000]" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -105,7 +105,7 @@ export default function CodeTranslator() {
                       To: Programming Language
                     </FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g: Python" {...field} />
+                      <Input placeholder="e.g: Python" {...field} className="bg-[#000]" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -120,7 +120,7 @@ export default function CodeTranslator() {
                     <FormControl>
                       <Textarea
                         placeholder="e.g: const number = 4"
-                        className="resize-none"
+                        className="resize-none bg-[#000]"
                         rows={15}
                         {...field}
                       />
@@ -131,7 +131,7 @@ export default function CodeTranslator() {
               />
               <Button type="submit" className="w-full">
                 Translate
-                <Sparkles className="w-5 h-5" />
+                <Sparkles className="w-3 h-3 ml-[10px]" />
               </Button>
             </form>
           </Form>
@@ -140,8 +140,8 @@ export default function CodeTranslator() {
         {/* right */}
         <div className="border bg-white rounded-[20px] p-4 h-fit w-[670px]">
           {translatedCode && (
-            <div className="overflow-auto p-5 border border-dashed border-black rounded-md">
-              <pre>{translatedCode}</pre>
+            <div className="overflow-auto p-5 border border-dashed border-black bg-black rounded-md">
+              <pre className="text-[14pt] text-white">{translatedCode}</pre>
             </div>
           )}
           {!translatedCode &&
@@ -159,8 +159,8 @@ export default function CodeTranslator() {
                 </div>
               </div>
             ) : (
-              <div className="p-5 border border-dashed border-black rounded-md">
-                <pre>Code Line Here</pre>
+              <div className="p-5 border border-dashed border-black bg-black rounded-md">
+                <pre className="text-[14pt] text-white">Code Line Here</pre>
               </div>
             ))}
         </div>

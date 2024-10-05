@@ -15,7 +15,7 @@ export async function generateCode(prompt: string): Promise<string> {
           content: "generate a good quality code based on the {prompt} given by the user. The code should have proper indentation, be well-structured, and not use unnecessary characters. Ensure to use proper comments. prompt:" + prompt + "do not include ``` in the code block.Do not add any special characters (e.g: ```, ```html, ```python etc) at the beginning and end of the code block. Do not include ``` in the code block. The code should be well-structured and properly indented. Ensure to use proper comments. Provide the code only",
         },
       ],
-      temperature: 0.8, // Lower temperature for more deterministic responses
+      temperature: 1, // Lower temperature for more deterministic responses
     });
 
     const response = completion.choices[0].message.content; // Ensure the response structure is correct

@@ -22,11 +22,11 @@ export async function POST(req: Request) {
         {
           role: "system",
           content:
-            "You are a helpful, informative, and safe assistant. Please answer the following question without providing any harmful, offensive, or unsafe content.",
+            "Do not include ``` in the code block.Do not add any special characters (e.g: ```, ```html, ```python etc) at the beginning and end of the code block. Do not include ``` in the code block. The code should be well-structured and properly indented. Ensure to use proper comments. Provide the code only. Generate a good quality code based on the {prompt} given by the user. The code should have proper indentation, be well-structured, and not use unnecessary characters. Ensure to use proper comments.",
         },
         {
           role: "user",
-          content: `Translate the following code from ${fromLanguage} to ${toLanguage}: ${code}`,
+          content: `Translate the following code from ${fromLanguage} to ${toLanguage}: ${code}.`,
         },
       ],
       temperature: 0.3, // Lower temperature for more deterministic responses

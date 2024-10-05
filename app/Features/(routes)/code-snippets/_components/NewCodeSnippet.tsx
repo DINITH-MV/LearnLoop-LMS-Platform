@@ -63,7 +63,7 @@ export const NewCodeSnippet = () => {
       <DialogTrigger asChild>
         <Button variant="default" onClick={() => setIsDialogOpen(true)}>
           <PlusCircle className="h-4 w-4 mr-2" />
-          <span className="hidden sm:inline">New Code Snippet</span>
+          <span className="hidden sm:inline text-[14pt]">New Code Snippet</span>
         </Button>
       </DialogTrigger>
       {isDialogOpen && (
@@ -82,7 +82,7 @@ export const NewCodeSnippet = () => {
                     <FormControl>
                       <Textarea
                         rows={5}
-                        placeholder="E.g: Generate a python code to verify email address"
+                        placeholder=""
                         {...field}
                         className="border rounded-[8px] text-[14pt] text-[#000] h-[80px] bg-[#fff]"
                       />
