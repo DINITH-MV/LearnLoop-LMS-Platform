@@ -14,6 +14,8 @@ import {
 import FeedbackReport from "./_components/FeedbackReport";
 import CourseReport from "./_components/CourseReport";
 import DebugReport from "./_components/DebugReport";
+import CodeGeneratorReport from "./_components/CodeGenReport";
+import CodeGenReport from "./_components/CodeGenReport";
 type FeedbackWithFormattedDate = {
   id: string;
   messages: string;
@@ -60,8 +62,8 @@ const reports = async () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell className="font-medium w-[320px]">Course Analytics</TableCell>
+          <TableRow className="">
+            <TableCell className="font-medium w-[320px] ">Course Analytics</TableCell>
             <TableCell>
               {" "}
               <CourseReport />
@@ -79,6 +81,13 @@ const reports = async () => {
             <TableCell>
               {" "}
               <DebugReport />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium w-[320px]">Generated Code Analysis</TableCell>
+            <TableCell>
+              {" "}
+              <CodeGenReport />
             </TableCell>
           </TableRow>
         </TableBody>

@@ -1,21 +1,25 @@
 import { db } from "@/lib/db";
 import { CodeDebugger } from "@prisma/client";
 
-type GetAnalysis = {
-  userId: string;
-  language: string;
-  code: string;
-  solution: string;
+type GeneratedCode = {
+  id: string;
+  prompt: string;
+  generatedCode: string;
 };
 
-export const getDebugAnalysis = async (): Promise<{ analysis: CodeDebugger[]; codeIdCount: number }> => {
+export const getGeneratedCodeAnalysis = async (): Promise<{
+  analysis: GeneratedCode[];
+  codeIdCount: number;
+}> => {
   try {
-    const analysis = await db.codeDebugger.findMany({
+    const analysis = await db.generatedCode.findMany({
       select: {
         id: true,
-        language: true,
-        code: true,
-        solution: true,
+        userId: true,
+        prompt: true,
+        generatedCode: true,
+        createdAt: true,
+        updateAt: true,
       },
       orderBy: {
         createdAt: "desc",

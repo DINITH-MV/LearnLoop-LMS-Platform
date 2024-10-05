@@ -15,13 +15,12 @@ type ReportGenerationProps = {
   codeIdCount: number;
   analysis: {
     id: string;
-    language: string;
-    code: string;
-    solution: string;
+    prompt: string;
+    generatedCode: string;
   }[];
 };
 
-const DebugReportGeneration = ({
+const CodeGenReportGeneration = ({
   codeIdCount,
   analysis,
 }: ReportGenerationProps) => {
@@ -34,15 +33,12 @@ const DebugReportGeneration = ({
     const chartInstance = new Chart(chartRef.current as HTMLCanvasElement, {
       type: "bar" as ChartType,
       data: {
-        labels: [
-          "5G Communication System Using Matlab",
-          "The Basics of Rocket Science",
-        ],
+        labels: ["Prompt 1", "Prompt 2"], // Example values, replace with actual data if needed
         datasets: [
           {
-            label: "total",
+            label: "Code Generation Count",
             data: [90, 20], // Example values, replace with actual data if needed
-            backgroundColor: ["#00C49F", "#FF8042"], // Green for high revenue, Orange for low
+            backgroundColor: ["#00C49F", "#FF8042"], // Green for high count, Orange for low
           },
         ],
       },
@@ -92,7 +88,7 @@ const DebugReportGeneration = ({
     doc.addFileToVFS("WorkSans-normal.ttf", font);
     doc.addFont("WorkSans-normal.ttf", "WorkSans", "normal");
     doc.setFont("WorkSans");
-    doc.text("DEBUG ANALYSIS REPORT", startX + 62, startY + 20);
+    doc.text("CODE GENERATION REPORT", startX + 60, startY + 20);
     startY += 30; // Move Y position after the title
     doc.setFontSize(13);
     doc.text(
@@ -104,24 +100,35 @@ const DebugReportGeneration = ({
 
     // Add total count
     doc.setFontSize(15);
-    doc.text(`Total Code Snippets: ${codeIdCount}`, startX + 10, startY + 12);
-    startY += 25; // Move Y position for code snippets
+    doc.text(`Total Generated Codes: ${codeIdCount}`, startX + 10, startY + 12);
+    startY += 25; // Move Y position for code generation entries
 
-    // Add code snippets and solutions
+    // Add prompt and generated code
     doc.setFontSize(14);
     analysis.forEach((item, index) => {
-      doc.text(`Code Snippet No:${index + 1}`, startX + 10, startY);
-      doc.setFontSize(14);
+      doc.text(`Entry No:${index + 1}`, startX + 10, startY);
       startY += 7;
-      doc.text(`Language: ${item.language}`, startX + 10, startY);
-
-      // Add code snippet (this may be large, so we need to handle wrapping)
-      const codeLines = doc.splitTextToSize(item.code, 180); // Split long code lines to fit
-      startY += 14;
-      doc.setFontSize(14);
-      doc.text(`Code:`, startX + 10, startY);
+      doc.text(`Prompt:`, startX + 10, startY);
       startY += 5;
-      doc.setFontSize(10);
+
+      // Add prompt text (this may be large, so we need to handle wrapping)
+      const promptLines = doc.splitTextToSize(item.prompt, 180); // Split long prompt lines to fit
+      promptLines.forEach((line: string) => {
+        if (startY >= 270) {
+          doc.addPage(); // Add new page if the content exceeds page height
+          startY = 20;
+          addPageBorder(); // Add border to the new page
+        }
+        doc.text(line, startX + 10, startY);
+        startY += 5; // Adjust line spacing
+      });
+
+      // Add generated code
+      startY += 7; // Space between prompt and generated code
+      doc.text(`Generated Code:`, startX + 10, startY);
+      startY += 5;
+
+      const codeLines = doc.splitTextToSize(item.generatedCode, 180); // Split long code lines to fit
       doc.setFont("courier", "normal"); // Change font to courier for code style
       codeLines.forEach((line: string) => {
         if (startY >= 270) {
@@ -133,25 +140,7 @@ const DebugReportGeneration = ({
         startY += 5; // Adjust line spacing
       });
 
-      // Add solution
-      startY += 7; // Space between code and solution
-      const solutionLines = doc.splitTextToSize(item.solution, 180); // Split long solution lines to fit
-      doc.setFont("WorkSans", "normal"); // Switch back to normal font for solution
-      doc.setFontSize(14);
-      doc.text(`Solution:`, startX + 10, startY);
-      startY += 5;
-      doc.setFontSize(10);
-      solutionLines.forEach((line: string) => {
-        if (startY >= 270) {
-          doc.addPage(); // Add new page if the content exceeds page height
-          startY = 20;
-          addPageBorder(); // Add border to the new page
-        }
-        doc.text(line, startX + 10, startY);
-        startY += 5; // Adjust line spacing
-      });
-
-      // Space before the next code snippet
+      // Space before the next entry
       startY += 10;
 
       // Add a new page if necessary
@@ -204,4 +193,4 @@ const DebugReportGeneration = ({
   );
 };
 
-export default DebugReportGeneration;
+export default CodeGenReportGeneration;
