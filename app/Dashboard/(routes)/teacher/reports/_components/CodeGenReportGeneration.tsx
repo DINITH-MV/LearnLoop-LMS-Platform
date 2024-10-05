@@ -108,6 +108,7 @@ const CodeGenReportGeneration = ({
     analysis.forEach((item, index) => {
       doc.text(`Entry No:${index + 1}`, startX + 10, startY);
       startY += 7;
+      doc.setFontSize(12);
       doc.text(`Prompt:`, startX + 10, startY);
       startY += 5;
 
@@ -123,10 +124,13 @@ const CodeGenReportGeneration = ({
         startY += 5; // Adjust line spacing
       });
 
+      doc.setFontSize(14);
+
       // Add generated code
       startY += 7; // Space between prompt and generated code
       doc.text(`Generated Code:`, startX + 10, startY);
       startY += 5;
+      doc.setFontSize(12);
 
       const codeLines = doc.splitTextToSize(item.generatedCode, 180); // Split long code lines to fit
       doc.setFont("courier", "normal"); // Change font to courier for code style
