@@ -62,7 +62,7 @@ export default function ImageToCode() {
   };
 
   return (
-    <div className="gap-4 mt-[-10px] mx-[300px] bg-[#fbf6f2] h-[300%]">
+    <div className="gap-4 mt-[-10px] mx-[300px] bg-[#fbf6f2] h-[400%]">
       {/* Header */}
       <div className="text-center pt-[40px] mb-[20px] font-bold text-[30pt]">
         IMAGE TO CODE ANALYZER
@@ -110,7 +110,7 @@ export default function ImageToCode() {
         </div>
 
         {/* Generated Code Output */}
-        <div className="w-[800px]">
+        <div className="w-[800px] mb-[40px]">
           {generatedCode ? (
             <div className="px-[40px] py-[30px] mt-[10px] border-[#fff] border-[5px] rounded-[37px] min-h-[200px] text-[18px] bg-[#efefef]">
               <pre>{generatedCode}</pre>

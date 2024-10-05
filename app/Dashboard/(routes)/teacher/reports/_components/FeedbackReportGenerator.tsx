@@ -66,7 +66,7 @@ const FeedbackReportGenerator = ({ feedbacks }: ReportGenerationProps) => {
     doc.setFontSize(15);
     doc.text(
       `For the month starting from: ${selectedMonth}`,
-      startX + 62,
+      startX + 57,
       startY + 28
     );
 

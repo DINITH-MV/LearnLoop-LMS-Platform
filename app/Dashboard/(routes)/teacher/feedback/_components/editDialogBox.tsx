@@ -89,7 +89,7 @@ export const EditDialogBox = ({ dataSet }: any) => {
                       <Textarea
                         placeholder="Enter your feedback here"
                         className="resize-none text-black"
-                        rows={10}
+                        rows={6}
                         {...field}
                         disabled={isTeacher}
                       />
@@ -104,12 +104,12 @@ export const EditDialogBox = ({ dataSet }: any) => {
                 name="reply"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Reply</FormLabel>
+                    <FormLabel className=" mt-[20px]">Reply</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Enter your reply here"
                         className="resize-none text-black"
-                        rows={6}
+                        rows={5}
                         {...field}
                         disabled={!isTeacher} // Make input read-only for non-teachers
                       />

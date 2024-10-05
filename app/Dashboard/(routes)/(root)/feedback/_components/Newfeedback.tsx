@@ -80,17 +80,17 @@ export const Newfeedback = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white">Feedback</FormLabel>
+                    <FormLabel className="text-black">Feedback</FormLabel>
                     <FormControl>
                     
                       <Textarea
                         placeholder="Write Feedback"
-                        className="resize-none"
+                        className="resize-none text-black"
                         rows={10}
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage className="text-[14pt] text-white"/>
+                    <FormMessage className="text-[14pt] text-[#ad1f1f]"/>
                   </FormItem>
                 )}
               />
@@ -110,7 +110,7 @@ export const Newfeedback = () => {
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage className="text-[14pt] text-white"/>
+                    <FormMessage className="text-[14pt] text-[#ad1f1f]"/>
                   </FormItem>
                 )}
               />

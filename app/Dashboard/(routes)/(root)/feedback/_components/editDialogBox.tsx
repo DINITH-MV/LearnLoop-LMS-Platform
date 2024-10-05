@@ -105,7 +105,7 @@ export const EditDialogBox = ({ dataSet }: any) => {
                 name="reply"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Reply</FormLabel>
+                    <FormLabel className=" mt-[20px]">Reply</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Enter your reply here"
