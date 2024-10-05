@@ -4,23 +4,23 @@ import { format } from "date-fns";
 import { InputFeedback } from "@/components/ui/inputFeedback";
 import ReportGeneration from "./FeedbackReportGenerator";
 import ReportGenerationAnalytics from "./CourseReportGeneration";
-import { getAnalytics } from "@/actions/get-analytics";
 import { auth } from "@clerk/nextjs/server";
 import { getCourses } from "@/actions/get-courses";
 import { getEnrolledCourses } from "@/actions/get-enrolled-courses";
+import { getDebugAnalysis } from "@/actions/get-debugCodeAnalysis";
+import DebugReportGeneration from "./DebugReportGeneration";
 
 const DebugReport = async () => {
-  const { totalRevenue, totalSales } = await getAnalytics();
+  const { codeIdCount, analysis } = await getDebugAnalysis();
 
   const enrolledCourses = await getEnrolledCourses();
 
   return (
     <div className="pl-6 ">
       {/* Pass filteredFeedbacks, totalRevenue, and totalSales to the report */}
-      <ReportGenerationAnalytics
-        enrolledCourses={enrolledCourses}
-        totalRevenue={totalRevenue}
-        totalSales={totalSales}
+      <DebugReportGeneration
+        analysis={analysis}
+        codeIdCount={codeIdCount}
       />
     </div>
   );
