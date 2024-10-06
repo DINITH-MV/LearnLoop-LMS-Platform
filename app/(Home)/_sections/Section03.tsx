@@ -41,10 +41,10 @@ const content = [
     link: "/Features/code-debugger",
   },
   {
-    icon: snippets,
-    title: "CODE SNIPPETS",
-    text: "Organize, store, and share reusable code snippets.",
-    link: "/Features/code-snippets",
+    icon: subtitles,
+    title: "CODE COMPILER",
+    text: "Converts code between programming languages",
+    link: "/Features/online-compiler",
   },
   {
     icon: subtitles,
@@ -52,6 +52,7 @@ const content = [
     text: "Converts code between programming languages",
     link: "/Features/code-translator",
   },
+  
 ];
 
 export const Section03 = () => {

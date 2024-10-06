@@ -13,9 +13,6 @@ export default async function DebugHistory() {
   }
 
   const codeHistory = await db.codeDebugger.findMany({
-    where: {
-      userId,
-    },
     orderBy: {
       createdAt: "desc",
     },

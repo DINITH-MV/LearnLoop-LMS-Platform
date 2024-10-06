@@ -37,7 +37,7 @@ const FeedbackClient: React.FC<FeedbackClientProps> = ({ formattedFeedbacks, isT
         <div className="flex-1">
           <InputFeedback
             placeholder="Search feedbacks by message"
-            className="w-[400px] text-[14pt]"
+            className="w-[400px] text-[14pt] text-black"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -45,7 +45,7 @@ const FeedbackClient: React.FC<FeedbackClientProps> = ({ formattedFeedbacks, isT
         <div className="flex-1">
           <InputFeedback
             placeholder="Search feedbacks by reply"
-            className="w-[400px] text-[14pt]"
+            className="w-[400px] text-[14pt] text-black"
             value={replyQuery}
             onChange={(e) => setReplyQuery(e.target.value)}
           />

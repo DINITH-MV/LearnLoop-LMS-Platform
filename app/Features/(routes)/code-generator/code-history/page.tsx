@@ -14,10 +14,7 @@ export default async function CodeHistory() {
     return;
   }
 
-  const codeHistory = await db.generatedCode.findMany({
-    where: {
-      userId,
-    },
+  const codeHistory = await db.generatedCode.findMany({    
     orderBy: {
       createdAt: "desc",
     },
