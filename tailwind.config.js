@@ -14,6 +14,11 @@ module.exports = withUt({
   ],
   theme: {
   	extend: {
+      screens: {
+        'laptop': '1074px',    // Will apply to both screens
+        'desktop': '1457px',   // Will ONLY apply to 1457px screen, NOT 1074px
+        'wide': '1600px',      // For even larger screens
+      	},
   		spacing: {
   			'0': '0',
   			'1': '0.4rem',

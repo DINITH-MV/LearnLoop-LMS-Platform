@@ -36,22 +36,25 @@ export const Section01 = () => {
   }, []);
 
   return (
-    <div>
+    <div className="text-7xl text-[rgb(255,255,255)] z-21">
       <motion.section
         style={{ opacity }}
         ref={targetRef}
-        className="relative mt-[-50px] mb-[300px] h-screen py-16 text-white before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100px)_var(--y,_100px),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-60"
+        className="relative mt-[50px] wide:mt-[50px] desktop:mt-[100px] h-screen py-16 text-white before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100px)_var(--y,_100px),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-60"
       >
         <motion.div
-          style={{ scale, position, x: 140, y: 100 }}
-          className="fixed z-10 flex flex-col"
+          style={{ 
+            scale, 
+            position,
+          }}
+          className="inset-0 w-screen h-screen z-10 flex items-center justify-center"
         >
-          <div className="flex ml-[20px]" id="first-section">
+          <div className="flex items-center justify-center gap-8" id="first-section">
             <div className="min-w-[570px] md:max-md text-black">
-              <h1 className="ptSans mt-4 mb-9  nunito text-black text-left text-[54px] font-bold leading-[1]">
+              <h1 className="ptSans mt-4 mb-9 nunito text-black text-left text-[54px] font-bold leading-[1]">
                 Grow Skills Together
               </h1>
-              <p className="AnekDevanagari text-[32pt] max-w-[510px]">
+              <p className="AnekDevanagari leading-[1.3] text-[32pt] max-w-[510px]">
                 Boost Your Skills Through Collaborative Teamwork and Shared
                 Learning Together
               </p>
@@ -68,8 +71,8 @@ export const Section01 = () => {
               </button>
             </div>
 
-            <div className="mask1 h-[600px] w-[770px]">
-              <img src="https://s11.gifyu.com/images/SoVll.gif" />
+            <div className="mask1 mt-[100px] h-[500px] w-[590px] overflow-hidden">
+              <img src="https://raw.githubusercontent.com/DINITH-MV/LearnLoop-LMS-Platform/refs/heads/main/images/banner2.gif" alt="My GIF" className="ml-[35px] w-full h-[89%] object-cover" />
             </div>
           </div>
         </motion.div>

@@ -63,7 +63,6 @@
   }
 }
 
-
 @layer utilities {
   /* This two helpers apply a -50% to the translate x/y, and add
    * a --y/--x css variable to it. This util is only here to make writing this class
@@ -95,7 +94,6 @@
 .englebert {
   font-family: var(--font-englebert);
 }
-
 
 /* width */
 ::-webkit-scrollbar {
