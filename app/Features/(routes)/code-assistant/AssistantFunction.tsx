@@ -67,13 +67,39 @@ export default function AssistantFunction() {
           <div className="mt-12">
             <div className="max-w-[900px] m-auto w-full space-y-8">
               <div className="flex gap-5 items-center">
-                <Image
-                  src="/bot.svg"
-                  alt="user"
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
+                <span
+                className="fa-stack fa-x"
+                style={
+                  {
+                    fontSize: "16pt",
+                    top: "3px",
+                    left: "-4.5px",
+                  } as React.CSSProperties
+                }
+              >
+                <i
+                  className="fa-solid fa-circle fa-stack-2x"
+                  style={
+                    {
+                      color: "#fb5d5d",
+                      borderRadius: "30px",
+                    } as React.CSSProperties
+                  }
+                ></i>
+                <i
+                  className="fa-duotone fa-solid fa-message-bot z-[102]"
+                  style={
+                    {
+                      "--fa-primary-color": "#fff",
+                      "--fa-secondary-color": "#fff",
+                      "--fa-secondary-opacity": "0.8",
+                      fontSize: "18pt",
+                      top: "0px",
+                      left: "10px",
+                    } as React.CSSProperties
+                  }
+                ></i>
+              </span>
                 <p className="text-md font-medium text-white">
                   How can I help you?
                 </p>

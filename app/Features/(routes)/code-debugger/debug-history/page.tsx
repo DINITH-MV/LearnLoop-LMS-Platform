@@ -21,7 +21,7 @@ export default async function DebugHistory() {
   return (
     <div className="px-4 lg:px-8 py-4 h-[1100px]">
       <div>
-        <Button className="ml-[50px] mt-[20px] text-[14pt]">
+        <Button className="ml-[50px] mt-[20px] text-[14pt] rounded-[18px]">
           <Link
             href="/Features/code-debugger"
             className="flex items-center gap-x-1"

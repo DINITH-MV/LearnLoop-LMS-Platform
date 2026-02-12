@@ -17,6 +17,7 @@ import {
 } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ToastProvider } from "@/components/providers/toaster-provider";
+import Plugins from "@/components/ui/Plugins";
 
 const englebert = Englebert({
   subsets: ["latin"],
@@ -113,15 +114,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
-        />
-        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"/>
+        <Plugins />
       </head>
       <ClerkProvider> 
         <body

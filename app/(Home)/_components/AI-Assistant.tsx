@@ -40,7 +40,7 @@ export default function AIAssistant() {
                 }
               >
                 <i
-                  className="fa-solid fa-square fa-stack-2x"
+                  className="fa-solid fa-circle fa-stack-2x"
                   style={
                     {
                       color: "#fb5d5d",
