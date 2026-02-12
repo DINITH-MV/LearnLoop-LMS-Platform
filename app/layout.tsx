@@ -12,6 +12,8 @@ import {
   PT_Sans,
   Combo,
   Englebert,
+  Bricolage_Grotesque,
+  Yeon_Sung
 } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ToastProvider } from "@/components/providers/toaster-provider";
@@ -51,6 +53,20 @@ const AnekDevanagari = Anek_Devanagari({
 const ptSans = PT_Sans({
   subsets: ["latin"],
   variable: "--font-pt-sans",
+  display: "swap",
+  weight: "400",
+});
+
+const BricolageGrotesque = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage-grotesque",
+  display: "swap",
+  weight: "400",
+});
+
+const YeonSung = Yeon_Sung({
+  subsets: ["latin"],
+  variable: "--font-yeon-sung",
   display: "swap",
   weight: "400",
 });
@@ -109,7 +125,7 @@ export default function RootLayout({
       </head>
       <ClerkProvider> 
         <body
-          className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable} ${inter.variable} ${combo.variable} ${englebert.variable}`}
+          className={`bg-[#fbf6f2] ${nunito.variable} ${AnekDevanagari.variable} ${ptSans.variable} ${inter.variable} ${combo.variable} ${englebert.variable} ${BricolageGrotesque.variable} ${YeonSung.variable} font-sans`}
         >
           <motion.div
             className="cursor"

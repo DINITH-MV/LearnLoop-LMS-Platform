@@ -14,7 +14,7 @@ export const Section02 = () => {
   const scale = useTransform(scrollYProgress, [0.8, 0.2], [0.8, 0.8]);
   const x = useTransform(scrollYProgress, [0.9, 1], ["23%", "10%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.9], [0.9, 1]);
-  const opacity1 = useTransform(scrollYProgress, [0, 0.9], [0.9, 1]);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.9, 1], [0.9, 1, 0]);
 
   const text0Y = useTransform(
     scrollYProgress,
@@ -24,7 +24,7 @@ export const Section02 = () => {
 
   const text1Opacity = useTransform(
     scrollYProgress,
-    [0.1, 0.2, 0.5], // when the text will be visible
+    [0.1, 0.4, 0.5], // when the text will be visible
     [0, 1, 0], // how long the text will be visible
   );
   const text1Y = useTransform(
@@ -58,7 +58,7 @@ export const Section02 = () => {
   return (
     <section
       ref={targetRef}
-      className="flex h-[500vh] flex-col items-center justify-start"
+      className="flex h-[2200px] flex-col items-center justify-start"
     >
       <div className="sticky top-[12vh] h-[66.8vh] w-full flex items-center justify-center text-2xl leading-[1] text-white [&_p]:w-[45rem] [&_p]:max-w-[90%]">
         <div className="relative flex flex-col items-center">
@@ -108,7 +108,7 @@ export const Section02 = () => {
               Learning for everyone
             </p>
 
-            <p className="AnekDevanagari mt-[30px] pb-[60px] text-[16pt] leading-[1.2] text-right">
+            <p className="AnekDevanagari mt-[30px] pl-[5px] pb-[60px] text-[16pt] leading-[1.4] text-right">
               Our LMS now uses AI to suggest content and track progress, making
               learning easier and personalized.
             </p>

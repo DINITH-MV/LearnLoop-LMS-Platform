@@ -54,7 +54,7 @@ export const Section01 = () => {
               <h1 className="ptSans mt-4 mb-9 nunito text-black text-left text-[54px] font-bold leading-[1]">
                 Grow Skills Together
               </h1>
-              <p className="AnekDevanagari leading-[1.3] text-[32pt] max-w-[510px]">
+              <p className="BricolageGrotesque leading-[1.3] text-[32pt] max-w-[570px]">
                 Boost Your Skills Through Collaborative Teamwork and Shared
                 Learning Together
               </p>

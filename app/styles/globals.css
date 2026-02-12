@@ -83,6 +83,14 @@
   font-family: var(--font-anek-devanagari);
 }
 
+.BricolageGrotesque {
+  font-family: var(--font-bricolage-grotesque);
+}
+
+.YeonSung {
+  font-family: var(--font-yeon-sung);
+}
+
 .ptSans {
   font-family: var(--font-pt-sans);
 }

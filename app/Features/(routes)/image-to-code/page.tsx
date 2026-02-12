@@ -7,6 +7,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useAuth } from "@clerk/nextjs";
 
 import { FileUpload } from "@/components/file-upload";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -19,6 +20,7 @@ const formSchema = z.object({
 });
 
 export default function ImageToCode() {
+  const { isSignedIn, isLoaded } = useAuth();
   const [submittedImageUrl, setSubmittedImageUrl] = useState<string | null>(
     null
   );
@@ -26,6 +28,21 @@ export default function ImageToCode() {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+
+  // Redirect to sign-in if not authenticated
+  if (isLoaded && !isSignedIn) {
+    router.push("/sign-in");
+    return null;
+  }
+
+  // Show loading while auth is being checked
+  if (!isLoaded) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-2xl">Loading...</div>
+      </div>
+    );
+  }
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
@@ -47,9 +64,16 @@ export default function ImageToCode() {
       } else {
         throw new Error("Invalid response format");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error generating code:", error);
-      toast.error("Error generating code");
+      
+      // Handle authentication errors specifically
+      if (error.response?.status === 401) {
+        toast.error("Authentication required. Please sign in again.");
+        router.push("/sign-in");
+      } else {
+        toast.error("Error generating code");
+      }
     } finally {
       setLoading(false);
     }
