@@ -39,7 +39,7 @@ export default function ImageToCode() {
   if (!isLoaded) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="text-2xl">Loading...</div>
+        <div className="YeonSung text-xl">Loading...</div>
       </div>
     );
   }
@@ -86,9 +86,9 @@ export default function ImageToCode() {
   };
 
   return (
-    <div className="gap-4 mt-[-10px] mx-[300px] bg-[#fbf6f2] h-[400%]">
+    <div className="gap-4 mt-[-10px] mx-[300px] bg-[#fbf6f2] min-h-screen">
       {/* Header */}
-      <div className="text-center pt-[40px] mb-[20px] font-bold text-[30pt]">
+      <div className="YeonSung text-center pt-[40px] mb-[20px] font-bold text-[30pt]">
         IMAGE TO CODE ANALYZER
       </div>
 
@@ -123,7 +123,7 @@ export default function ImageToCode() {
               <div className="absolute top-[-15px] right-[-10px]">
                 <button
                   onClick={handleNewImageUpload}
-                  className="bg-gradient-to-tl from-[#896fffe3] to-[#ea1aba] text-[14pt] border-[4px] border-white w-[190px] h-[55px] rounded-[20px] text-white"
+                  className="bg-gradient-to-tl ptSans from-[#896ffffe] to-[#ea1aba] text-[14pt] border-[4px] border-white p-2 rounded-[10px] text-white"
                 >
                   {" "}
                   Upload New Image
@@ -136,8 +136,19 @@ export default function ImageToCode() {
         {/* Generated Code Output */}
         <div className="w-[800px] mb-[40px]">
           {generatedCode ? (
-            <div className="px-[40px] py-[30px] mt-[10px] border-[#fff] border-[5px] rounded-[37px] min-h-[200px] text-[18px] bg-[#efefef]">
-              <pre>{generatedCode}</pre>
+            <div className="px-[40px] py-[30px] mt-[10px] border-[#fff] border-[5px] rounded-[37px] min-h-[200px] text-[18px] bg-[#efefef] relative">
+              <div className="absolute top-[15px] right-[15px]">
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(generatedCode);
+                    toast.success("Code copied to clipboard!");
+                  }}
+                  className="bg-gradient-to-tl ptSans from-[#896ffffe] to-[#ea1aba] text-[14pt] border-[4px] border-white p-2 rounded-[10px] text-white"
+                >
+                  Copy Code
+                </button>
+              </div>
+              <pre className="w-[700px] overflow-auto pr-[120px]">{generatedCode}</pre>
             </div>
           ) : (
             <></>

@@ -64,90 +64,88 @@ export default function CodeGenerator() {
   }
 
   return (
-    <div className="h-[1100px] lg:px-8 py-4">
-      <div className="flex justify-end mb-4"></div>
-      <div className="text-center mb-[40px] font-bold text-[30pt]">
+    <div className="min-h-screen lg:px-8 py-4">
+      <div className="flex justify-end mb-4">
+        <Button className="text-[#444444] bg-[#f0d643] hover:bg-[#b6aa5d] hover:text-[#fff] w-[160px] h-[60px] rounded-[9px]">
+          <Link
+            href="/Features/code-generator/code-history"
+            className="flex items-center gap-x-1"
+          >
+            <History className="w-4 h-4 mr-[5px]" />
+            <div className="ptSans text-[16pt] font-semibold">HISTORY</div>
+          </Link>
+        </Button>
+      </div>
+      <div className="YeonSung text-center mb-[40px] font-bold text-[30pt]">
         CODE GENERATOR
       </div>
-      <Button className="float-right absolute right-[100px] text-[#444444] bg-[#f0d643] hover:bg-[#b6aa5d] hover:text-[#fff] w-[160px] h-[60px] rounded-[9px]">
-        <Link
-          href="/Features/code-generator/code-history"
-          className="flex items-center gap-x-1"
-        >
-          <History className="w-4 h-4 mr-[5px]" />
-
-          <div className="text-[16pt] font-semibold">HISTORY</div>
-        </Link>
-      </Button>
       <div className="flex justify-center">
-        <Card className=" w-[900px]">
+        <Card className="w-[900px]">
           <CardContent className="space-y-8">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="mt-2 space-y-4"
               >
-                <div className="bg-[#fff] p-[30px] mt-[30px] rounded-[7px]">
-                  <FormField
-                    control={form.control}
-                    name="prompt"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-[18pt] font-semibold">
-                          INPUT YOUR PROMPT
-                        </FormLabel>
-                        <FormControl>
-                          <Textarea
-                            rows={5}
-                            placeholder="E.g: Generate a python code to verify email address"
-                            {...field}
-                            className="border rounded-[8px] text-[14pt] text-[#fff] h-[180px] bg-[#000]"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+                <FormField
+                  control={form.control}
+                  name="prompt"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="ptSans text-[18pt] font-semibold">
+                        Input your prompt below
+                      </FormLabel>
+                      <FormControl>
+                        <Textarea
+                          rows={7}
+                          placeholder="E.g: Generate a python code to verify email address"
+                          {...field}
+                          className="placeholder:ptSans border rounded-[18px] text-[14pt] text-[#fff] h-[220px] max-h-[220px] bg-[#000]"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 <Button
                   type="submit"
-                  className="w-[93.8%] ml-[25px] h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
+                  className="ptSans w-[93.7%] h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
                 >
                   GENERATE CODE
                 </Button>
               </form>
             </Form>
-            <div className="bg-[#fff] p-[30px] rounded-[7px]">
-              <div>
-                <div className="text-[18pt] font-semibold mb-[10px]">
-                  PROMPT OUTPUT
-                </div>
-                {generatedCode && (
-                  <div className="overflow-auto border mb-8 p-5 text-[#fff] bg-[#000] rounded-[12px]">
-                    <pre className="text-[14pt]">{generatedCode}</pre>
-                  </div>
-                )}
-
-                {!generatedCode &&
-                  (loading ? (
-                    <div className="p-5 overflow-auto h-[400px] bg-[#fff] rounded-[12px]">
-                      <pre></pre>
-                      <div className="bg-[#000] space-y-2 mt-2">
-                        <Skeleton className="h-4 w-[550px] bg-slate-400" />
-                        <Skeleton className="h-4 w-[500px] bg-slate-400" />
-                        <Skeleton className="h-4 w-[525px] bg-slate-400" />
-                        <Skeleton className="h-4 w-[450px] bg-slate-400" />
-                        <Skeleton className="h-4 w-[500px] bg-slate-400" />
-                        <Skeleton className="h-4 w-[550px] bg-slate-400" />
-                        <Skeleton className="h-4 w-[400px] bg-slate-400" />
-                      </div>
-                    </div>
-                  ) : (
-                    <pre className="text-[14pt] p-5 h-[400px] border  text-[#fff] bg-[#000] rounded-[8px]">
-                      <pre>Generated code will display here</pre>
-                    </pre>
-                  ))}
+            <div>
+              <div className="ptSans text-[18pt] font-semibold mb-[10px]">
+                Prompt Output
               </div>
+              {generatedCode && (
+                <div className="overflow-auto border mb-4 p-5 text-[#fff] bg-[#000] rounded-[18px]">
+                  <pre className="text-[12pt]  text-left whitespace-pre font-mono">
+                    {generatedCode}
+                  </pre>
+                </div>
+              )}
+
+              {!generatedCode &&
+                (loading ? (
+                  <div className="p-5 overflow-auto h-[350px] bg-[#fff] rounded-[18px]">
+                    <pre></pre>
+                    <div className="bg-[#000] space-y-2 mt-2">
+                      <Skeleton className="h-4 w-[550px] bg-slate-400" />
+                      <Skeleton className="h-4 w-[500px] bg-slate-400" />
+                      <Skeleton className="h-4 w-[525px] bg-slate-400" />
+                      <Skeleton className="h-4 w-[450px] bg-slate-400" />
+                      <Skeleton className="h-4 w-[500px] bg-slate-400" />
+                      <Skeleton className="h-4 w-[550px] bg-slate-400" />
+                      <Skeleton className="h-4 w-[400px] bg-slate-400" />
+                    </div>
+                  </div>
+                ) : (
+                  <pre className="text-[14pt] text-[#fff] bg-[#000] rounded-[18px] p-5 h-[400px] overflow-auto">
+                    <pre>Generated code will display here</pre>
+                  </pre>
+                ))}
             </div>
           </CardContent>
         </Card>

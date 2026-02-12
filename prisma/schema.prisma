@@ -137,7 +137,7 @@ model GeneratedCode {
   generatedCode String
 
   createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 }
 
 model CodeDebugger {
@@ -148,7 +148,7 @@ model CodeDebugger {
   solution String
 
   createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 }
 
 model feedback {

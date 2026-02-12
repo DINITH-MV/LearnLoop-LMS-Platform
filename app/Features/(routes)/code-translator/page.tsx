@@ -3,27 +3,31 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { History } from "lucide-react";
 
 import { Button } from "../../../../components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-
 import toast from "react-hot-toast";
-import { Input } from "@/components/ui/input";
-import { Sparkles } from "lucide-react";
 import axios from "axios";
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const FormSchema = z.object({
   fromLanguage: z.string().min(2, {
@@ -73,81 +77,181 @@ export default function CodeTranslator() {
   }
 
   return (
-    <div>
-      <div className="text-center pt-[40px] mb-[80px] font-bold text-[30pt]">
+    <div className="min-h-screen lg:px-8 py-4">
+      <div className="text-center YeonSung pt-[16px] mb-[0px] font-bold text-[30pt]">
         CODE TRANSLATOR
       </div>
-      <div className="flex justify-around bg-[#efefef] mx-[45px] p-[25px] rounded-[40px]">
-        <div className="border bg-white rounded-[20px] p-4 h-fit w-[670px]">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="fromLanguage"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="float-left mb-[10px]">
-                      From: Programming Language
-                    </FormLabel>
-                    <FormControl>
-                      <Input placeholder="e.g: Javascript" {...field} className="bg-[#000]" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="toLanguage"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="float-left mb-[10px]">
-                      To: Programming Language
-                    </FormLabel>
-                    <FormControl>
-                      <Input placeholder="e.g: Python" {...field} className="bg-[#000]" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="code"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Code</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="e.g: const number = 4"
-                        className="resize-none bg-[#000]"
-                        rows={15}
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="w-full">
-                Translate
-                <Sparkles className="w-3 h-3 ml-[10px]" />
-              </Button>
-            </form>
-          </Form>
+      <div className="flex justify-end mb-4">
+        <Button className="bg-[#f0d643] hover:bg-[#b6aa5d] hover:text-[#fff] text-black">
+          <Link
+            href="/Features/code-translator/translate-history"
+            className="flex items-center gap-x-1"
+          >
+            <History className="w-4 h-4" />
+            History
+          </Link>
+        </Button>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {/* left */}
+        <div className="bg-[#efefef] p-[30px] rounded-[14px]">
+          <div className="border bg-[#fff] rounded-[14px] p-4 h-fit">
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
+                <FormField
+                  control={form.control}
+                  name="fromLanguage"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-[18pt] font-semibold ptSans">
+                        From Language
+                      </FormLabel>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger className="border rounded-[8px] text-[14pt] h-[45px] bg-[#000] text-[#fff]">
+                            <SelectValue placeholder="Select source language" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent className="bg-[#fff]">
+                          <SelectItem className="text-[14pt]" value="python">
+                            Python
+                          </SelectItem>
+                          <SelectItem className="text-[14pt]" value="java">
+                            Java
+                          </SelectItem>
+                          <SelectItem
+                            className="text-[14pt]"
+                            value="javascript"
+                          >
+                            JavaScript
+                          </SelectItem>
+                          <SelectItem
+                            className="text-[14pt]"
+                            value="typescript"
+                          >
+                            TypeScript
+                          </SelectItem>
+                          <SelectItem className="text-[14pt]" value="cpp">
+                            C++
+                          </SelectItem>
+                          <SelectItem className="text-[14pt]" value="csharp">
+                            C#
+                          </SelectItem>
+                          <SelectItem className="text-[14pt]" value="dart">
+                            Dart
+                          </SelectItem>
+                          <SelectItem className="text-[14pt]" value="go">
+                            Go
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="toLanguage"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-[18pt] font-semibold ptSans">
+                        To Language
+                      </FormLabel>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger className="border rounded-[8px] text-[14pt] h-[45px] bg-[#000] text-[#fff]">
+                            <SelectValue placeholder="Select target language" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent className="bg-[#fff]">
+                          <SelectItem className="text-[14pt]" value="python">
+                            Python
+                          </SelectItem>
+                          <SelectItem className="text-[14pt]" value="java">
+                            Java
+                          </SelectItem>
+                          <SelectItem
+                            className="text-[14pt]"
+                            value="javascript"
+                          >
+                            JavaScript
+                          </SelectItem>
+                          <SelectItem
+                            className="text-[14pt]"
+                            value="typescript"
+                          >
+                            TypeScript
+                          </SelectItem>
+                          <SelectItem className="text-[14pt]" value="cpp">
+                            C++
+                          </SelectItem>
+                          <SelectItem className="text-[14pt]" value="csharp">
+                            C#
+                          </SelectItem>
+                          <SelectItem className="text-[14pt]" value="dart">
+                            Dart
+                          </SelectItem>
+                          <SelectItem className="text-[14pt]" value="go">
+                            Go
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="code"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-[18pt] font-bold ptSans">
+                        Code Input
+                      </FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="E.g: const number = 4"
+                          className="resize-none border rounded-[8px] text-[#fff] bg-[#000] text-[14pt]"
+                          rows={15}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button
+                  type="submit"
+                  className="w-full h-[50px] bg-[#f0d643] hover:bg-[#ae9f4f] hover:text-[#fff] rounded-[8px] text-[20px] text-[#444444]"
+                >
+                  TRANSLATE CODE
+                </Button>
+              </form>
+            </Form>
+          </div>
         </div>
-
         {/* right */}
-        <div className="border bg-white rounded-[20px] p-4 h-fit w-[670px]">
+        <div className="border bg-[#efefef] p-[30px] rounded-[14px] h-fit">
           {translatedCode && (
-            <div className="overflow-auto p-5 border border-dashed border-black bg-black rounded-md">
-              <pre className="text-[14pt] text-white">{translatedCode}</pre>
+            <div className="overflow-auto p-5 border rounded-[14px] text-[#000] text-[12pt] border-dashed border-black">
+              <pre className="text-left whitespace-pre font-mono">
+                {translatedCode}
+              </pre>
             </div>
           )}
           {!translatedCode &&
             (loading ? (
-              <div className="p-5 overflow-auto border border-dashed border-black rounded-md">
-                <pre>Code Line Here</pre>
+              <div className="p-5 overflow-auto border rounded-[14px] text-[#fff] text-[12pt] border-black bg-[#000]">
+                <pre className="text-[#fff]">Code Line Here</pre>
                 <div className="space-y-2 mt-2">
                   <Skeleton className="h-4 w-[550px] bg-slate-400" />
                   <Skeleton className="h-4 w-[500px] bg-slate-400" />
@@ -159,8 +263,12 @@ export default function CodeTranslator() {
                 </div>
               </div>
             ) : (
-              <div className="p-5 border border-dashed border-black bg-black rounded-md">
-                <pre className="text-[14pt] text-white">Code Line Here</pre>
+              <div className="bg-[#ffffff] p-[20px] rounded-[14px]">
+                <div className="p-5 overflow-auto border rounded-[11px] text-[#fff] text-[14pt] border-black bg-[#000] h-[200px]">
+                  <pre className="text-[#fff]">
+                    Translated code will display here
+                  </pre>
+                </div>
               </div>
             ))}
         </div>

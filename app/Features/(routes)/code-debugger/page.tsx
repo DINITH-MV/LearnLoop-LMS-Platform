@@ -15,6 +15,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useState } from "react";
@@ -67,7 +74,7 @@ export default function CodeDebugger() {
 
   return (
     <div className="h-[1100px] lg:px-8 py-4">
-      <div className="text-center pt-[16px] mb-[0px] font-bold text-[30pt]">
+      <div className="text-center YeonSung pt-[16px] mb-[0px] font-bold text-[30pt]">
         CODE DEBUGGER
       </div>
       <div className="flex justify-end mb-4">
@@ -95,16 +102,24 @@ export default function CodeDebugger() {
                   name="proLanguage"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-[18pt] font-semibold">
-                        PROGRAMING LANGUAGE
+                      <FormLabel className="text-[18pt] font-semibold ptSans">
+                        Programming Language
                       </FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="E.g: Flutter"
-                          {...field}
-                          className="border rounded-[8px] text-[#fff] bg-[#000] text-[14pt] h-[30px] appearance-none"
-                        />
-                      </FormControl>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="border rounded-[8px] text-[14pt] h-[45px] bg-[#000] text-[#fff]">
+                            <SelectValue placeholder="Select a language" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent className="bg-[#fff]">
+                          <SelectItem className="text-[14pt]" value="python">Python</SelectItem>
+                          <SelectItem className="text-[14pt]" value="java">Java</SelectItem>
+                          <SelectItem className="text-[14pt]" value="dart">Dart</SelectItem>
+                          <SelectItem className="text-[14pt]" value="javascript">JavaScript</SelectItem>
+                          <SelectItem className="text-[14pt]" value="cpp">C++</SelectItem>
+                          <SelectItem className="text-[14pt]" value="csharp">C#</SelectItem>
+                        </SelectContent>
+                      </Select>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -114,12 +129,12 @@ export default function CodeDebugger() {
                   name="code"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-[18pt] font-semibold">
-                        CODE INPUT
+                      <FormLabel className="text-[18pt] font-bold ptSans">
+                        Code Input
                       </FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="E.g: cont number = 4"
+                          placeholder="E.g: const number = 4"
                           className="resize-none border rounded-[8px] text-[#fff] bg-[#000] text-[14pt]"
                           rows={15}
                           {...field}
@@ -142,7 +157,7 @@ export default function CodeDebugger() {
         {/* right */}
         <div className="border bg-[#efefef] p-[30px] rounded-[14px] h-fit">
           {translatedCode && (
-            <div className="overflow-auto p-5 border rounded-[14px] text-[#000] text-[14pt] border-dashed border-black">
+            <div className="overflow-auto p-5 border rounded-[14px] text-[#000] text-[12pt] border-dashed border-black">
               <pre>{translatedCode}</pre>
             </div>
           )}

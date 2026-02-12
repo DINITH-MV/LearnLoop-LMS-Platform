@@ -73,12 +73,12 @@ export const Section03 = () => {
 
   const text4Opacity = useTransform(
     scrollYProgress,
-    [0.4, 1, 1], // when the text will be visible
-    [1, 0, 0] // how long the text will be visible
+    [0.4, 0.7, 1], // when the text will be visible
+    [1, 1, 0] // how long the text will be visible
   );
 
   return (
-    <div id="second-section" className="relative min-h-screen flex flex-col items-center justify-center">
+    <div id="second-section" className="relative h-[900px] flex flex-col items-center justify-center">
       {/* Header Section */}
       <motion.div
         style={stylesWithCssVar({

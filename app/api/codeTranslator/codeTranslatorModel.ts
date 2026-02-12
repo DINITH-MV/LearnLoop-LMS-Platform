@@ -1,54 +1,35 @@
-const {
-  GoogleGenerativeAI,
-  HarmCategory,
-  HarmBlockThreshold,
-} = require("@google/generative-ai");
+import OpenAI from "openai";
 
-const MODEL_NAME = "gemini-1.0-pro";
-const API_KEY = process.env.GEMINI_API;
+export async function translateCode(from: string, to: string, code: string): Promise<string> {
+  try {
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
 
-export async function translateCode(from: string, to: string, code: string) {
-  const genAI = new GoogleGenerativeAI(API_KEY);
-  const model = genAI.getGenerativeModel({ model: MODEL_NAME });
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4",
+      messages: [
+        {
+          role: "system",
+          content: "You are an expert programmer capable of translating code between programming languages. Translate the provided code from one language to another while maintaining the same functionality. Ensure proper syntax, indentation, and language-specific best practices. Only return the translated code without explanations.",
+        },
+        {
+          role: "user",
+          content: `Translate this ${from} code to ${to}:\n\n${code}`,
+        },
+      ],
+      temperature: 0.3,
+    });
 
-  const generationConfig = {
-    temperature: 0.9,
-    topK: 1,
-    topP: 1,
-    maxOutputTokens: 2048,
-  };
-
-  const safetySettings = [
-    {
-      category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-      threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-    },
-    {
-      category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-      threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-    },
-    {
-      category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-      threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-    },
-    {
-      category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-      threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-    },
-  ];
-
-  const parts = [
-    {
-      text: "Assume you are an expert programmer you have to translate code into another language. That is your role. As a prompt user given a prompt that contain code lines you have to covert those lines from {from} to {language} with proper syntax and make sure to use proper indentation.\n\n const number = 4\n\nfrom: {JavaScript}\nto: {python}",
-    },
-  ];
-
-  const result = await model.generateContent({
-    contents: [{ role: "user", parts }],
-    generationConfig,
-    safetySettings,
-  });
-
-  const response = result.response;
-  return response.text();
+    const response = completion.choices[0].message.content;
+    
+    if (!response) {
+      throw new Error("No response generated from AI model");
+    }
+    
+    return response;
+  } catch (error) {
+    console.error("Code Translation Error:", error);
+    return "Error: Unable to translate code. Please check your input and try again.";
+  }
 }
