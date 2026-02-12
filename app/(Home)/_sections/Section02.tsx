@@ -72,7 +72,7 @@ export const Section02 = () => {
             })}
             className=""
           >
-            <div className="bg-[linear-gradient(140deg,#ff8f93,#ffbe77)] rounded-r-[80px] py-[28pt] p-[20px]">
+            <div className="bg-[linear-gradient(140deg,#ff5e64,#ffbe77)] rounded-r-[80px] py-[28pt] p-[20px]">
               <p className="text-[#ffffffd8] text-[32pt] ml-[20px] text-justify ptSans font-semibold leading-[1.4]">
                 BUILDING LEARNING <br /> CULTURE WITH AI
               </p>
@@ -97,7 +97,7 @@ export const Section02 = () => {
             opacity: text1Opacity,
             "--y": text1Y,
             color: "black",
-            width: "350px",
+            width: "330px",
             size: "24pt",
             textAlign: "center",
           })}

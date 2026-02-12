@@ -86,7 +86,7 @@ export const Section03 = () => {
         })}
         className="flex items-center justify-center mb-8"
       >
-        <div className="w-[520px] text-center py-[40px] bg-[linear-gradient(87deg,#ffe292,#FF7755)] rounded-r-[70px] p-[20px]">
+        <div className="w-[520px] text-center py-[40px] bg-[linear-gradient(87deg,#ffd45d,#ff5a31)] rounded-r-[70px] p-[20px]">
           <p className="text-[32pt] text-center text-[#fffce8] ptSans font-semibold leading-[1.4]">
             INTRODUCING OUR <br />
             LATEST AI FEATURES
