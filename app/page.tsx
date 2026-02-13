@@ -9,6 +9,7 @@ import Header from "./(Home)/_components/Header";
 import Footer from "./(Home)/_components/Footer";
 import AIAssistant from "./(Home)/_components/AI-Assistant";
 import TopScrollButton from "./(Home)/_components/TopScrollButton";
+import Section04 from "./(Home)/_sections/Section04";
 
 export default function Page() {
   const [isClient, setIsClient] = useState(false);
@@ -32,6 +33,7 @@ export default function Page() {
         <Section01 />
         <div className="relative z-10 w-full">
           <Section02 />
+          <Section04 />
           <Section03 />
         </div>
         <div className="z-[100] relative">
