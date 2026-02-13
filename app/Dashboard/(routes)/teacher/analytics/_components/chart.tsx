@@ -29,24 +29,36 @@ export const Chart = ({ data }: ChartProps) => {
   };
 
   return (
-    <Card>
-      <ResponsiveContainer width="100%" height={350}>
-        <BarChart data={data}>
+    <Card className="p-2 sm:p-4">
+      <ResponsiveContainer
+        width="100%"
+        height={280}
+        className="sm:!h-[350px] lg:!h-[400px]"
+      >
+        <BarChart
+          data={data}
+          margin={{ top: 5, right: 10, left: 0, bottom: 5 }}
+        >
           <CartesianGrid strokeDasharray="3 3" opacity={0.2} />{" "}
           {/* Light grid lines */}
           <XAxis
             dataKey="name"
             stroke="#888888"
-            fontSize={12}
+            fontSize={10}
             tickLine={false}
             axisLine={false}
+            interval={0}
+            angle={-45}
+            textAnchor="end"
+            height={60}
           />
           <YAxis
             stroke="#888888"
-            fontSize={12}
+            fontSize={10}
             tickLine={false}
             axisLine={false}
             tickFormatter={(value) => `$${value}`}
+            width={50}
           />
           <Tooltip formatter={(value) => [`$${value}`, "Total"]} />{" "}
           {/* Tooltip for value details */}

@@ -5,7 +5,7 @@ export default function Header() {
       <div className="text-center text-[15.5pt] m-auto w-[600px] flex justify-around">
         <span>HOME</span>
         <span onClick={() => window.scrollTo({ top: 5239, behavior: 'smooth' })}>FEATURES</span>
-        <span>COURSES</span>
+        <span><a href="/Dashboard/progress" target="_blank">COURSES</a></span>
         <span>ABOUT US</span>
       </div>
     </div>
