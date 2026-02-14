@@ -16,7 +16,7 @@ export const FileUploadAttachment = ({
 }: FileUploadProps) => {
   return (
     <UploadDropzone
-    className="bg-gradient-to-br from-[#ff3a96] via-[#8c1ff7] to-[#511aea] 
+    className="bg-gradient-to-br ptSans from-[#ff3a96] via-[#8c1ff7] to-[#511aea] 
     ut-upload-icon:text-[#fff] h-[380px]
     ut-label:text-[18pt] ut-label:text-[#fff] ut-label:w-[400px] ut-label:mb-[16px]    
     ut-allowed-content:text-[16pt] ut-allowed-content:text-[#fff] ut-allowed-content:mb-[24px]  
